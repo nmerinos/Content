@@ -26,6 +26,8 @@ Las etiquetas más comunes que encontramos son:
 |------------|:----------------------|:-----------|
 |`<title>`|Define el título del documento.|  |
 
+> **Ejemplo:**
+> - Contenido.
 
 | Etiqueta   |      Descripcion      |  Atributos |
 |------------|:----------------------|:-----------|
@@ -33,6 +35,12 @@ Las etiquetas más comunes que encontramos son:
 |||http-equiv: Los servidores HTTP utilizan este atributo para obtener información sobre los encabezados.|
 |||content: Este atributo especifica el valor de una propiedad.|
 |||scheme: Proporciona a los agentes de usuario más contexto para la interpretación correcta de los datos.|
+
+> **Ejemplo:**
+> - Contenido.
+
+
+
 
 | Etiqueta   |      Descripcion      |  Atributos |
 |------------|:----------------------|:-----------|
@@ -43,7 +51,9 @@ Las etiquetas más comunes que encontramos son:
 |||media: El medio para la información del estilo.|
 |||target: Indica donde abrir el URL.|
 
-Ejemplo:
+> **Ejemplo:**
+> - Contenido.
+
 
 
 
@@ -51,8 +61,9 @@ Ejemplo:
 |------------|:----------------------|:-----------|
 |`<base>`|Especifica la URL base que será usada para todos los vínculos de la página.||
 
-Ejemplo:
-Especificar la url http://www.w3schools.com/images/ para que en el body reconozca la referencia a la imagen http://www.w3schools.com/images/html5.gif en la etiqueta de imagen (<img>).
+> **Ejemplo:**
+> -Especificar la url http://www.w3schools.com/images/ para que en el body reconozca la referencia a la imagen http://www.w3schools.com/images/html5.gif en la etiqueta de imagen (`<img>`).
+
        <html>
           <base href="http://www.w3schools.com/images/" target="_blank">
           <body>
@@ -66,8 +77,8 @@ Especificar la url http://www.w3schools.com/images/ para que en el body reconozc
 |------------|:----------------------|:-----------|
 |`<style>`|Define el estilo de la información del documento html.||
 
-Ejemplo:
-Definir el estilo de la etiqueta body, definiendo su atributo background-color como yellow, definir el atributo color de la etiqueta p como azul.
+> **Ejemplo:**
+> -Definir el estilo de la etiqueta body, definiendo su atributo background-color como yellow, definir el atributo color de la etiqueta p como azul.
 
        <style>
           body {background-color:yellow;}
@@ -84,8 +95,8 @@ Revisar este [link][2] para mayor profundidad.
 |||src: Especifica la localización de un script externo.|
 |||type: Especifica el lenguaje de scripts de los contenidos del elemento.|
 
-Ejemplo:
-Vamos a escribir JavaScript dentro de un elemento HTML con atributo id="hackspace".
+> **Ejemplo:**
+> -Vamos a escribir JavaScript dentro de un elemento HTML con atributo id="hackspace".
 
        <html>
           <body>

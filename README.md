@@ -4,24 +4,39 @@ We are covering the topics from the [training syllabus][1]
 
 ####Week 1
 > **Frontend**
+
 > Fundamentos de Frontend
+
 > HTML
+
 > CSS
+
 > **Backend**
+
 > Fundamentos de Backend
+
 > Javascript I
+
 > **Electrónica**
+
 > Fundamentos de Electrónica
 
 ####Week 2
 > **Frontend**
+
 > Jquery
+
 > Templating I (Bootstrap/Foundation)
+
 > **Backend**
+
 > Firebase
+
 > Javascript II
+
 > **Electrónica**
-Arduino (Leds y Potenciómetros)
+
+> Arduino (Leds y Potenciómetros)
 
 ####Week 3
 > **Frontend**

@@ -116,8 +116,8 @@ Revisar este [link][2] para mayor profundidad.
 
 | Etiqueta | Descripcion | Atributos |
 |----------|-------------|-----------|
-|'<form>'  | Esta etiqueta indica que se empezara a recolectar informacion del usuario |||
-|'<input>' | Genera un cuadro en el cual el usuario puede introducir informacion o contenido|||
+||`<form>` | Esta etiqueta indica que se empezara a recolectar informacion del usuario |||
+|'`<input>`| Genera un cuadro en el cual el usuario puede introducir informacion o contenido|||
 |||src|
 
 

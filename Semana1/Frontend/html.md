@@ -117,3 +117,37 @@ Revisar este [link][2] para mayor profundidad.
 
 
 
+
+
+
+===================================================
+Lo que no quiero volver a repetir es esta parte siguiente con el formato de arriba(cuadro de etiqueta, y ejemplo):
+
+Etiquetas para forms <form>
+	atributos: action,method,required,placeholder
+	drop down list box <select> <option> value selected
+	multiple select box <select> size multiple
+	<textarea>
+	<input> type name size maxlength
+		.password <input> type=”password” name value checked
+		.radio button <input> type=’’radio” name value checked
+		.checkbox <input> type=”checkbox” name value checked
+		.file input box <input> type=”file”
+		.submit button <input> type=”submit” name value
+		.image button <input> type = “image” src
+		.label <label>
+		.form validation <input required=”required” />
+		.date input <input type=”date” />
+		.email <input type=”email” />
+		.url <input type=“url” />
+
+
+
+
+
+
+
+
+
+
+

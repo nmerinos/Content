@@ -114,7 +114,11 @@ Revisar este [link][2] para mayor profundidad.
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
 [2]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head#See_also
 
-
+| Etiqueta | Descripcion | Atributos |
+|----------|-------------|-----------|
+|'<form>'  | Esta etiqueta indica que se empezara a recolectar informacion del usuario |||
+|'<input>' | Genera un cuadro en el cual el usuario puede introducir informacion o contenido|||
+|||src|
 
 
 

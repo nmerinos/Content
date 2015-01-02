@@ -8,14 +8,14 @@ Antes de empezar, debemos tener las herramientas necesarias para visualizar corr
 
 Estos son las herramientas que necesitaremos:
 
-    * En Windows
-        1. [http://www.google.com.pe/chrome/browser/desktop/index.html](Google Chrome): Vayan descárgandose este navegador, más adelante lo utilizaremos con mayor profundidad.
-        2. [http://www.sublimetext.com/2](Sublime Text 2): Este es uno de los mejores editores de texto gratuitos disponibles. Les servirá para poder abrir los archivos que les brindaremos para revisarlos y editarlos en su computadora.
+* En Windows
+    1. [Google Chrome](http://www.google.com.pe/chrome/browser/desktop/index.html): Vayan descárgandose este navegador, más adelante lo utilizaremos con mayor profundidad.
+    2. [Sublime Text 2](http://www.sublimetext.com/2): Este es uno de los mejores editores de texto gratuitos disponibles. Les servirá para poder abrir los archivos que les brindaremos para revisarlos y editarlos en su computadora.
 
-    * En Linux
+* En Linux
 
 
-    * En MAC
+* En MAC
 
 
 #### Ejemplo 1

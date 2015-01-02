@@ -73,4 +73,4 @@ We are covering the topics from the [training syllabus][1]
 [4]: https://github.com/nmerinos/Content/blob/master/Semana1/Frontend/fundamentosfrontend.md
 [5]: https://github.com/nmerinos/Content/blob/master/Semana1/Frontend/html.md
 [6]: https://github.com/nmerinos/Content/blob/master/Semana1/Frontend/CSS.md
-[7]:  https://github.com/nmerinos/Content/blob/master/Semana1/Electronica/Introduccion.md
+[7]: https://github.com/nmerinos/Content/blob/master/Semana1/Electronica/Introduccion.md

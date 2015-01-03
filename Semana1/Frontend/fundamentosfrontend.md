@@ -25,7 +25,7 @@ Lo que verás será algo parecido a esto:
 ~~~html
 <body>
     <h1>Título</h1>
-    <p>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea. Adipisci, laboriosam, illo! Fugiat officia quisquam, quasi ex et voluptate.</p>
+    <p>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p>
 </body>
 ~~~
 
@@ -33,7 +33,7 @@ Pero, Si abres este archivo con Google Chrome verás lo siguiente:
 
 ~~~iframe
 Título
-Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea. Adipisci, laboriosam, illo! Fugiat officia quisquam, quasi ex et voluptate.
+Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.
 ~~~
 
 

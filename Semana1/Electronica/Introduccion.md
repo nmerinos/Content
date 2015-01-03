@@ -109,7 +109,7 @@ La parte interna tiene conexiones verticales, pero la línea central funciona di
 
 Ahora que sabes esto, es tu turno.
 
-Arma la configuración analógica (con el potenciómetro, la 3ra mostrada) en 123D Circuits y conecta el mismo que va al Voltímetro, a la entrada A1 del Arduino, y cópiale el siguiente programa al editor de código:
+Arma la configuración analógica (con el potenciómetro, la 3ra mostrada) en 123D Circuits y conecta un cable desde la misma columna que va al Voltímetro, a la entrada A1 del Arduino, y cópiale el siguiente programa al editor de código:
 
 > int dato = 0;  
 >void setup()  

@@ -86,7 +86,7 @@ Debido a que cuando trabajamos en una web tenemos bastante código para trabajar
 
 1. Creamos los arhivos ejemplo3.html, style.css y main.js, y los ponemos en una ubicación que conozcamos (en este caso los 3 están en una misma carpeta). Estos son los archivos HTML, CSS y Javascript respectivamente y pueden tener cualquier nombre que queramos, pero tienen que terminar en las extensiones de cada tipo de archivo.
 2. Abrimos el archivo HTML y vemos que en vez del código CSS y Javascript que había anteriormente, ahora hay un links dentro de la etiqueta ``<head>`` y la etiqueta ``<script>`` de Javascript con código que teníamos se redujo a un ``src="main.js"``
-3. Abrimos el archivo CSS llamado style.css y vemosel mismo código que teníamos dentro de ``<style type="text/css">''.
+3. Abrimos el archivo CSS llamado style.css y vemosel mismo código que teníamos dentro de ``<style type="text/css">``.
 4. Abrimos el archivos Javascrtip llamado main.js y vemos el mismo código que teníamos dentro de ``<script type="text/javascript" src="static/template/themes/admin/layout.js"></script>``.
 
 ~~~html

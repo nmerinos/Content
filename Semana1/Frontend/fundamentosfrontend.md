@@ -39,8 +39,8 @@ Pero, Si abres este archivo con Google Chrome verás lo siguiente:
 ~~~iframe
 Título
 Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.
-![HackSpace Perú](http://puu.sh/e0BO7/f44d5bf1d6.png>)
-<button type="button">¡Hazme clic!</button>
+![HackSpace Perú](http://puu.sh/e0BO7/f44d5bf1d6.png)
+<button type="button" markdown="1">¡Hazme clic!</button>
 ~~~
 
 Como verás, este es un archivo de HTML simplificado. Ahora seguiremos con el segundo ejemplo.
@@ -68,7 +68,6 @@ A
                 x.style.color = "red"; 
             }
         </script>
-
         <button type="button" onclick="miFuncion()">¡Hazme clic!</button>
     </body>
 </html>

@@ -130,3 +130,32 @@ Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera secci
 
 
 ## Cuestionario
+
+1- ¿Cuál es la funcionalidad básica del **HTML**?
+
+*   Editar el diseño y estilos de la página.
+*   Describir la estructura y organización de una página web.
+*   Interpretar las etiquetas y pintar una página web.
+
+2- Las etiquetas son los elementos principales de:
+
+*   HTML
+*   CSS
+*   Javascript
+
+3- Es un lenguaje de programación:
+
+*   HTML
+*   CSS
+*   Javascript
+
+4- ¿Con Javascript podemos añadir nuevo CSS?
+
+*   Sí
+*   No
+
+5- ¿Con qué programo una funcionalidad de clic en un botón?
+
+*   HTML
+*   CSS
+*   Javascript

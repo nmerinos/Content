@@ -1,0 +1,476 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>fundamentosbackend.html</title><style></style></head><body>
+<h1 id="fundamentos-de-backend">Fundamentos de Backend</h1>
+<p>El backend es la parte web del lado del servidor y base de datos, oculta al usuario. Este no lo puede observar pero lo puede usar indirectamente, ya que el backend trabaja con los datos que se envían desde el frontend como contraseñas al momento de autentificarte o como datos cuando registras tu tarjeta de crédito. Estos datos pueden ser registradas en una base de datos o pueden ser utilizados para hacer alguna consulta al servidor.</p>
+<p>Los lenguajes o tecnologías más comunes  a utilizar son python con su framework django, ruby on rails y Node.js. Este último permite utilizar javascript como backend y es el que aprenderemos en este entrenamiento.</p>
+<p>Node.js es un entorno JavaScript de lado de servidor que utiliza un modelo asíncrono, con I/O de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google. V8 es uno de los intérpretes más rápidos que puedan existir en la actualidad para cualquier lenguaje dinámico. Además las capacidades de Node para I/O (Entrada/Salida) son realmente ligeras y potentes, ideal para aplicaciones en tiempo real de datos intensivos.</p>
+<p>Node.js trabaja con el gestor de paquetes npm, el cual permite administrar módulos (<strong>modularizacion</strong>) a ser instalados. Un módulo es una manera de organizar el código, similar a un paquete o librería. Los módulos son soportados gracias a la sentencia require().</p>
+<p>// saludo.js
+ function saludo() {
+  return &quot;Hola&quot;;
+};</p>
+<p>Existen módulos nativos, los cuales no se necesitan ser traidos localmente </p>
+<p> var http = require(&quot;http&quot;);</p>
+<p>y existen los módulos que podemos crear, para ello luego de crear los módulos,  usamos module.exports = {} colocando entre las llaves lo que queremos exportar.</p>
+<p>module.exports={
+saludo:saludo
+} </p>
+<h2 id="ejemplos">Ejemplos</h2>
+<h3 id="configurando-mi-entorno">Configurando mi entorno</h3>
+<p>Debemos instalar node para poder comenzar a trabajar.</p>
+<h4 id="instalar-node-en-windows">Instalar node en Windows</h4>
+<p>Empecemos por descargar el instalador de la pagina (node-v0.X.msi Windows installer) de <a href="http://nodejs.org/">Node.js</a></p>
+<p>Simplemente corremos el instalador, abrimos la consola (cmd.exe) y probamos la version de node instalada:</p>
+<pre><code>node -v
+</code></pre><p>Esto nos va a mostrar la version que instalamos, lo que nos queda es probar algo de javascript para ser felices, asi que en la consola escribimos node y presionamos enter para entrar en la consola y despues tiramos algo de js:</p>
+<pre><code>node
+&gt; var prueba = &#39;Prueba Node&#39;;
+&gt; console.log(prueba);
+</code></pre><p>Para lo que respecta NPM, ya lo tenemos, vamos a ver la version:</p>
+<pre><code>npm -v
+</code></pre><p>Tenemos node y npm instalado para empezar a codear. Si queremos instalar paquetes del NPM:</p>
+<pre><code>npm install [paquete]
+</code></pre><h4 id="-a-name-linux-instalar-node-en-linux-ubuntu-a-">&lt;a name=&quot;linux&quot;&gt;Instalar node en Linux-Ubuntu&lt;/a&gt;</h4>
+<p>Bajar el source de Node.js, compilarlo, e instalarlo.</p>
+<p>Descargar el source <strong>node-v0.X.tar.gz</strong> de la <a href="http://nodejs.org/download/">página</a> , o clonar el source usando <a href="https://github.com/joyent/node">git</a>. Si quieren elejir una version en particular pueden verlo en <a href="http://nodejs.org/dist/">Distribuciones de Node</a>.</p>
+<p>Después de tener el tar.gz vamos a hacer los pasos de descomprimir, crear una carpeta, configurar el paquete, compilarlo e instalarlo:</p>
+<p>Abrimos el terminal, nos posicionamos donde tenemos el <strong>.tar.gz</strong> y hacemos lo siguiente:</p>
+<pre><code>tar -zxf node-v0.10.35.tar.gz
+cd node-v0.6.5
+./configure
+make
+sudo make install
+</code></pre><p>Comprobamos poniendo en el terminal:</p>
+<pre><code>node -v
+</code></pre><p>y nos va a retornar la version de node instalada.</p>
+<p>Escribimos node, y damos ENTER, para abrir la consola de node, y empezamos escribirmos javascript:</p>
+<pre><code>node
+&gt; var prueba = &#39;Prueba Node&#39;;
+&gt; console.log(prueba);
+</code></pre><p>Presionamos Ctrl+C 2 veces y volvemos al terminal.</p>
+<p>Desde la version 0.6 de node ya tenemos el NPM incluido, pero por si necesitan instalarlo, en el terminal pomenos:</p>
+<pre><code>curl http://npmjs.org/install.sh | sh
+</code></pre><p>Si no reconoce el comando cURL, instalarlo con:</p>
+<pre><code>sudo apt-get install curl
+</code></pre><p>Comprobamos la version en el terminal:</p>
+<pre><code>npm -v
+</code></pre><p>y ahora es simplemente agregar paquetes a nuestro gusto utilizando:</p>
+<pre><code>npm install [paquete]
+</code></pre><h4 id="instalar-node-en-mac-os">Instalar node en Mac OS</h4>
+<p>Como prerequisito tenemos que tener instalado Xcode.</p>
+<p>La forma más sencilla es descargar desde la página el instalador para Macintosh (node-vX.pkg Macintosh installer), ejecutarlo y seguir los pasos. Por defecto instala tanto Node como NPM.</p>
+<p>Al terminar se indica que la ruta donde se copiaron los archivos es /usr/local/bin.</p>
+<p>La otra forma de instalarlo es la misma que la de <a href="#linux">Linux</a> explicada más arriba.</p>
+<p>Comprobamos las versión de node:</p>
+<pre><code>node -v
+</code></pre><p>… y de NPM:</p>
+<pre><code>npm -v
+</code></pre><h3 id="ejemplo-1-llamadas-as-ncronas">Ejemplo 1 : Llamadas Asíncronas</h3>
+<p>Cuando la terminación de una operación y la reanudación de un programa ocurren a la vez, se dice que estamos realizando llamadas síncronas. Nuestro proceso se bloquea mientras espera la terminación de una operación .</p>
+<pre><code>f=leer_fichero()
+//Hasta que no se lee el fichero no llegamos aquí
+t=leer_teclado()
+//Hasta que no se lee el teclado no llegamos aquí
+buscar(f,t)
+//Resto del programa
+</code></pre><p>La alternativa es no esperar, ser asíncronos. Debido a que no esperamos ocurren dos cosas no bloqueamos la ejecución de nuestro programa. </p>
+<p>Por esta razón a las llamadas asíncronas también se les dice no bloqueantes. La llamada retorna antes de que se complete la operación y, por tanto, no puede devolver el resultado. Para solucionar ellos podemos usar diversas opciones, pero nos enfocaremos en los callbacks o retrollamadas, el cual es interrumpir e indicar que código hay que ejecutar en el momento de realizar la llamada asíncrona.</p>
+<pre><code>f=leer_fichero()
+t=leer_teclado()
+buscar(f,t)
+//Resto del programa
+</code></pre><p>En vez de esperar el resultado de las funciones, indico a estas funciones qué tienen que hacer cuando terminen.</p>
+<pre><code>leer_fichero_asincrono(usa_fichero)
+leer_teclado_asincrono(usa_teclado)
+
+//Resto del programa
+</code></pre><p>Así, en el caso de leer_fichero_asincrono() lo que hago es decirle que, cuando termine de leer el fichero llame a la función usa_fichero(). Igualmente, con leer_teclado_asincrono(). Estas funciones usa_fichero() y usa_teclado() que se ejecutan cuando se completa la operación son las retrollamadas.</p>
+<p>Acabadas las presentaciones, lo importante aquí es que la función  leer_fichero_asincrono() no espera y la ejecución continúa. Se ejecuta leer_teclado_asincrono() y tampoco espera, seguimos ejecutando lo que haya que ejecutar despues y, mientras, se lee del fichero y del teclado a la vez.</p>
+<p>¿Y dónde está la función buscar() que es donde realmente hacemos algo con lo leído? Bueno, no podemos llamarla hasta que estemos seguros de que tanto el fichero como el teclado se han leído. Esa es la responsabilidad de usa_fichero() y usa_teclado() que deben guardar los datos, comprobar que están ambos y, si es así, llamar la función buscar() con ellos. </p>
+<pre><code>var f, t string;
+func usa_fichero(rf) { 
+f = rf; 
+if t!=&quot;&quot; {buscar(f,t)} }
+func usa_teclado(rt) { 
+t = rt; 
+if f!=&quot;&quot; {buscar(f,t)} }
+
+//Resto del programa
+</code></pre><p>Para eso guardamos los datos recibidos en dos variables visibles por ambas retrollamadas y cuando se comprueba que ambas cadenas se han leído, llama a buscar().</p>
+<p>&quot;El infierno de devolución de llamada&quot; o mejor conocido como &quot;callback hell&quot; se refiere a los callback fuertemente jerarquizados volviendose ilegibles o pesado de leer. El metodo principal para corregir esto es lo que definimos anteriormente como la <strong>modularizacion</strong>.</p>
+<h3 id="ejemplo-2-servidor-http">Ejemplo 2 : Servidor HTTP</h3>
+<p><a href="samples/Ejemplo2.zip">Descargar el Ejemplo 2</a> </p>
+<p>Crearemos un servidor HTTP básico que responda a algunas de nuestras peticiones de manera predefinida.</p>
+<h4 id="primer-servidor">Primer Servidor</h4>
+<p>Para no alojar todo el código de nuestras aplicaciones en un solo archivo (lo cual resultaria tedioso de entender y poco organizado) Node.js te permite implementar al patrón de diseño MVC. Escribiremos un archivo principal (app.js) con el que iniciaremos nuestra aplicación y la lógica la programaremos en los módulos.</p>
+<p>Node.js integra un completo servidor (y cliente) web en el módulo <code>http</code>. Para hacer uso de un módulo en Node.js hemos de utilizar el comando <code>require</code> con un único parámetro, el nombre del módulo que queremos cargar. Copiemos este codigo en un archivo nuevo y guardemoslo como <code>server.js</code>.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//server.js</span>
+<span class="hljs-comment">/* Iniciamos el módulo http */</span>
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http"</span>);
+<span class="hljs-comment">/* Creamos el objeto del servidor */</span>
+http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, response)</span> </span>{
+    <span class="hljs-comment">/* Preparamos las cabeceras de respuesta */</span>
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Hola Core Upgrade!"</span>);
+    response.end();
+}).listen(<span class="hljs-number">3000</span>);
+</code></pre>
+<p>Ahora podemos ejecutarlo escribiendo en la consola <code>node server.js</code> . Si apuntamos nuestro navegador a <a href="http://localhost:3000">http://localhost:3000</a> nos encontraremos con nuestro mensaje.</p>
+<p>El método <code>createServer</code> del objeto <code>http</code> devuelve un objeto de tipo servidor al que le concatenamos directamente la llamada a su método listen y lo ponemos a escuchar en el puerto 3000.</p>
+<p>Al método se le pasa un único parámetro que es una función anónima (que también podríamos haber definido previamente y pasarla como argumento, el resultado sería el mismo). Cada vez que el servidor recibe una nueva petición, Node.js llama a la función que le hemos pasado como parámetro, a este tipo de funciones se les llama callbacks.</p>
+<p>A dicho callback se le pasan dos parámetros, <code>request</code> y <code>response</code>. Sus nombres son autodescriptivos, el primero de ellos es un objeto que contiene todos los datos relacionados con la petición y el segundo objeto es utilizado para responder al navegador. Cuando hemos acabado de responder al navegador tenemos que ejecutar <code>response.end()</code>.</p>
+<p>Refactoricemos el código de server.js para convertirlo en un módulo de Node.js.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//server.js</span>
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serverStart</span><span class="hljs-params">()</span> </span>{
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, response)</span> </span>{
+        response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+        response.write(<span class="hljs-string">"Hola Core Upgrade!"</span>);
+        response.end();
+    }).listen(<span class="hljs-number">3000</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Server started..."</span>);
+}
+exports.start = serverStart;
+</code></pre>
+<p>Para convertir nuestro código a un módulo solo tenemos que encerrarlo dentro de una función y exportarla. Ahora vamos a crear nuestro archivo principal <code>app.js</code>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">//app.js</span>
+<span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./server"</span>);
+server.start();
+</code></pre>
+<p>Si ejecutamos <code>node app.js</code> veremos el mensaje <strong>Server started…</strong> en la consola y si recargamos el navegador veremos que nuestra aplicación web sigue funcionando.</p>
+<h4 id="routing-o-enrutado-de-peticiones">Routing o enrutado de peticiones</h4>
+<p>Toda la información requerida está contenida en el objeto <code>request</code> que se le pasa a la función anónima al crear nuestro servidor.</p>
+<p>Usaremos el módulo <code>url</code> para procesar esa información con el objetivo de crear rutas para las peticiones HTTP. </p>
+<pre><code class="lang-js"><span class="hljs-comment">//server.js</span>
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http"</span>);
+<span class="hljs-keyword">var</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">"url"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serverStart</span><span class="hljs-params">(route)</span> </span>{
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, response)</span> </span>{
+        <span class="hljs-comment">// agregamos el modulo url</span>
+        <span class="hljs-keyword">var</span> pathname = url.parse(request.url).pathname; 
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received petition for "</span> + pathname);
+        route(pathname);
+        response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+        response.write(<span class="hljs-string">"Hola Core Upgrade!"</span>);
+        response.end();
+    }).listen(<span class="hljs-number">3000</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Server started..."</span>);
+}
+exports.start = serverStart;
+</code></pre>
+<p>Ahora nuestro servidor web es capaz de distinguir entre peticiones basándose en su URL. Esto nos permite mapear peticiones hacia nuestros manejadores.</p>
+<p>Crearemos un nuevo módulo llamado <code>router.js</code> donde escribiremos el código necesario para empezar a enrutar y a modificar el código de nuestro servidor.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//router.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">route</span><span class="hljs-params">(pathname)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Routing a new petition for "</span> + pathname);
+}
+exports.route = route;
+</code></pre>
+<p>Este código aún no rutea nada por que no hemos creado ningún manejador aún. De momento sirve para nuestro propósito didáctico. Modificamos la entrada principal de la aplicación, el archivo <code>app.js</code>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">//app.js</span>
+<span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./server"</span>);
+<span class="hljs-keyword">var</span> router = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./router"</span>);
+server.start(router.route);
+</code></pre>
+<p>Si ejecutamos nuestro servidor y recargamos la página veremos el siguiente log en la consola:</p>
+<pre><code>$ node App.js 
+Server started...
+Received petition for /
+Routing a new petition for /
+Received petition for /favicon.ico
+Routing a new petition for /favicon.ico
+</code></pre><p>La petición a favicon.ico es normal al usar navegadores web modernos, ignórala de momento.</p>
+<h4 id="manejadores-handlers">Manejadores/Handlers</h4>
+<p>Cada petición debe tener asociado un manejador de eventos que se haga cargo de procesar la petición. Crearemos un nuevo módulo al que llamaremos <code>requestHandlers.js</code> y que va a contener el código a ejecutar por cada evento. </p>
+<pre><code class="lang-js"><span class="hljs-comment">//requestHandlers.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'index' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es nuestro index, para entrar a las otras dos ingresa a /primera_pagina o /segunda_pagina"</span>);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">primera_pagina</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'primera_pagina' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es el mensaje mostrar con primera_pagina."</span>);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">segunda_pagina</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'segunda_pagina' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es el mensaje mostrar con segunda_pagina."</span>);
+    response.end();
+}
+exports.index = index;
+exports.primera_pagina = primera_pagina;
+exports.segunda_pagina = segunda_pagina;
+</code></pre>
+<p>Se usa el objeto <code>request</code> para conseguir que nuestras respuestas sean asíncronas.</p>
+<p>Ahora refactoricemos nuestro código en <code>server.js</code> y <code>router.js</code> para adaptarlo a nuestros manejadores.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//server.js</span>
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http"</span>);
+<span class="hljs-keyword">var</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">"url"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serverStart</span><span class="hljs-params">(route, handler)</span> </span>{
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, response)</span> </span>{
+        <span class="hljs-keyword">var</span> pathname = url.parse(request.url).pathname;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received petition for "</span> + pathname);
+        route(handler, pathname, response); <span class="hljs-comment">//agregamos handler y response</span>
+        response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+        response.write(<span class="hljs-string">"Hola Core Upgrade!"</span>);
+        response.end();
+    }).listen(<span class="hljs-number">3000</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Server started..."</span>);
+}
+exports.start = serverStart;
+</code></pre>
+<p>Añadimos dos parámetros a la llamada de la función route con la finalidad de añadir nuestro manejador y el objeto response. Sigamos con el archivo <code>router.js</code>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">//router.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">route</span><span class="hljs-params">(handler, pathname, response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Routing a new petition for"</span> + pathname);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> handler[pathname] === <span class="hljs-string">'function'</span>) {
+        handler[pathname](response);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"No request handler for "</span> + pathname + <span class="hljs-string">" skipping"</span>);
+        response.writeHead(<span class="hljs-number">404</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+        response.write(<span class="hljs-string">"404 Not Found"</span>);
+        response.end();
+    }
+}
+
+exports.route = route;
+</code></pre>
+<p>Aquí si hay cambios importantes, ahora la función obtiene el manejador a ejecutar y lo ejecuta si es una función pasándole como parámetros el objeto response y delegamos la respuesta directamente al manejador. </p>
+<p>Si no existe un manejador al que pasarle la petición, devuelve una página de <code>error 404</code>.</p>
+<p>Tan solo nos queda hacer unas modificaciones en <code>app.js</code> para despachar las peticiones. También añadimos el parámetro handler a la función start.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//app.js</span>
+<span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./server"</span>);
+<span class="hljs-keyword">var</span> router = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./router"</span>);
+<span class="hljs-keyword">var</span> requestHandlers = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./requestHandlers"</span>);
+<span class="hljs-keyword">var</span> handler = {}
+handler[<span class="hljs-string">"/"</span>] = requestHandlers.index;
+handler[<span class="hljs-string">"/primera_pagina"</span>] = requestHandlers.primera_pagina;
+handler[<span class="hljs-string">"/segunda_pagina"</span>] = requestHandlers.segunda_pagina;
+server.start(router.route, handler);
+</code></pre>
+<h3 id="ejemplo-3-peticiones-post">Ejemplo 3 : Peticiones POST</h3>
+<p><a href="samples/Ejemplo3.zip">Descargar el Ejemplo 3</a> </p>
+<p>Utilizaremos un archivo <code>app.js</code> de entrada principal de la aplicación  y nuestro código estará distribuido en módulos. </p>
+<h4 id="manejar-peticiones-post">Manejar peticiones POST</h4>
+<p>Aprendimos a manejar peticiones GET provenientes del cliente web y a crear manejadores que las despacharan a los métodos correspondientes para producir la salida y devolverla al navegador de forma no bloqueante. Ahora veamos como se maneja una petición POST sencilla.</p>
+<p>Vamos a añadir un sencillo formulario que el usuario rellenará y entonces la página será actualizada con la información proporcionada por el usuario. Vamos a mostrar este formulario en la página principal que es asimismo el manejador /primera_pagina.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//requestHandlers.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'index' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es nuestro index, para entrar a las otras dos ingresa a /primera_pagina o /segunda_pagina"</span>);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">primera_pagina</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'primera_pagina' enviado."</span>);
+    <span class="hljs-keyword">var</span> html = <span class="hljs-string">'&lt;html&gt;'</span>+
+        <span class="hljs-string">'    &lt;head&gt;'</span>+
+        <span class="hljs-string">'        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;'</span>+
+        <span class="hljs-string">'    &lt;/head&gt;'</span>+
+        <span class="hljs-string">'    &lt;body&gt;'</span>+
+        <span class="hljs-string">'        &lt;form action="/enviar" method="post"&gt;'</span>+
+        <span class="hljs-string">'            &lt;p&gt;&lt;label for="nombre"&gt;Escribe tu nombre: &lt;/label&gt;&lt;/p&gt;'</span>+
+        <span class="hljs-string">'            &lt;input type="text" name="nombre" id="nombre" /&gt;'</span>+
+        <span class="hljs-string">'            &lt;p&gt;&lt;label for="bio"&gt;Escribe una pequeña Bio sobre ti: &lt;/label&gt;&lt;/p&gt;'</span>+
+        <span class="hljs-string">'            &lt;textarea name="bio" id="bio" rows="30" cols="60"&gt;&lt;/textarea&gt;'</span>+
+        <span class="hljs-string">'            &lt;p&gt;&lt;input type="submit" value="Enviar" /&gt;&lt;/p&gt;'</span>+
+        <span class="hljs-string">'        &lt;/form&gt;'</span>+
+        <span class="hljs-string">'    &lt;/body&gt;'</span>+
+        <span class="hljs-string">'&lt;/html&gt;'</span>;
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(html);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">segunda_pagina</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'segunda_pagina' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es el mensaje mostrar con segunda_pagina."</span>);
+    response.end();
+}
+exports.index = index;
+exports.primera_pagina = primera_pagina;
+exports.segunda_pagina = segunda_pagina;
+</code></pre>
+<p><img src="Imagenes/1.png" alt="Sin titulo"></p>
+<p>Para que podamos manejar las peticiones POST de forma no bloqueante, es decir, asíncrona, Node.js nos hace llegar la información proveniente del cliente en pequeñas porciones usando callbacks que son invocados ante eventos específicos. </p>
+<p><strong>Cuando una porción de información llega, se dispara el evento</strong> <code>data</code><strong>, cuando toda la información ha sido cargada, se dispara el evento</strong> <code>end</code><strong>, de esta manera podemos manejar la llegada de datos desde el formulario de forma asíncrona.</strong></p>
+<p>Lo primero que necesitamos, es decirle a Node.js que funciones debe de invocar cuando los eventos se disparen. Para hacerlo, debemos añadir listeners al objeto request en el callback que es invocado cuando el servidor recibe una petición. En nuestro caso, la función anónima definida en <code>server.js</code>.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//server.js</span>
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http"</span>);
+<span class="hljs-keyword">var</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">"url"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serverStart</span><span class="hljs-params">(route, handler)</span> </span>{
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, response)</span> </span>{
+        <span class="hljs-comment">// Variable que alberga los datos del formulario</span>
+        <span class="hljs-keyword">var</span> postData = <span class="hljs-string">""</span>;
+        <span class="hljs-keyword">var</span> pathname = url.parse(request.url).pathname; <span class="hljs-comment">//parseamos el path</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received petition for "</span> + pathname);
+        <span class="hljs-comment">// Esperamos recibir los datos en utf-8</span>
+        request.setEncoding(<span class="hljs-string">"utf8"</span>);
+        <span class="hljs-comment">// Añadimos callbacks para eventos de envios de formularios</span>
+        request.addListener(<span class="hljs-string">"data"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(chunk)</span> </span>{
+            postData += chunk;
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"\n************************************************************\n"</span>+
+                <span class="hljs-string">"Received POST data chunk '\n"</span>+chunk+<span class="hljs-string">"'\n"</span>+
+                <span class="hljs-string">"************************************************************\n"</span>);
+        });
+        request.addListener(<span class="hljs-string">"end"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            route(handler, pathname, response, postData);
+        });
+    }).listen(<span class="hljs-number">3000</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Server started..."</span>);
+}
+exports.start = serverStart;
+</code></pre>
+<p>Hay varios cambios en este archivo. </p>
+<p>-Para empezar, hemos definido la variable <strong>postData</strong> donde alojaremos los datos provenientes del formulario. </p>
+<p>-Después hemos definido que esperamos recibir esos datos codificados como utf8. </p>
+<p>-Hemos añadido un capturador de eventos o event listener que dispara una función anónima cuando se lanza el evento <strong>“data“</strong>. Dicha función anónima introduce en la variable <strong>postData</strong> los nuevos datos conforme van llegando, no tiene misterio alguno. También hemos añadido un event listener para el evento <strong>“end“</strong> que dispara una función anónima que pasa todos los datos al enrutador, incluida la nueva variable <strong>postData</strong>.</p>
+<p>Hemos añadido un log de cada porción de información que nos llega a través del POST a modo de depurado. Si probamos el formulario podremos comprobar como con cantidades pequeñas de texto el evento <strong>data</strong> solo es disparado una vez pero si usamos fuentes de datos más largas es disparado en múltiples ocasiones.</p>
+<p>Para probarlo añade al textarea el texto que produce esta url y comprobarás como el evento es disparado en múltiples ocasiones.</p>
+<h4 id="procesando-los-datos-enviados">Procesando los datos enviados</h4>
+<p>De momento no tenemos un manejador para el path /enviar vamos a crearlo y vamos a hacer que utilice los datos enviados en el formulario para alguna tarea.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//requestHandlers.js</span>
+<span class="hljs-keyword">var</span> querystring = <span class="hljs-built_in">require</span>(<span class="hljs-string">"querystring"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'index' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es nuestro index, para entrar a las otras dos ingresa a /primera_pagina o /segunda_pagina"</span>);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">primera_pagina</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'primera_pagina' enviado."</span>);
+    <span class="hljs-keyword">var</span> html = <span class="hljs-string">'&lt;html&gt;'</span>+
+        <span class="hljs-string">'    &lt;head&gt;'</span>+
+        <span class="hljs-string">'        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;'</span>+
+        <span class="hljs-string">'    &lt;/head&gt;'</span>+
+        <span class="hljs-string">'    &lt;body&gt;'</span>+
+        <span class="hljs-string">'        &lt;form action="/enviar" method="post"&gt;'</span>+
+        <span class="hljs-string">'            &lt;p&gt;&lt;label for="nombre"&gt;Escribe tu nombre: &lt;/label&gt;&lt;/p&gt;'</span>+
+        <span class="hljs-string">'            &lt;input type="text" name="nombre" id="nombre" /&gt;'</span>+
+        <span class="hljs-string">'            &lt;p&gt;&lt;label for="bio"&gt;Escribe una pequeña Bio sobre ti: &lt;/label&gt;&lt;/p&gt;'</span>+
+        <span class="hljs-string">'            &lt;textarea name="bio" id="bio" rows="30" cols="60"&gt;&lt;/textarea&gt;'</span>+
+        <span class="hljs-string">'            &lt;p&gt;&lt;input type="submit" value="Enviar" /&gt;&lt;/p&gt;'</span>+
+        <span class="hljs-string">'        &lt;/form&gt;'</span>+
+        <span class="hljs-string">'    &lt;/body&gt;'</span>+
+        <span class="hljs-string">'&lt;/html&gt;'</span>;
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(html);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">segunda_pagina</span><span class="hljs-params">(response)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler para request 'segunda_pagina' enviado."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"Este es el mensaje mostrar con segunda_pagina."</span>);
+    response.end();
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enviar</span><span class="hljs-params">(response, postData)</span> </span>{
+    postData = querystring.parse(postData);
+    <span class="hljs-built_in">console</span>.log(postData);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Handler for request 'enviar' dispatched."</span>);
+    response.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+    response.write(<span class="hljs-string">"&lt;p&gt;Hola "</span> + postData.nombre + <span class="hljs-string">"&lt;/p&gt;"</span>);
+    response.write(<span class="hljs-string">"&lt;p&gt;Has dicho sobre ti: &lt;br /&gt;"</span> + postData.bio + <span class="hljs-string">"&lt;/p&gt;"</span>);
+    response.end();
+}
+exports.index = index;
+exports.primera_pagina = primera_pagina;
+exports.segunda_pagina = segunda_pagina;
+exports.enviar = enviar;
+</code></pre>
+<p>Añadimos el módulo querystring para procesar los campos del formulario que el usuario ha rellenado. </p>
+<p>Añadimos la función enviar que recibe dos parámetros, <strong>response</strong> que usamos para responder de vuelta al navegador y <strong>postData</strong> que contiene los datos enviados por el usuario. Utilizamos el método parse del módulo <strong>querystring</strong> para separar la cadena <strong>postData</strong> en elementos y lo utilizamos para mostrar la salida.</p>
+<p>Ademas de estos cambios, debemos de hacer cambios en <strong>app.js</strong> y añadir la ruta a <strong>router.js</strong>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">//app.js</span>
+<span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./server"</span>);
+<span class="hljs-keyword">var</span> router = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./router"</span>);
+<span class="hljs-keyword">var</span> requestHandlers = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./requestHandlers"</span>);
+<span class="hljs-keyword">var</span> handler = {}
+handler[<span class="hljs-string">"/"</span>] = requestHandlers.index;
+handler[<span class="hljs-string">"/primera_pagina"</span>] = requestHandlers.primera_pagina;
+handler[<span class="hljs-string">"/segunda_pagina"</span>] = requestHandlers.segunda_pagina;
+handler[<span class="hljs-string">"/enviar"</span>] = requestHandlers.enviar; <span class="hljs-comment">//Añadimos esta linea para el path /enviar</span>
+server.start(router.route, handler);
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//router.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">route</span><span class="hljs-params">(handler, pathname, response, postData)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Routing a new petition for "</span> + pathname);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> handler[pathname] === <span class="hljs-string">'function'</span>) {
+        handler[pathname](response, postData);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"No request handler for "</span> + pathname + <span class="hljs-string">" skipping"</span>);
+        response.writeHead(<span class="hljs-number">404</span>, {<span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"text/html"</span>});
+        response.write(<span class="hljs-string">"404 Not Found"</span>);
+        response.end();
+    }
+}
+
+exports.route = route;
+</code></pre>
+<p>Los cambios en <strong>router.js</strong> también son menores, solamente hemos añadido soporte al enrutador para que pase la variable <strong>postData</strong> a los manejadores desde el servidor.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.</p>
+<p>a. Crear un servidor que escuche en el puerto 4000 y que tenga una lista de notas y alumnos como respuestas para las paginas (manejadores/handlers) /curso1 y /curso2.</p>
+<p>b. Crear un path /registrarAlumno para que devuelva los datos que se envien desde un formulario en el path /form que tenga  5 textfields donde se escriban notas (numeros) cada uno al lado de un label con los nombres de los cursos : &quot;Algebra&quot;, &quot;Aritmetica&quot;, &quot;Geometria&quot;, &quot;Historia&quot; y &quot;Comunicacion&quot;. </p>
+<h2 id="cuestionario">Cuestionario</h2>
+<blockquote>
+<p>1.¿Como podemos evitar el callback hell segun el material?</p>
+</blockquote>
+<p>a. Modularizacion</p>
+<p>b. Promesas</p>
+<p>c. Generadores</p>
+<p>d. Todas las anteriores</p>
+<blockquote>
+<p>2.Asincrona es sinonimo de:</p>
+</blockquote>
+<p>a. Bloqueante</p>
+<p>b. No bloqueante</p>
+<p>c. Multihilo</p>
+<p>d. Ninguna de las anteriores</p>
+<blockquote>
+<p>3.¿Que es Node.js?</p>
+</blockquote>
+<p>a. Framework</p>
+<p>b. Entorno javascript</p>
+<p>c. Lenguaje de programacion</p>
+<p>d. Ninguna de las anteriores</p>
+<blockquote>
+<p>4.¿Que es un callback?</p>
+</blockquote>
+<p>a. Funcion que se utiliza como argumento de otra funcion.</p>
+<p>b. Es una retrollamada.</p>
+<p>c. Las 2 anteriores.</p>
+<p>d. Ninguna de las anteriores.</p>
+<blockquote>
+<p>5.¿Donde podemos usar Node.js?</p>
+</blockquote>
+<p>a. Aplicaciones web (especialmente las de tiempo real)</p>
+<p>b. Network applications</p>
+<p>c. Sistemas distribuidos</p>
+<p>d. Todas las anteriores</p>
+<blockquote>
+<p>6.¿Cuales son las ventajas de usar node.js?</p>
+</blockquote>
+<p>a. Provee una facil manera de construir programas de red escalable</p>
+<p>b. Generalmente rapido</p>
+<p>c. Gran concurrencia</p>
+<p>d. Asincrono</p>
+<blockquote>
+<p>7.¿Donde corre Node.js?</p>
+</blockquote>
+<p>a. Windows</p>
+<p>b. Linux</p>
+<p>c. Mac OS</p>
+<p>d. Todas las anteriores</p>
+<blockquote>
+<p>8.¿Como trabaja Node.js?</p>
+</blockquote>
+<p>a. En el ambiente v8.</p>
+<p>b. Utiliza JavaScript.</p>
+<p>c. De manera no bloqueante y un bucle(loop) de eventos de un solo hilo.</p>
+<p>d. Todas las anteriores.</p>
+<p><a href="http://courseware.codeschool.com/node_slides.pdf">Lectura recomendada</a></p>
+
+</body></html>

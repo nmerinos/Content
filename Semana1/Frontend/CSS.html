@@ -1,0 +1,105 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>CSS.html</title><style></style></head><body>
+<h1 id="css">CSS</h1>
+<h2 id="como-agregar-css-al-html">Como agregar CSS al HTML</h2>
+<ol>
+<li><p>Agregar un link a un archivo de CSS externo</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"estilos.css"</span> /&gt;</span>
+</code></pre>
+</li>
+<li><p>Agregar CSS directamente en la etiqueta <code>&lt;style&gt;</code> del HTML</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+<span class="hljs-tag">p</span> <span class="hljs-rules">{
+ <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">green
+</span></span></span>}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>Agregar CSS en las etiquetas del HTML</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"color:white;background:green;"</span>&gt;</span>Texto blanco fondo verde<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>Importando un archivo CSS</p>
+<pre><code class="lang-html">@import &quot;estilos.css&quot;
+</code></pre>
+</li>
+</ol>
+<h2 id="estructura-basica">Estructura basica</h2>
+<pre><code class="lang-css">    selector {
+      propiedad1:valor;
+      propiedad2:valor;
+      propiedad3:valor;
+    }
+</code></pre>
+<ul>
+<li>El selector identifica los elementos del HTML a los cuales se aplicara la regla.</li>
+<li>Los pares propiedad-valor dentro de las llaves estan separados por puntos y coma; y las propiedades estan separadas de su respectivo valor por dos puntos.</li>
+<li>Las propiedades definen lo que quieres modificar a los elementos seleccionados, por ejemplo, cambiar la posicion,el color, los margenes, el color de fondo, entre otros.</li>
+<li><p>Los valores son los valores que quieres cambiar a cada propiedad de los elementos seleccionados. Los valores dependen de la propiedad, por ejemplo las propiedades que afectan al color pueden tomar nombres de color (en ingles) como red,gray,yellow, codigo del color en hexadecimal, como #009900 o valores RGB, como rgb(34,142,28). Las propiedades que afectan el ancho, la altura, la posicion, el margen, etc pueden tomar valores medidos en pixel, ems, porcentaje, centimetros o otras unidades.</p>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="lang-css"><span class="hljs-tag">h1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Arial</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>El selector h1 selecciona a todos los elementos <code>&lt;h1&gt;</code> en el documento HTML que usa este CSS para aplicar esta regla, a menos que existan selectores mas especificos cuyas reglas sobreescribiran a esta.
+Las propiedades en esta regla son el color del texto, la fuente del texto, y el tamano de la fuente
+Los valores de estas propiedades son rojo, Arial, y 30 pixeles respectivamente.</p>
+</li>
+</ul>
+<h2 id="selectores">Selectores</h2>
+<p>  Existen muchos tipos de selectores los tres mas usados que vas a encontrar son:</p>
+<ol>
+<li><p>Tag name: Selecciona los elementos del HTML de la respectiva etiqueta</p>
+<pre><code class="lang-css"><span class="hljs-tag">p</span> <span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+</li>
+<li><p>Selector por clase: Selecciona los elementos del HTML que tienen un atributo <code>class</code> con el valor especificado</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ejemplo"</span>&gt;</span>Texto de ejemplo<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ejemplo"</span>&gt;</span>Contenido<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-class">.ejemplo</span><span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> blue</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+</li>
+<li><p>Selector por id: Selecciona los elementos del HTML que tienen un atributo <em>id</em> con el valor especificado</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myid"</span>&gt;</span>Texto de ejemplo<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myid"</span>&gt;</span>Contenido<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-id">#myid</span><span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> blue</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<blockquote>
+<p>Puedes unir varios selectores para definir reglas mas especificas, por ejemplo:</p>
+<pre><code class="lang-css"><span class="hljs-tag">p</span><span class="hljs-class">.importante</span> : <span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>En el ejemplo anterior selecciona todos los elementos del html dentro de la etiqueta <code>&lt;p&gt;</code> cuyo valor <em>class</em> es <em>importante</em></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="agrupando-selectores">Agrupando selectores</h2>
+<p>  Tambien es posible agrupar selectores que quieres que tengan el mismo estilo, por ejemplo en vez de escribir:</p>
+<pre><code class="lang-css">  <span class="hljs-tag">h1</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> blue</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+  <span class="hljs-rule">}</span></span>
+  <span class="hljs-tag">h2</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> blue</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+  <span class="hljs-rule">}</span></span>
+</code></pre>
+<p>  Donde los selectores <em>h1</em> y <em>h2</em> tienen el mismo estilo es posible agrupar los selectores separados por una coma:</p>
+<pre><code class="lang-css"> <span class="hljs-tag">h1</span>,<span class="hljs-tag">h2</span> <span class="hljs-rules">{
+   <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> blue</span></span>;
+   <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+ <span class="hljs-rule">}</span></span>
+</code></pre>
+
+</body></html>

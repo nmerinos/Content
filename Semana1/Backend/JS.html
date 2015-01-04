@@ -1,0 +1,359 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>JS.html</title><style></style></head><body>
+<p>&lt;h1 id=&quot;javascript&quot;&gt;JavaScript&lt;/h1&gt;
+
+</p>
+<p>&lt;p&gt;JavaScript es un lenguaje de programacion que puede ser aplicado a un documento HTML para agregarle interactividad, tambien se puede usar desde el lado del servidor con frameworks como Nodejs, ademas se puede usar para programar el microcontrolador de una placa Arduino  usando la libreria Johnny-Five.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h2 id=&quot;variables&quot;&gt;Variables&lt;/h2&gt;
+
+</p>
+<p>&lt;ul&gt;
+&lt;li&gt;En programacion las variables son contenedores para valores que pueden ser de diferentes tipos.&lt;/li&gt;
+&lt;li&gt;Las variables tienen un nombre y un valor separados por un signo igual ‘=’.&lt;/li&gt;
+&lt;li&gt;Las variables se declaran usando la palabra clave ‘var’ seguida del nombre de la variable.&lt;/li&gt;
+&lt;li&gt;Los nombres de las variables pueden ser cualquier letra o palabra, pero existen algunas restricciones como por ejemplo, el nombre de una variable no puede comenzar por un numero, aunque si puede contener numeros en medio o al final del nombre de la variable, tampoco se puede usar ciertas palabras reservadas como nombre de una variable tales como &lt;em&gt;var&lt;/em&gt;,&lt;em&gt;con&lt;/em&gt;,&lt;em&gt;do&lt;/em&gt;,etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+</p>
+<p>&lt;p&gt;En el primer ejemplo se definen dos variables con sus respectivos valores y se define una tercera variable con el valor de la suma de los anteriores.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-1&quot;&gt;Ejemplo 1&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; x = &lt;span class=&quot;hljs-number&quot;&gt;20&lt;/span&gt;,
+    y = &lt;span class=&quot;hljs-number&quot;&gt;15&lt;/span&gt;,
+    suma = x + y;&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;El interprete lee el codigo instruccion por instruccion, de modo que cada instruccion termina en un punto y coma.&lt;/p&gt;
+
+</p>
+<p>&lt;p&gt;En palabras sencillas el primer ejemplo realiza los siguientes pasos:&lt;/p&gt;
+
+</p>
+<p>&lt;ul&gt;
+&lt;li&gt;Define una nueva variable de nombre ‘x’ y le asigna un valor de ‘20’&lt;/li&gt;
+&lt;li&gt;Define una nueva variable de nombre &lt;em&gt;y&lt;/em&gt; y le asigna un valor de &lt;em&gt;15&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Define una nueva variable de nombre &lt;em&gt;suma&lt;/em&gt; y le asigna el resulta de la suma de los valores de las variables &lt;em&gt;x&lt;/em&gt; y &lt;em&gt;y&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;tipos-de-variables&quot;&gt;Tipos de variables&lt;/h3&gt;
+
+</p>
+<p>&lt;p&gt;Los valores de las variables ademas de contener numeros enteros como se mostro en el primer ejemplo pueden contener diferentes tipos de valores:&lt;/p&gt;
+
+</p>
+<p>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;Tipo&lt;/th&gt;
+  &lt;th&gt;Explicacion&lt;/th&gt;
+  &lt;th&gt;Ejemplo&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+  &lt;td&gt;String&lt;/td&gt;
+  &lt;td&gt;Una cadena de texto.Para identificar que el valor de la variable es una cadena, se debe encerrar la cadena entre comillas&lt;/td&gt;
+  &lt;td&gt;var miCiudad = ‘Lima’;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Number&lt;/td&gt;
+  &lt;td&gt;Un numero. Los numeros no tienen comillas alrededor de ellos&lt;/td&gt;
+  &lt;td&gt;var miEdad = 20;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Boolean&lt;/td&gt;
+  &lt;td&gt;Un valor verdadero o falso. true y false son palabras reservadas en JavaScript y no necesitan comillas&lt;/td&gt;
+  &lt;td&gt;var asd = true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Array&lt;/td&gt;
+  &lt;td&gt;Una estructura que permite almacenar multiples valores en una sola referencia&lt;/td&gt;
+  &lt;td&gt;var misCursos = [‘Backend’, ‘Frontend’, ‘Electronica’]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Object&lt;/td&gt;
+  &lt;td&gt;Basicamente cualquier cosa. Todo en JavaScript es un objeto y se puede almacenar en una variable&lt;/td&gt;
+  &lt;td&gt;var miPerfil = { miEdad :19, miCiudad : ‘Lima’, misCursos : = [‘B’, ‘F’, ‘E’]}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+
+
+
+</p>
+<p>&lt;h2 id=&quot;estructuras-condicionales&quot;&gt;Estructuras condicionales&lt;/h2&gt;
+
+</p>
+<p>&lt;p&gt;Las condiciones son estructuras que te permiten verificar los valores de ciertas variables y dependiendo del resultado ejecutar un conjunto de instrucciones.&lt;/p&gt;
+
+</p>
+<p>&lt;p&gt;La estructura la condicional &lt;code&gt;if&lt;/code&gt; es la mas facil y su estructura es &lt;code&gt;if (condicion) { instruccion;}&lt;/code&gt;, de manera que si la condicion es verdadera el codigo encerrado entre llaves se ejecuta.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-3&quot;&gt;Ejemplo 3&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; miEdad = &lt;span class=&quot;hljs-number&quot;&gt;21&lt;/span&gt;;
+&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (miEdad &gt;= &lt;span class=&quot;hljs-number&quot;&gt;18&lt;/span&gt;){
+    alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Soy mayor de edad!&quot;&lt;/span&gt;);
+    }&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;En la mayoria de casos es necesario ejecutar otras instrucciones si el valor de la condicion &lt;code&gt;if&lt;/code&gt; es falso eso se puede hacer usando la condicional &lt;code&gt;if else&lt;/code&gt;  y su estructura es &lt;code&gt;if (condicion) {instrucciones si es cierto} else { instrucciones si es falso}&lt;/code&gt;&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-4&quot;&gt;Ejemplo 4&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; miEdad = &lt;span class=&quot;hljs-number&quot;&gt;17&lt;/span&gt;;
+&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (miEdad &gt;= &lt;span class=&quot;hljs-number&quot;&gt;18&lt;/span&gt;){
+    alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Soy mayor de edad!&quot;&lt;/span&gt;);
+} &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+    alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Soy menor de edad&quot;&lt;/span&gt;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;Las condiciones tambien pueden ser anidadas de manera que se ejecuten si cumplen todas las condiciones previas.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-5&quot;&gt;Ejemplo 5&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (edad &gt;= &lt;span class=&quot;hljs-number&quot;&gt;18&lt;/span&gt; ){
+    alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Eres mayor de edad&quot;&lt;/span&gt;);
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (licencia == &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;){
+        alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Eres apto para conducir&quot;&lt;/span&gt;);
+    } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+        alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Pero no puedes conducir&quot;&lt;/span&gt;);
+    }
+} &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+    alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Aun no puedes conducir por tu edad&quot;&lt;/span&gt;);
+}&lt;/code&gt;&lt;/pre&gt;
+
+
+
+</p>
+<p>&lt;h2 id=&quot;bucles-o-loops&quot;&gt;Bucles o loops&lt;/h2&gt;
+
+</p>
+<p>&lt;p&gt;Los bucles son condiciones repetitivas, donde una variable cambia de valor en cada ciclo. La forma más fácil de un bucle es usando la sentencia for. Ésta tiene una sintaxis que es similar a la sentencia if, pero con más opciones: &lt;br&gt;
+&lt;code&gt;for (valor inicial; condicion de fin; cambio)&lt;/code&gt;&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-6&quot;&gt;Ejemplo 6&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;i &lt;= &lt;span class=&quot;hljs-number&quot;&gt;31&lt;/span&gt;;i = i + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;){
+  alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Hoy es el dia &quot;&lt;/span&gt; + i + &lt;span class=&quot;hljs-string&quot;&gt;&quot; del mes!&quot;&lt;/span&gt;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;Una aplicacion importante de los bucles es para recorrer los valores de un array.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-7&quot;&gt;Ejemplo 7&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; cursos = [&lt;span class=&quot;hljs-string&quot;&gt;&#39;Backend&#39;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&#39;Frontend&#39;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&#39;Electronica&#39;&lt;/span&gt;]
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; total = cursos.length;
+&lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;i&lt;total; i++){
+  alert(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Estoy tomando el curso de &quot;&lt;/span&gt; + cursos[i] + &lt;span class=&quot;hljs-string&quot;&gt;&quot; en el CoreUpgrade  2015&quot;&lt;/span&gt;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+
+
+</p>
+<p>&lt;h2 id=&quot;funciones&quot;&gt;Funciones&lt;/h2&gt;
+
+</p>
+<p>&lt;p&gt;Una funcion es un conjunto de codigo que puede ser llamado por otro codigo o por si mismo o una variable que hace referencia a la funcion, esta puede recibir y/o retornar datos al ser llamada. &lt;br&gt;
+La estructura basica de una funcion es:&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;miFuncion&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt; {&lt;/span&gt;
+  Contenido de la funcion
+}&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;En el siguiente ejemplo definimos una funcion que recibe como parametro dos numeros y retorna el valor del mayor de los numeros&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;ejemplo-8&quot;&gt;Ejemplo 8&lt;/h3&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;obtenerMayor&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(x,y)&lt;/span&gt;{&lt;/span&gt;
+ &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(x&gt;y){
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; (x);
+  } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;{
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; (y);
+ }
+}&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;Ademas JavaScript posee funciones predeterminadas para cada tipo de variable por ejemplo:&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;funciones-para-cadenas-de-texto&quot;&gt;Funciones para cadenas de texto&lt;/h3&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;split()&lt;/code&gt;: Retorna una lista a partir del string, la cual se delimita por el separador que se pasa como parametro&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; lenguajes = &lt;span class=&quot;hljs-string&quot;&gt;&quot;Python,Clojure,JS,Elixir&quot;&lt;/span&gt;;
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; arrayLenguajes = lenguajes.split(&lt;span class=&quot;hljs-string&quot;&gt;&#39;,&#39;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (i=&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;i&lt;arrayLenguajes.length;i++){
+  console.log(arrayLenguajes[i])
+}&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;toUpperCase()&lt;/code&gt;: Retorna la cadena con sus correspondientes caracteres en mayusculas. &lt;br&gt;
+&lt;code&gt;toLowerCase()&lt;/code&gt;: Retorna la cadena con sus correspondientes caracteres en minusculas.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;funciones-para-arrays&quot;&gt;Funciones para arrays&lt;/h3&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;join()&lt;/code&gt;: Retorna un string que resulta de concatenar los elementos del array que se pasa como parametro&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo-2&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; dias = [&lt;span class=&quot;hljs-string&quot;&gt;&quot;Lu&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Ma&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Mi&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Ju&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Vi&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Sa&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Do&quot;&lt;/span&gt;];
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; cadenaDias = dias.join(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/&quot;&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;push()&lt;/code&gt; : Agrega uno o mas de un elemento al final del array.&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo-9&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; distLinux = [&lt;span class=&quot;hljs-string&quot;&gt;&quot;CentOs&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Fedora&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Mint&quot;&lt;/span&gt;,];
+distLinux.push(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Ubuntu&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;Arch&quot;&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;pop()&lt;/code&gt; : Elimina el ultimo elemento del array&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo-10&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; windowsOS = [&lt;span class=&quot;hljs-string&quot;&gt;&quot;Windows 7&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Vista&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;XP&quot;&lt;/span&gt;]
+windowsOS.pop();&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;reverse()&lt;/code&gt; : Invierte el orden de los elementos del array&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo-11&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; meses = [&lt;span class=&quot;hljs-string&quot;&gt;&quot;Ene&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Feb&quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&quot;Mar&quot;&lt;/span&gt;]
+meses.reverse()&lt;/code&gt;&lt;/pre&gt;
+
+
+
+</p>
+<p>&lt;h3 id=&quot;funciones-para-numeros&quot;&gt;Funciones para numeros&lt;/h3&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;isNaN()&lt;/code&gt;: Determina si es un numero no valido&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo-12&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; numero1 = &lt;span class=&quot;hljs-number&quot;&gt;23&lt;/span&gt;*&lt;span class=&quot;hljs-number&quot;&gt;34&lt;/span&gt;,
+    numero2 = &lt;span class=&quot;hljs-string&quot;&gt;&quot;23&quot;&lt;/span&gt;,
+    numero3 = &lt;span class=&quot;hljs-number&quot;&gt;13&lt;/span&gt;/&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+&lt;span class=&quot;hljs-built_in&quot;&gt;isNaN&lt;/span&gt;(numero1); &lt;span class=&quot;hljs-literal&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;hljs-built_in&quot;&gt;isNaN&lt;/span&gt;(numero2); &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;hljs-built_in&quot;&gt;isNaN&lt;/span&gt;(numero3); &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+</p>
+<p>&lt;p&gt;&lt;code&gt;toFixed()&lt;/code&gt; : Redondea el numero al numero de decimales que se le pasa como parametro&lt;/p&gt;
+
+
+
+</p>
+<p>&lt;h4 id=&quot;ejemplo-13&quot;&gt;Ejemplo&lt;/h4&gt;
+
+
+
+</p>
+<p>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-js hljs &quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; numero = &lt;span class=&quot;hljs-number&quot;&gt;919.827&lt;/span&gt;;
+numero.toFixed() ; &lt;span class=&quot;hljs-number&quot;&gt;920&lt;/span&gt;
+numero.toFixed(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;); &lt;span class=&quot;hljs-number&quot;&gt;919.8&lt;/span&gt;
+numero.toFixed(&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;); &lt;span class=&quot;hljs-number&quot;&gt;919.83&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</p>
+
+</body></html>

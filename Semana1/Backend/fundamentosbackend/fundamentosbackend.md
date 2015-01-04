@@ -4,14 +4,34 @@ El backend es la parte web del lado del servidor y base de datos, oculta al usua
 
 Los lenguajes o tecnologías más comunes  a utilizar son python con su framework django, ruby on rails y Node.js. Este último permite utilizar javascript como backend y es el que aprenderemos en este entrenamiento.
 
+Node.js es un entorno JavaScript de lado de servidor que utiliza un modelo asíncrono, con I/O de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google. V8 es uno de los intérpretes más rápidos que puedan existir en la actualidad para cualquier lenguaje dinámico. Además las capacidades de Node para I/O (Entrada/Salida) son realmente ligeras y potentes, ideal para aplicaciones en tiempo real de datos intensivos.
+
+Node.js trabaja con el gestor de paquetes npm, el cual permite administrar módulos (**modularizacion**) a ser instalados. Un módulo es una manera de organizar el código, similar a un paquete o librería. Los módulos son soportados gracias a la sentencia require().
+
+// saludo.js
+ function saludo() {
+  return "Hola";
+};
+
+Existen módulos nativos, los cuales no se necesitan ser traidos localmente 
+
+ var http = require("http");
+
+y existen los módulos que podemos crear, para ello luego de crear los módulos,  usamos module.exports = {} colocando entre las llaves lo que queremos exportar.
+
+module.exports={
+saludo:saludo
+} 
+
+
 
 ## Ejemplos
 
-#### Configurando mi entorno
+### Configurando mi entorno
 
 Debemos instalar node para poder comenzar a trabajar.
 
-##### Instalar node en Windows
+#### Instalar node en Windows
 
 Empecemos por descargar el instalador de la pagina (node-v0.X.msi Windows installer) de [Node.js](http://nodejs.org/)
 
@@ -42,7 +62,7 @@ npm install [paquete]
 ~~~
 
 
-##### <a name="linux">Instalar node en Linux-Ubuntu</a>
+#### <a name="linux">Instalar node en Linux-Ubuntu</a>
 
 Bajar el source de Node.js, compilarlo, e instalarlo.
 
@@ -103,7 +123,7 @@ npm install [paquete]
 ~~~
 
 
-##### Instalar node en Mac OS
+#### Instalar node en Mac OS
 
 Como prerequisito tenemos que tener instalado Xcode.
 
@@ -126,7 +146,7 @@ npm -v
 ~~~
 
 
-#### Ejemplo 1 : Llamadas Asíncronas
+### Ejemplo 1 : Llamadas Asíncronas
 
 Cuando la terminación de una operación y la reanudación de un programa ocurren a la vez, se dice que estamos realizando llamadas síncronas. Nuestro proceso se bloquea mientras espera la terminación de una operación .
 
@@ -179,12 +199,16 @@ if f!="" {buscar(f,t)} }
 
 Para eso guardamos los datos recibidos en dos variables visibles por ambas retrollamadas y cuando se comprueba que ambas cadenas se han leído, llama a buscar().
 
+"El infierno de devolución de llamada" o mejor conocido como "callback hell" se refiere a los callback fuertemente jerarquizados volviendose ilegibles o pesado de leer. El metodo principal para corregir esto es lo que definimos anteriormente como la **modularizacion**.
 
-#### Ejemplo 2 : Servidor HTTP
+
+### Ejemplo 2 : Servidor HTTP
+
+[Descargar el Ejemplo 2](samples/Ejemplo2.zip) 
 
 Crearemos un servidor HTTP básico que responda a algunas de nuestras peticiones de manera predefinida.
 
-##### Primer Servidor
+#### Primer Servidor
 
 Para no alojar todo el código de nuestras aplicaciones en un solo archivo (lo cual resultaria tedioso de entender y poco organizado) Node.js te permite implementar al patrón de diseño MVC. Escribiremos un archivo principal (app.js) con el que iniciaremos nuestra aplicación y la lógica la programaremos en los módulos.
 
@@ -240,7 +264,7 @@ server.start();
 Si ejecutamos `node app.js` veremos el mensaje **Server started…** en la consola y si recargamos el navegador veremos que nuestra aplicación web sigue funcionando.
 
 
-##### Routing o enrutado de peticiones
+#### Routing o enrutado de peticiones
 
 Toda la información requerida está contenida en el objeto `request` que se le pasa a la función anónima al crear nuestro servidor.
 
@@ -300,7 +324,7 @@ Routing a new petition for /favicon.ico
 La petición a favicon.ico es normal al usar navegadores web modernos, ignórala de momento.
 
 
-##### Manejadores
+#### Manejadores/Handlers
 
 Cada petición debe tener asociado un manejador de eventos que se haga cargo de procesar la petición. Crearemos un nuevo módulo al que llamaremos `requestHandlers.js` y que va a contener el código a ejecutar por cada evento. 
 
@@ -388,11 +412,13 @@ handler["/segunda_pagina"] = requestHandlers.segunda_pagina;
 server.start(router.route, handler);
 ~~~
 
-#### Ejemplo 3 : Peticiones POST
+### Ejemplo 3 : Peticiones POST
+
+[Descargar el Ejemplo 3](samples/Ejemplo3.zip) 
 
 Utilizaremos un archivo `app.js` de entrada principal de la aplicación  y nuestro código estará distribuido en módulos. 
 
-##### Manejar peticiones POST
+#### Manejar peticiones POST
 
 Aprendimos a manejar peticiones GET provenientes del cliente web y a crear manejadores que las despacharan a los métodos correspondientes para producir la salida y devolverla al navegador de forma no bloqueante. Ahora veamos como se maneja una petición POST sencilla.
 
@@ -486,7 +512,7 @@ Hemos añadido un log de cada porción de información que nos llega a través d
 
 Para probarlo añade al textarea el texto que produce esta url y comprobarás como el evento es disparado en múltiples ocasiones.
 
-##### Procesando los datos enviados
+#### Procesando los datos enviados
 
 De momento no tenemos un manejador para el path /enviar vamos a crearlo y vamos a hacer que utilice los datos enviados en el formulario para alguna tarea.
 
@@ -588,4 +614,83 @@ b. Crear un path /registrarAlumno para que devuelva los datos que se envien desd
 
 ## Cuestionario
 
+1. Como podemos evitar el callback hell segun el material?
+
+a. Modularizacion
+
+b. Promesas
+
+c. Generadores
+
+d. Todas las anteriores
+
+2. Asincrona es sinonimo de:
+
+a. Bloqueante
+
+b. No bloqueante
+
+c. Multihilo
+
+d. Ninguna de las anteriores
+
+3. Que es Node.js
+
+a. Framework
+
+b. Entorno javascript
+
+c. Lenguaje de programacion
+
+d. Ninguna de las anteriores
+
+4. Que es un callback?
+
+a. Funcion que se utiliza como argumento de otra funcion.
+
+b. Es una retrollamada.
+
+c. Las 2 anteriores.
+
+d. Ninguna de las anteriores.
+
+5. Donde podemos usar Node.js?
+
+a. Aplicaciones web (especialmente las de tiempo real)
+
+b. Network applications
+
+c. Sistemas distribuidos
+
+d. Todas las anteriores
+
+6. Cuales son las ventajas de usar node.js?
+a. Provee una facil manera de construir programas de red escalable
+
+b. Generalmente rapido
+
+c. Gran concurrencia
+
+d. Asincrono
+
+7. Donde corre Node.js?
+
+a. Windows
+
+b. Linux
+
+c. Mac OS
+
+d. Todas las anteriores
+
+8. Como trabaja Node.js?
+a. En el ambiente v8.
+
+b. Utiliza JavaScript.
+
+c. De manera no bloqueante y un bucle(loop) de eventos de un solo hilo.
+
+d. Todas las anteriores.
+
+[Lectura recomendada](http://courseware.codeschool.com/node_slides.pdf)
 

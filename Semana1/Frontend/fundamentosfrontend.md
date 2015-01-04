@@ -22,7 +22,7 @@ Ubícate en la carpeta de **Ejemplo 1** del archivo [Ejemplos Frontend](http://w
 
 Lo que verás será algo parecido a esto:
 
-```html
+~~~html
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +36,7 @@ Lo que verás será algo parecido a esto:
         <button type="button">¡Hazme clic!</button>
     </body>
 </html>
-```
+~~~
 
 Pero, si abres este archivo con Google Chrome verás lo siguiente:
 
@@ -51,7 +51,7 @@ Continuaremos con un archivo HTML con CSS y Javascript incluido dentro de él.
 
 En este ejemplo añadimos dentro del ``<body>`` el estilo (CSS) y el script (Javascript), el orden en el que ha sido colocado influye en la funcionalidad que posee, pero ahora lo que nos interesa es solo ver que funciona.
 
-```html
+~~~html
 <!DOCTYPE html>
 <html>
     <head>
@@ -77,7 +77,7 @@ En este ejemplo añadimos dentro del ``<body>`` el estilo (CSS) y el script (Jav
         <button type="button" onclick="miFuncion()">¡Hazme clic!</button>
     </body>
 </html>
-```
+~~~
 
 Si abres este archivo con Google Chrome verás lo siguiente:
 
@@ -97,7 +97,7 @@ Debido a que cuando trabajamos en una web tenemos bastante código para trabajar
 3. Abrimos el archivo CSS llamado style.css y vemos el mismo código que teníamos dentro de ``<style type="text/css">``.
 4. Abrimos el archivos Javascript llamado main.js y vemos el mismo código que teníamos dentro de ``<script type="text/javascript" src="static/template/themes/admin/layout.js"></script>``.
 
-```html
+~~~html
 <!DOCTYPE html>
 <html>
     <head>
@@ -113,7 +113,7 @@ Debido a que cuando trabajamos en una web tenemos bastante código para trabajar
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
-```
+~~~
 
 Si abres el archivo ejemplo3.html con Google Chrome verás que se ve exactamente igual que en el Ejemplo 2 y tiene la misma funcionalidad:
 

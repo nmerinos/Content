@@ -1,5 +1,7 @@
 # CSS
 
+[TOC]
+
 ## Como agregar CSS al HTML
 
   1. Agregar un link a un archivo de CSS externo

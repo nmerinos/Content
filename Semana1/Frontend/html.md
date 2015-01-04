@@ -6,14 +6,14 @@
 
 Todo html sigue una estructura similar, primero se escribe la etiqueta `<html></html>`  y dentro de el contiene una etiqueta `<head></head>` el cual define información del documento y otra `<body></body>` el cuál define información del cuerpo del documento: 
 
-```html
+~~~html
 <html>
 <head>
 </head>
 <body>
 </body>
 </html>
-```
+~~~
 
 Generalmente las etiquetas de abren `<etiqueta>` y cierran `</etiqueta>`, teniendo contenido por dentro, habiendo excepciones que no se cierran porque no tienen contenido, como `<img>` o `<br>`.
 Otro concepto fundamental es entender que cada etiqueta tiene atributos y cada atributo asume un valor: 
@@ -57,7 +57,7 @@ Revisar este [link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/he
 > **Ejemplo:**
 > -Vamos a escribir JavaScript dentro de un elemento HTML con atributo id="hackspace".
 
-```html
+~~~html
 <html>
 <body>
 <script>
@@ -69,7 +69,7 @@ document.getElementById("hackspace").innerHTML = "Hola JavaScript!";
 <button type="button" onclick="myFunction()">Probar script</button>
 </body>
 </html>
-```
+~~~
 
 ### Formularios
 
@@ -96,7 +96,7 @@ document.getElementById("hackspace").innerHTML = "Hola JavaScript!";
 ||email|Define un input tipo email.|
 ||url|Define un input tipo url.|
 
-```html
+~~~html
 <!DOCTYPE html>
 <html>
 <body>
@@ -124,7 +124,7 @@ Esta es mi descripcion.
 
 </body>
 </html>
-```
+~~~
 
 
 

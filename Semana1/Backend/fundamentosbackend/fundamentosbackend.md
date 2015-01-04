@@ -615,83 +615,74 @@ b. Crear un path /registrarAlumno para que devuelva los datos que se envien desd
 ## Cuestionario
 
 > 1.   ¿Como podemos evitar el callback hell segun el material?
-
-a. Modularizacion
-
-b. Promesas
-
-c. Generadores
-
-d. Todas las anteriores
-
+>>a. Modularizacion
+>>
+>> b. Promesas
+>>
+>> c. Generadores
+>>
+>> d. Todas las anteriores
 > 2.   Asincrona es sinonimo de:
-
-a. Bloqueante
-
-b. No bloqueante
-
-c. Multihilo
-
-d. Ninguna de las anteriores
-
+>> a. Bloqueante
+>>
+>> b. No bloqueante
+>>
+>> c. Multihilo
+>>
+> d. Ninguna de las anteriores
 > 3.   ¿Que es Node.js?
-
-a. Framework
-
-b. Entorno javascript
-
-c. Lenguaje de programacion
-
-d. Ninguna de las anteriores
-
+>>
+>> a. Framework
+>>
+>> b. Entorno javascript
+>>
+>> c. Lenguaje de programacion
+>>
+>> d. Ninguna de las anteriores
 > 4.   ¿Que es un callback?
-
-a. Funcion que se utiliza como argumento de otra funcion.
-
-b. Es una retrollamada.
-
-c. Las 2 anteriores.
-
-d. Ninguna de las anteriores.
-
+>>
+>>a. Funcion que se utiliza como argumento de otra funcion.
+>>
+>>b. Es una retrollamada.
+>>
+>>c. Las 2 anteriores.
+>>
+>>d. Ninguna de las anteriores.
 > 5.   ¿Donde podemos usar Node.js?
-
-a. Aplicaciones web (especialmente las de tiempo real)
-
-b. Network applications
-
-c. Sistemas distribuidos
-
-d. Todas las anteriores
-
+>>
+>> a. Aplicaciones web (especialmente las de tiempo real)
+>>
+>> b. Network applications
+>>
+>> c. Sistemas distribuidos
+>>
+>> d. Todas las anteriores
 > 6.   ¿Cuales son las ventajas de usar node.js?
-
-a. Provee una facil manera de construir programas de red escalable
-
-b. Generalmente rapido
-
-c. Gran concurrencia
-
-d. Asincrono
-
+>>
+>> a. Provee una facil manera de construir programas de red escalable
+>>
+>> b. Generalmente rapido
+>>
+>> c. Gran concurrencia
+>>
+>> d. Asincrono
 > 7.   ¿Donde corre Node.js?
-
-a. Windows
-
-b. Linux
-
-c. Mac OS
-
-d. Todas las anteriores
-
+>>
+>> a. Windows
+>>
+>> b. Linux
+>>
+>> c. Mac OS
+>>
+>> d. Todas las anteriores
 > 8.   ¿Como trabaja Node.js?
-
-a. En el ambiente v8.
-
-b. Utiliza JavaScript.
-
-c. De manera no bloqueante y un bucle(loop) de eventos de un solo hilo.
-
-d. Todas las anteriores.
+>>
+>> a. En el ambiente v8.
+>>
+>> b. Utiliza JavaScript.
+>>
+>> c. De manera no bloqueante y un bucle(loop) de eventos de un solo hilo.
+>>
+>> d. Todas las anteriores.
 
 [Lectura recomendada](http://courseware.codeschool.com/node_slides.pdf)

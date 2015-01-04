@@ -103,12 +103,14 @@ Debido a que cuando trabajamos en una web tenemos bastante código para trabajar
     <head>
     <meta charset="utf-8">
     <title>Página 3</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Título</h1>
-        <p>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p>
+        <h1 class="clase1">Título</h1>
+        <p id="demo">Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p>
         <img src="http://puu.sh/e0BO7/f44d5bf1d6.png" alt="HackSpace Perú">
-        <button type="button">¡Hazme clic!</button>
+        <button type="button" onclick="miFuncion()">¡Hazme clic!</button>
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
 ~~~
@@ -123,6 +125,8 @@ Vale la pena aclarar que la intención de estos ejemplos no es que entiendas el 
 ## Ejercicios
 
 Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.
+
+
 
 
 ## Cuestionario

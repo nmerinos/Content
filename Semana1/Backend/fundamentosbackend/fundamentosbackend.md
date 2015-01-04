@@ -437,7 +437,7 @@ exports.primera_pagina = primera_pagina;
 exports.segunda_pagina = segunda_pagina;
 ~~~
 
-![Sin titulo](Imagenes/1.jpg)
+![Sin titulo](Imagenes/1.png)
 
 
 Para que podamos manejar las peticiones POST de forma no bloqueante, es decir, asíncrona, Node.js nos hace llegar la información proveniente del cliente en pequeñas porciones usando callbacks que son invocados ante eventos específicos. 

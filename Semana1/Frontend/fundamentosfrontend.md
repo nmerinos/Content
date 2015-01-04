@@ -36,7 +36,7 @@ Lo que verás será algo parecido a esto:
 
 Pero, si abres este archivo con Google Chrome verás lo siguiente:
 
-    Añadir acá pantallaso.
+![Pantallazo Ejemplo 1](http://puu.sh/e32Ot/a9a3c0e10d.png)
 
 Como verás, este es un archivo de HTML simplificado. Ahora seguiremos con el segundo ejemplo.
 
@@ -77,30 +77,30 @@ Si abres este archivo con Google Chrome verás lo siguiente:
 
 En este vaso vemos cómo con el CSS estamos cambiando el color del Título. Ya demás, con el Javascript estamos añadiendo la funcionalidad que si haces clic en el botón ``¡Hazme Clic!`` agregamos atributos CSS al Párrafo y este crece y cambia de color.
 
-Ya que entendemos mejor á qué nos referíamos cuando decíamos que el CSS cambia el estilo y el Javascript agrega funcionabilidad, veremos un último ejemplo con los archivos separados.
+Ya que entendemos mejor a qué nos referíamos cuando decíamos que el CSS cambia el estilo y el Javascript agrega funcionalidad, veremos un último ejemplo con estos archivos separados.
 
 
 #### Ejemplo 3
 
-Debido a que cuando trabajamos en una web tenemos bastante código para trabajar, es preferible separar y organizar el HTML, CSS y Javascript en archivos diferentes. De esta manera es que el ejemplo anterior lo podemos realizar también de esta otra manera:
+Debido a que cuando trabajamos en una web tenemos bastante código para trabajar, es preferible separar y organizar el HTML, CSS y Javascript en archivos y hasta carpetas diferentes. De esta manera, en el ejemplo anterior lo podemos realizar también de esta otra manera:
 
-1. Creamos los arhivos ejemplo3.html, style.css y main.js, y los ponemos en una ubicación que conozcamos (en este caso los 3 están en una misma carpeta). Estos son los archivos HTML, CSS y Javascript respectivamente y pueden tener cualquier nombre que queramos, pero tienen que terminar en las extensiones de cada tipo de archivo.
+1. Creamos los arhivos ejemplo3.html, style.css y main.js, y los ponemos en una ubicación que conozcamos (en este caso los 3 están en una misma carpeta). Estos son los archivos HTML, CSS y Javascript respectivamente y pueden tener cualquier nombre que queramos pero con sus respectivas terminaciones.
 2. Abrimos el archivo HTML y vemos que en vez del código CSS y Javascript que había anteriormente, ahora hay un links dentro de la etiqueta ``<head>`` y la etiqueta ``<script>`` de Javascript con código que teníamos se redujo a un ``src="main.js"``
-3. Abrimos el archivo CSS llamado style.css y vemosel mismo código que teníamos dentro de ``<style type="text/css">``.
-4. Abrimos el archivos Javascrtip llamado main.js y vemos el mismo código que teníamos dentro de ``<script type="text/javascript" src="static/template/themes/admin/layout.js"></script>``.
+3. Abrimos el archivo CSS llamado style.css y vemos el mismo código que teníamos dentro de ``<style type="text/css">``.
+4. Abrimos el archivos Javascript llamado main.js y vemos el mismo código que teníamos dentro de ``<script type="text/javascript" src="static/template/themes/admin/layout.js"></script>``.
 
 ~~~html
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Página 1</title>
     </head>
     <body>
-        <h1 class="clase1">Título</h1>
-        <p id="demo">Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p>
+        <h1>Título</h1>
+        <p>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p>
         <img src="http://puu.sh/e0BO7/f44d5bf1d6.png" alt="HackSpace Perú">
-        <button type="button" onclick="miFuncion()">¡Hazme clic!</button>
-        <script type="text/javascript" src="main.js"></script>
+        <button type="button">¡Hazme clic!</button>
     </body>
 </html>
 ~~~

@@ -25,6 +25,10 @@ Lo que verás será algo parecido a esto:
 ~~~html
 <!DOCTYPE html>
 <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Página 1</title>
+    </head>
     <body>
         <h1>Título</h1>
         <p>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p>
@@ -50,6 +54,10 @@ En este ejemplo añadimos dentro del ``<body>`` el estilo (CSS) y el script (Jav
 ~~~html
 <!DOCTYPE html>
 <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Página 2</title>
+    </head>
     <body>
         <style type="text/css">
             .clase1 {
@@ -73,7 +81,7 @@ En este ejemplo añadimos dentro del ``<body>`` el estilo (CSS) y el script (Jav
 
 Si abres este archivo con Google Chrome verás lo siguiente:
 
-    Añadir acá pantallaso.
+![Pantallazo Ejemplo 2](http://puu.sh/e34mZ/057a80a65b.png)
 
 En este vaso vemos cómo con el CSS estamos cambiando el color del Título. Ya demás, con el Javascript estamos añadiendo la funcionalidad que si haces clic en el botón ``¡Hazme Clic!`` agregamos atributos CSS al Párrafo y este crece y cambia de color.
 
@@ -94,7 +102,7 @@ Debido a que cuando trabajamos en una web tenemos bastante código para trabajar
 <html>
     <head>
     <meta charset="utf-8">
-    <title>Página 1</title>
+    <title>Página 3</title>
     </head>
     <body>
         <h1>Título</h1>
@@ -107,7 +115,7 @@ Debido a que cuando trabajamos en una web tenemos bastante código para trabajar
 
 Si abres el archivo ejemplo3.html con Google Chrome verás que se ve exactamente igual que en el Ejemplo 2 y tiene la misma funcionalidad:
 
-    Añadir acá pantallaso.
+![Pantallazo Ejemplo 3](http://puu.sh/e34mZ/057a80a65b.png)
 
 Vale la pena aclarar que la intención de estos ejemplos no es que entiendas el código que estamos utilizando, ese será tema de las siguiente secciones. Pero si es que haz entendido mejor cómo es que los archivos HTML, CSS y Javascript interactúan, entonces estás listo para empezar a aprender a desarrollar con estos lenguajes.
 

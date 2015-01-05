@@ -209,11 +209,11 @@ Podemos cambiar la direccion relativa al html dentro del atributo src de la etiq
 
 ## Ejercicios
 
-## Ejercicio 1
+### Ejercicio 1
 
 Crear un archivo javascript, que tenga 2 funciones una que me calcule el promedio ponderado de 5 numeros que ingresen como un array de parametro de entrada y la otra función que imprima cada valor del array y el promedio calculado.
 
-## Ejercicio 2
+### Ejercicio 2
 
 Crear la función para el siguiente pseudocódigo que define una función con 2 parámetros uno string(nombre) y un array(pasajeros).
 

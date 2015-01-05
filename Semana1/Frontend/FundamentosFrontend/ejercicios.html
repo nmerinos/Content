@@ -1,0 +1,20 @@
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.</p>
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+<p>En la carpeta Ejercicio 1 encontramos un archivo HTML llamado <code>index.html</code>. Si abrimos esta archivo en el navegador veremos algo asi:</p>
+<p><img src="http://puu.sh/e3eop/39f3fc04db.png" alt="Pantallazo Ejercicio 1"></p>
+<p>Esto sucede porque los dos archivos CSS que necesita la web no estan linkeados dentro del HTML. Para solucionarlo debes editar el archivo <code>index.html</code> (en Sublime Text 2) e incluir estas dos líneas de código dentro de la etiqueta <code>&lt;head&gt;</code>. Por ahora no nos preocupemos en qué lugar del HEAD en específico:</p>
+<pre><code>&lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;css/agency.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre><p>Abre nuevamente el archivo en el navegador. ¿Qué es lo que ves ahora? Debería aparecer algo como esto:</p>
+<p><img src="http://puu.sh/e3eRP/76a8fa93d2.jpg" alt="Pantallazo Ejercicio 1 Resuelto"></p>
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+<p>En este segundo ejercicio queremos que le des funcionalidad a la sección del Portafolio de la página.</p>
+<p><img src="http://puu.sh/e42ul/cb0144b4a2.jpg" alt="Pantallazo Portafolio"></p>
+<p>Abre el archivo <code>index.html</code> de la carpeta Ejemplo 2. Haz clic en cualquier imagen de la sección Portafolio, verás que no aparece nada, solo hay un hover de color amarillo. Lo que haremos será incluir el archivo Javacript que brinda la funcionalidad del modal. Para quienes no entienden qué es un modal, es una sección de HTML que aparece delante de la página, muchos lo conocen como POP UP, pero este no aparece en una ventana diferente, sino en la misma página.</p>
+<p>En este caso, el HTML ya está creado, pero está oculto. Lo que haremos será incluir el archivo de javascript que hará que aparezca y desaparezca cuando el usuario desee.</p>
+<p>Para conseguir esto, abre el archivo <code>index.html</code> en Sublime Text 2 y dirígete a la parte más baja del documento, donde finaliza el <code>&lt;/body&gt;</code></p>
+<p>Ahí verás que hay varias etiquetas de <code>&lt;script&gt;</code>. Antes de que se cierre la etiquetea <code>&lt;/body&gt;</code> incluye el siguiente script:</p>
+<pre><code>&lt;script src=&quot;js/modal.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>Guarda el archivo y abre nuevamente el archivo index.html en el navegador, dirígete a la parte de Portafolio y haz clic en alguna de las imágenes. ¿Te aparece algo ahora? Debería aparecer algo como esto:</p>
+<p><img src="http://puu.sh/e46Fn/7da40253af.jpg" alt="Pantallazo Modal Resuelto"></p>

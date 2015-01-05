@@ -126,36 +126,63 @@ Vale la pena aclarar que la intención de estos ejemplos no es que entiendas el 
 
 Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.
 
+### Ejercicio 1
 
+En la carpeta Ejercicio 1 encontramos un archivo HTML llamado ``index.html``. Si abrimos esta archivo en el navegador veremos algo asi:
 
+![Pantallazo Ejercicio 1](http://puu.sh/e3eop/39f3fc04db.png)
+
+Esto sucede porque los dos archivos CSS que necesita la web no estan linkeados dentro del HTML. Para solucionarlo debes editar el archivo ``index.html`` (en Sublime Text 2) e incluir estas dos líneas de código dentro de la etiqueta ``<head>``. Por ahora no nos preocupemos en qué lugar del HEAD en específico:
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
+
+Abre nuevamente el archivo en el navegador. ¿Qué es lo que ves ahora? Debería aparecer algo como esto:
+
+![Pantallazo Ejercicio 1 Resuelto](http://puu.sh/e3eRP/76a8fa93d2.jpg)
+
+### Ejercicio 2
+
+En este segundo ejercicio queremos que le des funcionalidad a la sección del Portafolio de la página.
+
+![Pantallazo Portafolio](http://puu.sh/e42ul/cb0144b4a2.jpg)
+
+Abre el archivo ``index.html`` de la carpeta Ejemplo 2. Haz clic en cualquier imagen de la sección Portafolio, verás que no aparece nada, solo hay un hover de color amarillo. Lo que haremos será incluir el archivo Javacript que brinda la funcionalidad del modal. Para quienes no entienden qué es un modal, es una sección de HTML que aparece delante de la página, muchos lo conocen como POP UP, pero este no aparece en una ventana diferente, sino en la misma página.
+
+En este caso, el HTML ya está creado, pero está oculto. Lo que haremos será incluir el archivo de javascript que hará que aparezca y desaparezca cuando el usuario desee.
+
+Para conseguir esto, abre el archivo ``index.html`` en Sublime Text 2 y dirígete a la parte más baja del documento, donde finaliza el ``</body>``
+
+Ahí verás que hay varias etiquetas de ``<script>``. Antes de que se cierre la etiquetea ``</body>`` incluye el siguiente script:
+
+    <script src="js/modal.js"></script>
+
+Guarda el archivo y abre nuevamente el archivo index.html en el navegador, dirígete a la parte de Portafolio y haz clic en alguna de las imágenes. ¿Te aparece algo ahora? Debería aparecer algo como esto:
+
+![Pantallazo Modal Resuelto](http://puu.sh/e46Fn/7da40253af.jpg)
 
 ## Cuestionario
 
 1- ¿Cuál es la funcionalidad básica del **HTML**?
-
-*   Editar el diseño y estilos de la página.
-*   Describir la estructura y organización de una página web.
-*   Interpretar las etiquetas y pintar una página web.
+- Editar el diseño y estilos de la página.
+- Describir la estructura y organización de una página web.
+- Interpretar las etiquetas y pintar una página web.
 
 2- Las etiquetas son los elementos principales de:
-
-*   HTML
-*   CSS
-*   Javascript
+- HTML
+- CSS
+- Javascript
 
 3- Es un lenguaje de programación:
-
-*   HTML
-*   CSS
-*   Javascript
+- HTML
+- CSS
+- Javascript
 
 4- ¿Con Javascript podemos añadir nuevo CSS?
-
-*   Sí
-*   No
+- Sí
+- No
 
 5- ¿Con qué programo una funcionalidad de clic en un botón?
-
-*   HTML
-*   CSS
-*   Javascript
+- HTML
+- CSS
+- Javascript

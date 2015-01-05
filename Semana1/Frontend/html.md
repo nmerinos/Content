@@ -2,9 +2,9 @@
 
 ## Ejemplos
 
-### Cómo comenzar un codigo html
+### Cómo comenzar un documento html
 
-Lo primero que se declara siempre es el `<!DOCTYPE>`. Con esto definimos que version de html usaremos. `<!DOCTYPE html>` define html5.
+Lo primero que se declara siempre es el `<!DOCTYPE>`. Con esto definimos que versión de html usaremos. `<!DOCTYPE html>` define html5.
 Todo html sigue una estructura similar, primero se escribe la etiqueta `<html></html>`  y dentro de el contiene una etiqueta `<head></head>` el cual define información del documento y otra `<body></body>` el cuál define información del cuerpo del documento: 
 
 
@@ -321,9 +321,13 @@ Esta es mi descripcion.
 
 Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.
 
-a.Escriba un documento html que tenga como titulo "Programacion" y que redacte brevemente acerca de programacion incluya cabecaras, parrafos, divisiones, una tabla que enumere los cursos que desearia aprender.
+### Ejercicio 1
 
-b.Escriba un documento html con un formulario que pregunte por datos como nombre, apellido, cursos, notas, fecha de ingreso, un boton para subir una foto y un boton final para "enviar".
+a.Escriba un documento html que tenga como titulo "Programación" y que redacte brevemente acerca de programación incluya cabeceras, parrafos, divisiones, una tabla que enumere los cursos que desearia aprender.
+
+### Ejercicio 2
+
+b.Escriba un documento html con un formulario que pregunte por datos como nombre, apellido, cursos, notas, fecha de ingreso, un botón para subir una foto y un boton final para "enviar".
 
 ## Cuestionario
 

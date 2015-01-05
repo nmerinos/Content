@@ -129,10 +129,13 @@ En CSS existe el selector universal `*` el cual selecciona todos los elementos d
 
 
 ```css
-
+* {
+ margin: 0;
+ padding: 0;
+}
 ```
 
-## Selectores descendentes
+### Selectores descendentes
 
 En algunas ocasiones se requiere dar estilos diferentes a elementos de un solo tipo pero que se diferencia por el elemento que los contiene.
 Un elemento A es descendiente de otro elemento B si el elemento A esta incluido en el elemento B.

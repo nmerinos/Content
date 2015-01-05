@@ -174,8 +174,9 @@ En general la estructura para selecionar elementos descendientes es los selector
 
 ```css
 selector1 selector2 selector3 {
-
+ ...
 }
+```
 
 
 ## Ejercicios

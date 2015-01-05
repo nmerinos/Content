@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="css">CSS</h1>
+
+
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+
+
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+
+<p>Agregar una hoja de estilos externa al documento HTLM el cual aplica los siguientes estilos a  todos los parrafos <code>&lt;p&gt;</code> del documento: <br>
+- Color: Azul <br>
+- Tamaño de fuente: 12px <br>
+- Tipo de fuente: Times New Roman</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Bienvenido!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.hackspace.la"</span>&gt;</span>Visita la pagina<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span> Dolor sit amet, consectetur adipiscing elit. Praesent et tortor id turpis vestibulum vestibulum et quis magna. Praesent ac risus sed magna ornare pulvinar. Duis et aliquet nunc. In elit diam, elementum eu dictum quis, pharetra nec justo. Curabitur hendrerit fermentum nisl. Cras convallis gravida mollis. Nunc et feugiat sapien, eu ullamcorper lorem. <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span> Mauris faucibus tristique posuere. Nam vehicula quam at venenatis imperdiet. Vivamus mattis tortor eget est mollis tempor. Quisque nec eros libero. Suspendisse ultrices facilisis mi, eget bibendum libero auctor in. <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+
+<p>Modificar el CSS para agregar los siguientes estilos al documento HTML. <br>
+- El color del texto de todos los elementos del documento es verde. <br>
+- Los elementos con id <em>HS</em> tienen un color de fondo negro <br>
+- Los elementos con clase <em>CoreUp</em> tienen borde solido de 2px y color de fondo con codigo rgb <strong>rgb(224,224,224) </strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Ejercicio 2<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+    <span class="hljs-tag">body</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">lightgrey</span></span></span>}
+    <span class="hljs-tag">h1</span>   <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">blue</span></span></span>}
+    <span class="hljs-tag">p</span>    <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">green</span></span></span>}
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Bienvenido!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.hackspace.la"</span>&gt;</span>CoreUpgrade 2015<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"CoreUp"</span>&gt;</span>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"CoreUp"</span>&gt;</span> A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"HS"</span>&gt;</span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre></div></body>
+</html>

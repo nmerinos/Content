@@ -608,9 +608,13 @@ Los cambios en **router.js** también son menores, solamente hemos añadido sopo
 
 Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.
 
-a. Crear un servidor que escuche en el puerto 4000 y que tenga una lista de notas y alumnos como respuestas para las paginas (manejadores/handlers) /curso1 y /curso2.
+### Ejercicio 1
 
-b. Crear un path /registrarAlumno para que devuelva los datos que se envien desde un formulario en el path /form que tenga  5 textfields donde se escriban notas (numeros) cada uno al lado de un label con los nombres de los cursos : "Algebra", "Aritmetica", "Geometria", "Historia" y "Comunicacion". 
+Crear un servidor que escuche en el puerto 4000 y que tenga una lista de notas y alumnos como respuestas para las paginas (manejadores/handlers) /curso1 y /curso2.
+
+### Ejercicio 2
+
+Crear un path /registrarAlumno para que devuelva los datos que se envien desde un formulario en el path /form que tenga  5 textfields donde se escriban notas (numeros) cada uno al lado de un label con los nombres de los cursos : "Algebra", "Aritmetica", "Geometria", "Historia" y "Comunicacion". 
 
 ## Cuestionario
 

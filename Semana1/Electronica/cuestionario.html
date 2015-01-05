@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custionario</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="fundamentos-de-la-electrónica">Fundamentos de la electrónica</h1>
+
+
+
+<h1 id="cuestionario">Cuestionario</h1>
+
+<p>1-  ¿Cuál es la unidad para medir <strong>corriente</strong>? <br>
+- Voltios <br>
+- Amperios <br>
+- Ohmios</p>
+
+<p>2-  La configuración Pull-up entrega un … al presionar el pulsador. <br>
+- “o” <br>
+- “1”</p>
+
+<p>3-  La configuración analógica emplea para funcionar un… <br>
+- Potenciómetro <br>
+- LDR <br>
+- Led</p>
+
+<p>4- El protoboard posee en total … zonas aisladas. <br>
+- 3 <br>
+- 4 <br>
+- 5</p>
+
+<p>5-  El 123D Circuits permite probar códigos en Arduino <br>
+- V <br>
+- F##Ejemplos</p>
+
+<p><strong><em>Y por fin algo de acción</em></strong></p>
+
+<p>Como ya hemos mencionado, el Arduino puede leer datos de dos maneras, digital y analógica. Empezaremos con lo digital. ¿Cuál es la manera correcta de darle un 1 o un 0? Si pensaste en botones y switchs, tienes el 50% de la respuesta correcta. El otro 50% radica en la forma de conectarlos. Tenemos entonces 2 formas (efectivamente, ponerle un cable directo también funciona, pero significaría tener que mover cables para cambiar el valor, y es riesgoso):</p>
+
+<p>Tenemos entonces 2 configuraciones para los pulsadores: <strong>pull-up</strong> y <strong>pull-down</strong></p>
+
+<blockquote>
+  <p>Consideraciones: En los siguientes ejemplos emplearemos una especie de “pantallita” conocida técnicamente como <strong>multímetro</strong>. Esta nos permite observar valores como la corriente, el voltaje, y la resistencia. Cuando empecemos a usar el Arduino, la usaremos con menos frecuencia. Por el momento usamos el Arduino solo como una fuente de voltaje, no tiene nada programado.</p>
+</blockquote>
+
+<p>Pull-up entrega constantemente al pin un “0” lógico, y cuando se presiona el pulsador, entrega un “1”. Las conexiones son como se muestran:</p>
+
+<p><img src="Imagenes/PullUp.JPG" alt="Sin titulo" title=""></p>
+
+<p>Pull-down entrega constantemente al pin un “1” lógico, y al presionar el pulsador, entrega un “0”. Las conexiones son las siguientes:</p>
+
+<p><img src="Imagenes/PullDown.JPG" alt="Sin titulo" title=""></p>
+
+<p>Y, ¿cómo entregamos un valor analógico? La respuesta está en el siguiente diagrama de conexión: se emplea un potenciómetro.</p>
+
+<p><img src="Imagenes/Analog.JPG" alt="Sin titulo" title=""></p>
+
+<p>Es hora de poner manos a la obra. </p>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<p>Primero lo primero. <br>
+Para poder usar el 123D Circuits a plenitud, necesitamos una cuenta, así que a registrarnos. Ingresar a <a href="http://123d.circuits.io/">http://123d.circuits.io/</a>  y crear una cuenta.</p>
+
+<p>Al logearnos, en la esquina superior derecha podemos observar la ubicación de nuestros proyectos. CLick en el sujeto gris.</p>
+
+<p><img src="Imagenes/123Da.JPG" alt="Sin titulo" title=""></p>
+
+<p>Esta es mi cuenta, hasta el momento. Pueden observarse los proyectos que tengo disponibles, y un par de opciones a la derecha de los proyectos</p>
+
+<p><img src="Imagenes/123Db.JPG" alt="Sin titulo" title=""></p>
+
+<p>Click en <strong>New breadbord</strong>, o nuevo protoboard.</p>
+
+<p>Daremos una mini explicación del entorno:</p>
+
+<p><img src="Imagenes/123Dc.JPG" alt="Sin titulo" title=""></p>
+
+<p>Aquí tenemos el nombre del circuito que estamos diseñando. El nombre por default es <strong>“The Unnamed Circuit”</strong>. Luego, debajo, de izquierda a derecha, tenemos los botones <strong>Rotate</strong>, que se gira componentes en el protoboard; <strong>Delete</strong>, cuya función es eliminar componentes; <strong>zoom to fit</strong>, que ajusta el zoom para que podamos ver todos los objetos puestos en el área de trabajo; y por último tenemos las opciónes <strong>Undo</strong> y su contraparte, para deshacer cambios recientes.</p>
+
+<p><img src="Imagenes/123Dd.JPG" alt="Sin titulo" title=""></p>
+
+<p>Del otro lado, arriba, tenemos botontes bastante peculiares. Al lado de “All changes saved” podemos observar 3 botones que parecen pequeños chips. Estos son las vistas disponibles. Tenemos la <strong>vista en protoboard</strong>, la <strong>vista del esquemático</strong> y la <strong>vista en el PCB</strong>. Usaremos para el entrenamiento la vista en protoboard (breadboard). El siguiente botón corresponde a la <strong>cuenta por materiales</strong>, que nos entrega un precio promedio de los componentes requeridos. Finalmente tenemos la <strong>vista de configuraciones</strong>, donde podemos cambiar el nombre de nuestro proyecto. Finalmente, podemos ver los botones de <strong>feedback</strong> y nuestro <strong>usuario</strong>.</p>
+
+<p>Debajo tenemos los botones de <strong>chat</strong>; el <strong>editor de código</strong>, donde pondremos el código para Arduino; la <strong>librería de componentes</strong>, que podremos colocar en el protoboard; y el más importante, <strong>Iniciar simulación</strong>, que nos permite probar nuestro circuito.</p>
+
+<p>Luego tenemos el área de trabajo, que tiene un protoboard.</p>
+
+<p><img src="Imagenes/123De.JPG" alt="Sin titulo" title=""></p>
+
+<p>¿Cómo funciona el protoboard?  <br>
+Tiene conexiones internas que facilitan el cableado. Estas están dispuestas de la siguiente manera:</p>
+
+<p>Los extremos tienen conexión horizontal interna. Cualquier cosa que se conecte a alguno de los pines en esa línea, también estará conectada a otra en la misma línea.</p>
+
+<p><img src="Imagenes/Proto1.JPG" alt="Sin titulo" title=""></p>
+
+<p><img src="Imagenes/Proto4.JPG" alt="Sin titulo" title=""></p>
+
+<p>La parte interna tiene conexiones verticales, pero la línea central funciona división, es decir, las dos zonas centrales están aisladas entre sí.</p>
+
+<p><img src="Imagenes/Proto2.JPG" alt="Sin titulo" title=""></p>
+
+<p><img src="Imagenes/Proto3.JPG" alt="Sin titulo" title=""></p>
+
+<p>Ahora que sabes esto, es tu turno.</p>
+
+<p>Arma la configuración analógica (con el potenciómetro, la 3ra mostrada) en 123D Circuits y conecta un cable desde la misma columna que va al Voltímetro, a la entrada A1 del Arduino, y cópiale el siguiente programa al editor de código:</p>
+
+<blockquote>
+  <p>int dato = 0; <br>
+  void setup() <br>
+  { <br>
+  } <br>
+  void loop() <br>
+  { <br>
+  dato = analogRead(A1); <br>
+  Serial.println(dato); <br>
+  delay(500); <br>
+  }</p>
+</blockquote>
+
+<p>Próximamente explicaremos como programar en Arduino, este es un mero programa de prueba.</p>
+
+<p>Una vez pegado, de click en <em>Start Simulation</em> y sin cerrar el editor de código, dé click en el monitor serial (en la parte derecha del editor de código), como se ve en la imagen, para poder observar los valores de la lectura analógica. Mueva el valor con el potenciómetro para ver la variación. </p>
+
+<p><img src="Imagenes/MonitorSerial.JPG" alt="Sin titulo" title=""></p>
+
+<p>y felicidades.</p>
+
+<p>Aquí hay una muestra de cómo debe de quedar el circuito.</p>
+
+<p><img src="Imagenes/PlanchaEjer1.JPG" alt="Sin titulo" title=""></p>
+
+<p>Ahora realice el mismo procedimiento (empleando el mismo código también) para las configuraciones Pull-up y Pull-down.</p></div></body>
+</html>

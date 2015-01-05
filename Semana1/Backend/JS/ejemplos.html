@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="javascript">JavaScript</h1>
+
+<p>JavaScript es un lenguaje de programación que puede ser aplicado a un documento HTML para agregarle interactividad, también se puede usar desde el lado del servidor con frameworks como Nodejs, además se puede usar para programar el microcontrolador de una placa Arduino  usando la libreria Johnny-Five.</p>
+
+
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+
+
+<h3 id="variables">Variables</h3>
+
+<ul>
+<li>En programación las variables son contenedores para valores que pueden ser de diferentes tipos.</li>
+<li>Las variables tienen un nombre y un valor separados por un signo igual <strong>‘=’</strong>.</li>
+<li>Las variables se declaran usando la palabra clave <strong>‘var’</strong> seguida del nombre de la variable.</li>
+<li>Los nombres de las variables pueden ser cualquier letra o palabra, pero existen algunas restricciones como por ejemplo, el nombre de una variable no puede comenzar por un número, aunque si puede contener números en medio o al final del nombre de la variable, tampoco se puede usar ciertas palabras reservadas como nombre de una variable tales como <em>var</em>,<em>con</em>,<em>do</em>,etc.</li>
+<li>Para comparar la igualdad de 2 valores, se usara <strong>‘==’</strong> y la desigualdad con <strong>‘!=’</strong>.</li>
+</ul>
+
+<p>Definamos dos variables con sus respectivos valores y definamos una tercera variable con el valor de la suma de los anteriores.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> x = <span class="hljs-number">20</span>,
+    y = <span class="hljs-number">15</span>,
+    suma = x + y;</code></pre>
+
+<p>El interprete lee el código instrucción por instrucción, de modo que cada instrucción termina en un punto y coma.</p>
+
+<p>En palabras sencillas el primer ejemplo realiza los siguientes pasos:</p>
+
+<ul>
+<li>Define una nueva variable de nombre ‘x’ y le asigna un valor de ‘20’</li>
+<li>Define una nueva variable de nombre <em>y</em> y le asigna un valor de <em>15</em></li>
+<li>Define una nueva variable de nombre <em>suma</em> y le asigna el resulta de la suma de los valores de las variables <em>x</em> y <em>y</em></li>
+</ul>
+
+
+
+<h4 id="tipos-de-variables">Tipos de variables</h4>
+
+<p>Los valores de las variables ademas de contener números enteros como se mostró en el primer ejemplo pueden contener diferentes tipos de valores:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Tipo</th>
+  <th>Explicación</th>
+  <th>Ejemplo</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>String</td>
+  <td>Una cadena de texto.Para identificar que el valor de la variable es una cadena, se debe encerrar la cadena entre comillas. Su propiedad <strong>length</strong> nos devuelve su longitud de caracteres y <strong>charAt</strong> nos devuelve el carácter de una determinada posición.</td>
+  <td>var miCiudad = ‘Lima’;</td>
+</tr>
+<tr>
+  <td>Number</td>
+  <td>Un numero. Los numeros no tienen comillas alrededor de ellos</td>
+  <td>var miEdad = 20;</td>
+</tr>
+<tr>
+  <td>Boolean</td>
+  <td>Un valor verdadero o falso. true y false son palabras reservadas en JavaScript y no necesitan comillas</td>
+  <td>var asd = true</td>
+</tr>
+<tr>
+  <td>Array</td>
+  <td>Una estructura que permite almacenar multiples valores en una sola referencia</td>
+  <td>var misCursos = [‘Backend’, ‘Frontend’, ‘Electronica’]</td>
+</tr>
+<tr>
+  <td>Object</td>
+  <td>Basicamente cualquier cosa. Todo en JavaScript es un objeto y se puede almacenar en una variable</td>
+  <td>var miPerfil = { miEdad :19, miCiudad : ‘Lima’, misCursos : = [‘B’, ‘F’, ‘E’]}</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="estructuras-condicionales">Estructuras condicionales</h3>
+
+<p>Las condiciones son estructuras que te permiten verificar los valores de ciertas variables y dependiendo del resultado ejecutar un conjunto de instrucciones.</p>
+
+<p>La estructura la condicional <code>if</code> es la mas facil y su estructura es <code>if (condicion) { instruccion;}</code>, de manera que si la condición es verdadera el código encerrado entre llaves se ejecuta.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> miEdad = <span class="hljs-number">21</span>;
+<span class="hljs-keyword">if</span> (miEdad &gt;= <span class="hljs-number">18</span>){
+    alert(<span class="hljs-string">"Soy mayor de edad!"</span>);
+    }</code></pre>
+
+<p>En la mayoría de casos es necesario ejecutar otras instrucciones si el valor de la condicion <code>if</code> es falso eso se puede hacer usando la condicional <code>if else</code>  y su estructura es <code>if (condicion) {instrucciones si es cierto} else { instrucciones si es falso}</code></p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> miEdad = <span class="hljs-number">17</span>;
+<span class="hljs-keyword">if</span> (miEdad &gt;= <span class="hljs-number">18</span>){
+    alert(<span class="hljs-string">"Soy mayor de edad!"</span>);
+} <span class="hljs-keyword">else</span> {
+    alert(<span class="hljs-string">"Soy menor de edad"</span>)
+}</code></pre>
+
+<p>Las condiciones también pueden ser anidadas de manera que se ejecuten si cumplen todas las condiciones previas.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">if</span> (edad &gt;= <span class="hljs-number">18</span> ){
+    alert(<span class="hljs-string">"Eres mayor de edad"</span>);
+    <span class="hljs-keyword">if</span> (licencia == <span class="hljs-literal">true</span>){
+        alert(<span class="hljs-string">"Eres apto para conducir"</span>);
+    } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">"Pero no puedes conducir"</span>);
+    }
+} <span class="hljs-keyword">else</span> {
+    alert(<span class="hljs-string">"Aún no puedes conducir por tu edad"</span>);
+}</code></pre>
+
+
+
+<h3 id="bucles-o-loops">Bucles o loops</h3>
+
+<p>Los bucles son condiciones repetitivas, donde una variable cambia de valor en cada ciclo. La forma más fácil de un bucle es usando la sentencia for. Ésta tiene una sintaxis que es similar a la sentencia if, pero con más opciones: <br>
+<code>for (valor inicial; condicion de fin; cambio)</code></p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>;i &lt;= <span class="hljs-number">31</span>;i = i + <span class="hljs-number">1</span>){
+  alert(<span class="hljs-string">"Hoy es el dia "</span> + i + <span class="hljs-string">" del mes!"</span>)
+}</code></pre>
+
+<p>Una aplicación importante de los bucles es para recorrer los valores de un array.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> cursos = [<span class="hljs-string">'Backend'</span>,<span class="hljs-string">'Frontend'</span>, <span class="hljs-string">'Electronica'</span>]
+<span class="hljs-keyword">var</span> total = cursos.length;
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i &lt; total; i++){
+  alert(<span class="hljs-string">"Estoy tomando el curso de "</span> + cursos[i] + <span class="hljs-string">" en el CoreUpgrade  2015"</span>)
+}</code></pre>
+
+
+
+<h3 id="funciones">Funciones</h3>
+
+<p>Una función es un conjunto de código que puede ser llamado por otro código o por si mismo o una variable que hace referencia a la función, esta puede recibir y/o retornar datos al ser llamada. <br>
+La estructura básica de una función es:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">miFuncion</span><span class="hljs-params">()</span> {</span>
+  Contenido de la función
+}</code></pre>
+
+<p>Definamos una función que recibe como parámetro dos números y retorna el valor del mayor de los números</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">obtenerMayor</span><span class="hljs-params">(x,y)</span>{</span>
+ <span class="hljs-keyword">if</span>(x&gt;y){
+  <span class="hljs-keyword">return</span> (x);
+  } <span class="hljs-keyword">else</span>{
+  <span class="hljs-keyword">return</span> (y);
+ }
+}</code></pre>
+
+<p>Además JavaScript posee funciones predeterminadas para cada tipo de variable por ejemplo:</p>
+
+
+
+<h4 id="funciones-para-cadenas-de-texto">Funciones para cadenas de texto</h4>
+
+<p><code>split()</code>: Retorna una lista a partir del string, la cual se delimita por el separador que se pasa como parámetro</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> lenguajes = <span class="hljs-string">"Python,Clojure,JS,Elixir"</span>;
+<span class="hljs-keyword">var</span> arrayLenguajes = lenguajes.split(<span class="hljs-string">','</span>);
+<span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span>;i&lt;arrayLenguajes.length;i++){
+  console.log(arrayLenguajes[i])
+}</code></pre>
+
+<p><code>toUpperCase()</code>: Retorna la cadena con sus correspondientes carácteres en mayúsculas. <br>
+<code>toLowerCase()</code>: Retorna la cadena con sus correspondientes carácteres en minúsculas.</p>
+
+
+
+<h4 id="funciones-para-arrays">Funciones para arrays</h4>
+
+<p><code>join()</code>: Retorna un string que resulta de concatenar los elementos del array que se pasa como parámetro <br>
+<code>push()</code> : Agrega uno o mas de un elemento al final del array. <br>
+<code>pop()</code> : Elimina el último elemento del array <br>
+<code>reverse()</code> : Invierte el orden de los elementos del array</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> dias = [<span class="hljs-string">"Lu"</span>,<span class="hljs-string">"Ma"</span>,<span class="hljs-string">"Mi"</span>,<span class="hljs-string">"Ju"</span>,<span class="hljs-string">"Vi"</span>,<span class="hljs-string">"Sa"</span>,<span class="hljs-string">"Do"</span>];
+<span class="hljs-keyword">var</span> distLinux = [<span class="hljs-string">"CentOs"</span>,<span class="hljs-string">"Fedora"</span>,<span class="hljs-string">"Mint"</span>,];
+<span class="hljs-keyword">var</span> windowsOS = [<span class="hljs-string">"Windows 7"</span>,<span class="hljs-string">"Vista"</span>, <span class="hljs-string">"XP"</span>]
+<span class="hljs-keyword">var</span> meses = [<span class="hljs-string">"Ene"</span>,<span class="hljs-string">"Feb"</span>,<span class="hljs-string">"Mar"</span>]
+
+<span class="hljs-keyword">var</span> cadenaDias = dias.join(<span class="hljs-string">"/"</span>);
+distLinux.push(<span class="hljs-string">"Ubuntu"</span>, <span class="hljs-string">"Arch"</span>);
+windowsOS.pop();
+meses.reverse()</code></pre>
+
+
+
+<h4 id="funciones-para-números">Funciones para números</h4>
+
+<p><code>isNaN()</code>: Determina si es un número no válido <br>
+<code>toFixed()</code> : Redondea el número al número de decimales que se le pasa como parámetro</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> numero1 = <span class="hljs-number">23</span>*<span class="hljs-number">34</span>,
+    numero2 = <span class="hljs-string">"23"</span>,
+    numero3 = <span class="hljs-number">13</span>/<span class="hljs-number">0</span>;
+<span class="hljs-built_in">isNaN</span>(numero1); <span class="hljs-literal">false</span>
+<span class="hljs-built_in">isNaN</span>(numero2); <span class="hljs-literal">true</span>
+<span class="hljs-built_in">isNaN</span>(numero3); <span class="hljs-literal">true</span>
+
+<span class="hljs-keyword">var</span> numero = <span class="hljs-number">919.827</span>;
+numero.toFixed() ; <span class="hljs-number">920</span>
+numero.toFixed(<span class="hljs-number">1</span>); <span class="hljs-number">919.8</span>
+numero.toFixed(<span class="hljs-number">2</span>); <span class="hljs-number">919.83</span></code></pre>
+
+
+
+<h3 id="corriendo-js-en-un-documento-html">Corriendo JS en un documento html</h3>
+
+<p>Nuestro arichivo js se llamará <strong>primer.js</strong> y será incluido en la etiqueta html <code>&lt;script&gt;</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"primer.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>JAVASCRIPT y HTML!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Debemos de ubicar nuestro archivo <strong>primer.js</strong> en la misma carpeta</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">console.log(<span class="hljs-string">"Line #"</span> + <span class="hljs-number">1</span> + <span class="hljs-string">" corriendo."</span>);</code></pre>
+
+<p>Podemos cambiar la direccion relativa al html dentro del atributo src de la etiqueta <code>&lt;script&gt;</code>. Por ejemplo de querer situarlo dentro de un directorio llamado script, usaríamos lo siguiente <strong>“script/primer.js”</strong> y si quisieramos situarlo en una carpeta adyacente a la carpeta del documento html usaríamos <strong>“../script/primer.js”</strong>.</p>
+
+
+
+<h3 id="introducción-al-dom-html">Introducción al DOM HTML</h3>
+
+<p>El Document Object Model (DOM) es una interfaz de programación para los documentos HTML y XML. Define una forma en que se puede acceder a la estructura desde los programas de modo que puedan cambiar la estructura del documento, estilo y contenido. Proporciona una representación del documento como un grupo estructurado de nodos y objetos que tienen propiedades y métodos. Esencialmente, comunica las páginas web con los scripts o lenguajes de programación.</p>
+
+<p>Al crear un elemento javascript, podemos comenzar de inmediato el uso del DOM con elementos como “document” o “window” para manipular el propio documento o para llegar a los <strong>childs</strong> de ese documento, que son los <strong>distintos elementos de la página web</strong>. </p>
+
+<p>Hagamos algo tan simple como lo siguiente, mostremos un mensaje de alerta mediante el uso de la función “alert()” del objeto “window”.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">// cuando el documento es cargado, esta funcion se ejecutara</span>
+       window.onload = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+       window.alert(<span class="hljs-string">'El documento ha cargado y la funcion ha comenzado'</span>);
+    <span class="hljs-comment">// creamos algunos elementos </span>
+    <span class="hljs-comment">// en una pagina HTML vacia</span>
+       heading = document.createElement(<span class="hljs-string">"h1"</span>); <span class="hljs-comment">//creamos un elmento h1</span>
+       heading_text = document.createTextNode(<span class="hljs-string">"Agregamos esta cabecera"</span>); <span class="hljs-comment">//creamos el texto</span>
+       heading.appendChild(heading_text); <span class="hljs-comment">//agregamos el texto como un hijo al elemento heading que es un h1</span>
+       document.body.appendChild(heading); <span class="hljs-comment">//agregamos el elemento heading como un hijo al body</span>
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h4 id="importantes-tipo-de-datos">Importantes tipo de datos</h4>
+
+<p>Hay un número de diferentes tipos de datos que se pueden decir son los que se usan frecuentemente. Referiremos a los nodos como elementos, a arreglos de nodos como nodeLists (o simplemente elementos), y a nodos atributos simplemente como atributos.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Data Type</th>
+  <th align="left">Descripcion</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/document">document</a></td>
+  <td align="left">Es la raíz/origen del mismo documento.</td>
+</tr>
+<tr>
+  <td>element</td>
+  <td align="left">Se refiere a un elemento o un nodo de tipo elemento returnado por un miembro del DOM API. El metodo document.createElement() retorna un elemento que acaba de ser creado en el DOM.</td>
+</tr>
+<tr>
+  <td>nodeList</td>
+  <td align="left">Una lista de nodos es un conjunto de elementos, como el tipo que devuelve el método document.getElementsByTagName (). Los elementos de una lista de nodos se accede por el índice en cualquiera de dos maneras:</td>
+</tr>
+</tbody></table>
+
+
+<p>list.item (1) <br>
+lista [1] <br>
+Estos dos son equivalentes. En el primero, item() es un método en el objeto nodeList. El segundo utiliza la típica sintaxis de a buscar el segundo elemento de la lista.| <br>
+|attribute|Son nodos que refieren a los atributos de los elementos.| <br>
+|namedNodeMap|Es similar a un arreglo de items pero accedidos por nombre o id.|</p>
+
+
+
+<h4 id="interfaces-y-objetos">Interfaces y objetos</h4>
+
+<p>Muchos objetos provienen de distintas interfaces por lo que tienen propiedades y metodos de cada una de estas.</p>
+
+<p>Por ejemplo una tabla proviene de 3 interfaces:</p>
+
+<p>-<a href="https://developer.mozilla.org/en-US/docs/DOM/HTMLTableElement">HTML Table Element Interface</a></p>
+
+<p>-<a href="https://developer.mozilla.org/en-US/docs/DOM/element">DOM Element Interface</a></p>
+
+<p>-<a href="">Node Interface</a></p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> table = document.getElementById(<span class="hljs-string">"table"</span>);
+<span class="hljs-keyword">var</span> tableAttrs = table.attributes; <span class="hljs-comment">// Node/Element interface</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; tableAttrs.length; i++) {
+  <span class="hljs-comment">// HTMLTableElement interface: border attribute</span>
+  <span class="hljs-keyword">if</span>(tableAttrs[i].nodeName.toLowerCase() == <span class="hljs-string">"border"</span>)
+    table.border = <span class="hljs-string">"1"</span>; 
+}
+<span class="hljs-comment">// HTMLTableElement interface: summary attribute</span>
+table.summary = <span class="hljs-string">"note: increased border"</span>;</code></pre>
+
+
+
+<h4 id="métodos-comunes-en-el-dom">Métodos comunes en el DOM</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Data Type</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/document.getElementById">document.getElementById(id)</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.getElementsByTagName">element.getElementsByTagName(name)</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/document.createElement">document.createElement(name)</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/Node.appendChild">parentNode.appendChild(node)</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/element.innerHTML">element.innerHTML</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/element.style">element.style.left</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/element.setAttribute">element.setAttribute</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/element.getAttribute">element.getAttribute</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/element.addEventListener">element.addEventListener</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/window.content">window.content</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/window.onload">window.onload</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/window.dump">window.dump</a></td>
+</tr>
+<tr>
+  <td><a href="https://developer.mozilla.org/en-US/docs/DOM/window.scrollTo">window.scrollTo</a></td>
+</tr>
+</tbody></table>
+
+
+<p>Ejemplo de modificar una tabla usando DOM.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"table0"</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Row 0 Cell 0<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Row 0 Cell 1<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> table = document.getElementById(<span class="hljs-string">'table0'</span>);
+<span class="hljs-keyword">var</span> row = table.insertRow(-<span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> cell,
+    text;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
+  cell = row.insertCell(-<span class="hljs-number">1</span>);
+  text = <span class="hljs-string">'Row '</span> + row.rowIndex + <span class="hljs-string">' Cell '</span> + i;
+  cell.appendChild(document.createTextNode(text));
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre></div></body>
+</html>

@@ -7,7 +7,7 @@ Antes que nada, quisiera compartir con ustedes cierta frase que me ha estado aco
 Dicho esto, bienvenidos a esta sección del entrenamiento, en la que nos enfocaremos en la electrónica. Así que daremos un vistazo realmente rápido a la evolución que ha tenido esta rama.
 
 
- 
+
 
 ----------
 
@@ -23,7 +23,7 @@ Si bien la intención de este entrenamiento no es desarrollar cosas con tal magn
 
 ***Empecemos entonces***
 
-Si no tienes ni idea de qué es un miliamperio, y deseas averiguarlo, te recomiendo que leas un poco de la teoría **[aquí](https://github.com/eyallico/Content/blob/master/Semana1/Electronica/Teoria.md)** 
+Si no tienes ni idea de qué es un miliamperio, y deseas averiguarlo, te recomiendo que leas un poco de la teoría **[aquí](Teoria.md)** 
 
 Si quieres pasar directo a la acción (aunque un repaso nunca está de más) sigue leyendo. Empezaremos con una breve introducción a las herramientas que utilizaremos:
 
@@ -32,7 +32,7 @@ Arduino es una plataforma de hardware y software de fácil manejo. A lo largo de
 - 13 salidas/entradas configurables
 - 6 entradas analógicas.
 
-Si quieres saber la diferencia entre digital y analógico, revisa **[por acá](https://github.com/eyallico/Content/blob/master/Semana1/Electronica/DigitalVsAnalogico.md )**.
+Si quieres saber la diferencia entre digital y analógico, revisa **[por acá](DigitalVsAnalogico.md )**.
 
 La otra herramienta que utilizaremos será el [123D Circuits](http://123d.circuits.io/). Este es un simulador de circuitos electrónicos, que nos permitirá, mediante un protoboard virtual, realizar varios proyectos, también implementables en la vida real.
 

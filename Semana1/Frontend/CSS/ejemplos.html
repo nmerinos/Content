@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSS</title>
+<title>Ejemplos</title>
 <link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
@@ -11,7 +11,11 @@
 
 
 
-<h2 id="como-agregar-css-al-html">Como agregar CSS al HTML</h2>
+<h2 id="ejemplos">Ejemplos</h2>
+
+
+
+<h3 id="como-agregar-css-al-html">Como agregar CSS al HTML</h3>
 
 <ol>
 <li><p>Agregar un link a un archivo de CSS externo</p>
@@ -34,7 +38,7 @@
 
 
 
-<h2 id="estructura-basica">Estructura basica</h2>
+<h3 id="estructura-basica">Estructura basica</h3>
 
 <p><code>css <br>
     selector { <br>
@@ -62,7 +66,7 @@
 
 
 
-<h2 id="selectores">Selectores</h2>
+<h3 id="selectores">Selectores</h3>
 
 <p>Existen muchos tipos de selectores los tres mas usados que vas a encontrar son:</p>
 
@@ -105,7 +109,7 @@
 
 
 
-<h2 id="agrupando-selectores">Agrupando selectores</h2>
+<h3 id="agrupando-selectores">Agrupando selectores</h3>
 
 <p>Tambien es posible agrupar selectores que quieres que tengan el mismo estilo, por ejemplo en vez de escribir:</p>
 
@@ -126,5 +130,66 @@
    color: blue; <br>
    font-size: 20px; <br>
  } <br>
-</code></p></div></body>
+</code></p>
+
+
+
+<h3 id="selectores-universales">Selectores Universales</h3>
+
+<p>En CSS existe el selector universal <code>*</code> el cual selecciona todos los elementos de un tipo el cual no es muy usado ya que raras veces se desea que todos los elementos tengan el mismo estilo.</p>
+
+
+
+<pre class="prettyprint"><code class="language-css hljs ">* <span class="hljs-rules">{
+ <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+ <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+
+
+<h3 id="selectores-descendentes">Selectores descendentes</h3>
+
+<p>En algunas ocasiones se requiere dar estilos diferentes a elementos de un solo tipo pero que se diferencia por el elemento que los contiene. <br>
+Un elemento A es descendiente de otro elemento B si el elemento A esta incluido en el elemento B.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Praesent ac risus sed magna ornare pulvinar. <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Integer ex tortor, eleifend non porttitor eget, dictum eu elit.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+
+
+
+<pre class="prettyprint"><code class="language-css hljs "><span class="hljs-tag">h1</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+ <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+<p>En el ejemplo anterior existen dos etiquetas <code>&lt;p&gt;</code> pero se aplica solamente a la primera ya que esta esta contenida dentro de la etiqueta <code>h1</code> como se especifica en el selector del CSS. <br>
+Hay que resaltar que no necesariamente el elemento descendiente tiene que estar contenido inmediatamente dentro del elemento externo, es decir el elemento descendiente puede estar contenido dentro de otro elemento que a su vez este contenido en el elemento mas externo.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Praesent ac risus sed <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>magna<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> ornare pulvinar. <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Integer ex tortor, eleifend non porttitor eget, dictum eu elit.<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span></code></pre>
+
+
+
+<pre class="prettyprint"><code class="language-css hljs "><span class="hljs-tag">h1</span> <span class="hljs-tag">span</span> <span class="hljs-rules">{
+ <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+<p>En el ejemplo anterior la etiqueta <code>&lt;strong&gt;</code> que deseamos aplicar el estilo esta contenida dentro de una etiqueta <code>&lt;p&gt;</code> la cual a su vez esta contenida en una etiqueta <code>h1</code> por lo cual cumple la regla del selector del CSS.</p>
+
+<p>En general la estructura para selecionar elementos descendientes es los selectores de cada elemento individual comenzando del mas externo hasta el mas interno separadas por un espacio:</p>
+
+
+
+<pre class="prettyprint"><code class="language-css hljs "><span class="hljs-tag">selector1</span> <span class="hljs-tag">selector2</span> <span class="hljs-tag">selector3</span> <span class="hljs-rules">{
+ <span class="hljs-rule"><span class="hljs-attribute">...
+}</span></span></span></code></pre></div></body>
 </html>

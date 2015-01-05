@@ -1,8 +1,8 @@
 # CSS
 
-[TOC]
+## Ejemplos
 
-## Como agregar CSS al HTML
+### Como agregar CSS al HTML
 
   1. Agregar un link a un archivo de CSS externo
 
@@ -30,7 +30,7 @@
     @import "estilos.css"
   ```
 
-## Estructura basica
+### Estructura basica
 
   ```css
     selector {
@@ -56,7 +56,7 @@
   Las propiedades en esta regla son el color del texto, la fuente del texto, y el tamano de la fuente
   Los valores de estas propiedades son rojo, Arial, y 30 pixeles respectivamente.
 
-## Selectores
+### Selectores
 
   Existen muchos tipos de selectores los tres mas usados que vas a encontrar son:
 
@@ -100,7 +100,7 @@
     ```
   > En el ejemplo anterior selecciona todos los elementos del html dentro de la etiqueta `<p>` cuyo valor *class* es _importante_
 
-## Agrupando selectores
+### Agrupando selectores
 
   Tambien es posible agrupar selectores que quieres que tengan el mismo estilo, por ejemplo en vez de escribir:
 
@@ -123,7 +123,7 @@
  }
  ```
 
-## Selectores Universales
+### Selectores Universales
 
 En CSS existe el selector universal `*` el cual selecciona todos los elementos de un tipo el cual no es muy usado ya que raras veces se desea que todos los elementos tengan el mismo estilo.
 
@@ -135,7 +135,7 @@ En CSS existe el selector universal `*` el cual selecciona todos los elementos d
 }
 ```
 
-## Selectores descendentes
+### Selectores descendentes
 
 En algunas ocasiones se requiere dar estilos diferentes a elementos de un solo tipo pero que se diferencia por el elemento que los contiene.
 Un elemento A es descendiente de otro elemento B si el elemento A esta incluido en el elemento B.
@@ -237,16 +237,14 @@ Modificar el CSS para agregar los siguientes estilos al documento HTML.
 ```
 
 
-###Ejercicio 3
-
 
 ## Cuestionario
 
 1. ¿Cual es la etiqueta de HTML para agregar un archivo externo CSS?
 
-- <script>
-- <css>
-- <style>
+- `<script>`
+- `<css>`
+- `<style>`
 
 2. ¿Cual es el atributo HTML para agregar estilo en una etiqueta?
 
@@ -271,3 +269,4 @@ Modificar el CSS para agregar los siguientes estilos al documento HTML.
 - font-face
 - font-family
 - font-style
+

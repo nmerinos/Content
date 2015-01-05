@@ -207,6 +207,124 @@ console.log("Line #" + 1 + " corriendo.");
 
 Podemos cambiar la direccion relativa al html dentro del atributo src de la etiqueta `<script>`. Por ejemplo de querer situarlo dentro de un directorio llamado script, usaríamos lo siguiente **"script/primer.js"** y si quisieramos situarlo en una carpeta adyacente a la carpeta del documento html usaríamos **"../script/primer.js"**.
 
+### Introducción al DOM HTML
+
+El Document Object Model (DOM) es una interfaz de programación para los documentos HTML y XML. Define una forma en que se puede acceder a la estructura desde los programas de modo que puedan cambiar la estructura del documento, estilo y contenido. Proporciona una representación del documento como un grupo estructurado de nodos y objetos que tienen propiedades y métodos. Esencialmente, comunica las páginas web con los scripts o lenguajes de programación.
+
+Al crear un elemento javascript, podemos comenzar de inmediato el uso del DOM con elementos como "document" o "window" para manipular el propio documento o para llegar a los **childs** de ese documento, que son los **distintos elementos de la página web**. 
+
+Hagamos algo tan simple como lo siguiente, mostremos un mensaje de alerta mediante el uso de la función "alert()" del objeto "window".
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // cuando el documento es cargado, esta funcion se ejecutara
+       window.onload = function() {
+       window.alert('El documento ha cargado y la funcion ha comenzado');
+    // creamos algunos elementos 
+    // en una pagina HTML vacia
+       heading = document.createElement("h1"); //creamos un elmento h1
+       heading_text = document.createTextNode("Agregamos esta cabecera"); //creamos el texto
+       heading.appendChild(heading_text); //agregamos el texto como un hijo al elemento heading que es un h1
+       document.body.appendChild(heading); //agregamos el elemento heading como un hijo al body
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+#### Importantes tipo de datos
+
+Hay un número de diferentes tipos de datos que se pueden decir son los que se usan frecuentemente. Referiremos a los nodos como elementos, a arreglos de nodos como nodeLists (o simplemente elementos), y a nodos atributos simplemente como atributos.
+
+| Data Type  |               Descripcion             |
+|------------|:--------------------------------------|
+|[document](https://developer.mozilla.org/en-US/docs/DOM/document)|Es la raíz/origen del mismo documento.|
+|element|Se refiere a un elemento o un nodo de tipo elemento returnado por un miembro del DOM API. El metodo document.createElement() retorna un elemento que acaba de ser creado en el DOM.|
+|nodeList|Una lista de nodos es un conjunto de elementos, como el tipo que devuelve el método document.getElementsByTagName (). Los elementos de una lista de nodos se accede por el índice en cualquiera de dos maneras:
+list.item (1)
+lista [1]
+Estos dos son equivalentes. En el primero, item() es un método en el objeto nodeList. El segundo utiliza la típica sintaxis de a buscar el segundo elemento de la lista.|
+|attribute|Son nodos que refieren a los atributos de los elementos.|
+|namedNodeMap|Es similar a un arreglo de items pero accedidos por nombre o id.|
+
+#### Interfaces y objetos
+
+Muchos objetos provienen de distintas interfaces por lo que tienen propiedades y metodos de cada una de estas.
+
+Por ejemplo una tabla proviene de 3 interfaces:
+
+-[HTML Table Element Interface](https://developer.mozilla.org/en-US/docs/DOM/HTMLTableElement)
+
+-[DOM Element Interface](https://developer.mozilla.org/en-US/docs/DOM/element)
+
+-[Node Interface]()
+
+```js
+var table = document.getElementById("table");
+var tableAttrs = table.attributes; // Node/Element interface
+for (var i = 0; i < tableAttrs.length; i++) {
+  // HTMLTableElement interface: border attribute
+  if(tableAttrs[i].nodeName.toLowerCase() == "border")
+    table.border = "1"; 
+}
+// HTMLTableElement interface: summary attribute
+table.summary = "note: increased border";
+```
+
+#### Métodos comunes en el DOM
+|            Data Type            |
+|---------------------------------|
+|[document.getElementById(id)](https://developer.mozilla.org/en-US/docs/DOM/document.getElementById)|
+|[element.getElementsByTagName(name)](https://developer.mozilla.org/en-US/docs/Web/API/Element.getElementsByTagName)|
+|[document.createElement(name)](https://developer.mozilla.org/en-US/docs/DOM/document.createElement)|
+|[parentNode.appendChild(node)](https://developer.mozilla.org/en-US/docs/DOM/Node.appendChild)|
+|[element.innerHTML](https://developer.mozilla.org/en-US/docs/DOM/element.innerHTML)|
+|[element.style.left](https://developer.mozilla.org/en-US/docs/DOM/element.style)|
+|[element.setAttribute](https://developer.mozilla.org/en-US/docs/DOM/element.setAttribute)|
+|[element.getAttribute](https://developer.mozilla.org/en-US/docs/DOM/element.getAttribute)|
+|[element.addEventListener](https://developer.mozilla.org/en-US/docs/DOM/element.addEventListener)|
+|[window.content](https://developer.mozilla.org/en-US/docs/DOM/window.content)|
+|[window.onload](https://developer.mozilla.org/en-US/docs/DOM/window.onload)|
+|[window.dump](https://developer.mozilla.org/en-US/docs/DOM/window.dump)|
+|[window.scrollTo](https://developer.mozilla.org/en-US/docs/DOM/window.scrollTo)|
+
+
+Ejemplo de modificar una tabla usando DOM.
+
+
+```html
+<html>
+<head></head>
+<body>
+<table id="table0">
+ <tr>
+  <td>Row 0 Cell 0</td>
+  <td>Row 0 Cell 1</td>
+ </tr>
+</table>
+
+<script>
+var table = document.getElementById('table0');
+var row = table.insertRow(-1);
+var cell,
+    text;
+
+for (var i = 0; i < 2; i++) {
+  cell = row.insertCell(-1);
+  text = 'Row ' + row.rowIndex + ' Cell ' + i;
+  cell.appendChild(document.createTextNode(text));
+}
+</script>
+</body>
+</html>
+```
+
+
 ## Ejercicios
 
 ### Ejercicio 1
@@ -238,15 +356,15 @@ funcion agregarPasajero (nombre,pasajeros){
 
 ## Cuestionario
 
-> 1.¿Cómo se muestra una ventana con el mensaje "Hola mundo!"?
+> 1.¿Cómo se muestra una ventana con el mensaje "Hola hackspace!"?
 
-a. alert("Hola mundo!"); 
+a. alert("Hola hackspace!"); 
 
-b. alertBox = "Hola mundo!"; 
+b. alertBox = "Hola hackspace!"; 
 
-c. alertBox("Hola mundo!); 
+c. alertBox("Hola hackspace!); 
 
-d. msgBox("Hola mundo!); 
+d. msgBox("Hola hackspace!); 
 > 2.JavaScript es un lenguaje de programación
 
 a. Compilado

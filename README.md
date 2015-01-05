@@ -1,6 +1,3 @@
-
-![MyVideo](https://www.youtube.com/watch?v=irkxCJSOvso)
-
 Platform Content written by Hackspace people
 =======
 We are covering the topics from the [training syllabus][1]

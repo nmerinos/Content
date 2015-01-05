@@ -135,7 +135,7 @@ En CSS existe el selector universal `*` el cual selecciona todos los elementos d
 }
 ```
 
-### Selectores descendentes
+## Selectores descendentes
 
 En algunas ocasiones se requiere dar estilos diferentes a elementos de un solo tipo pero que se diferencia por el elemento que los contiene.
 Un elemento A es descendiente de otro elemento B si el elemento A esta incluido en el elemento B.
@@ -207,9 +207,34 @@ Agregar una hoja de estilos externa al documento HTLM el cual aplica los siguien
 
 ###Ejercicio 2
 Completar el CSS para agregar los siguientes estilos al documento HTML.
-- El color del texto de todos los elementos del documento son de color verde.
+- El color del texto de todos los elementos del documento es verde.
 - Los elementos con id *HS* tienen un color de fondo negro
 - Los elementos con clase *CoreUp* tienen borde solido de 2px y color de fondo con codigo rgb **rgb(224,224,224) **
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Ejercicio 2</title>
+    <style>
+    body {background-color:lightgrey}
+    h1   {color:blue}
+    p    {color:green}
+    </style>
+  </head>
+  <body>
+    <h1>Bienvenido!</h1>
+    <a href="http://www.hackspace.la">CoreUpgrade 2015</a>
+    <p id="CoreUp">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, </p>
+    <div>
+     <h1 class="CoreUp"> A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie </h1>
+     <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth<p>
+    </div>
+    <p id="HS">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+  </body>
+</html>
+```
 
 
 ###Ejercicio 3

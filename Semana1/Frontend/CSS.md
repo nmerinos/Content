@@ -206,7 +206,7 @@ Agregar una hoja de estilos externa al documento HTLM el cual aplica los siguien
 ```
 
 ###Ejercicio 2
-Completar el CSS para agregar los siguientes estilos al documento HTML.
+Modificar el CSS para agregar los siguientes estilos al documento HTML.
 - El color del texto de todos los elementos del documento es verde.
 - Los elementos con id *HS* tienen un color de fondo negro
 - Los elementos con clase *CoreUp* tienen borde solido de 2px y color de fondo con codigo rgb **rgb(224,224,224) **
@@ -241,3 +241,33 @@ Completar el CSS para agregar los siguientes estilos al documento HTML.
 
 
 ## Cuestionario
+
+1. ¿Cual es la etiqueta de HTML para agregar un archivo externo CSS?
+
+- <script>
+- <css>
+- <style>
+
+2. ¿Cual es el atributo HTML para agregar estilo en una etiqueta?
+
+- font
+- style
+- css
+
+3. ¿Cual es la manera correcta de agregar comentarios en CSS?
+
+- /*  Comentario CSS */
+- // Comentario CSS //
+- // Comentario CSS
+
+4. ¿Que propiedad es usada para cambiar el color de fondo?
+
+- color
+- background-color
+- font-color
+
+5. ¿Que propiedad se usa para cambiar la fuente de un texto ?
+
+- font-face
+- font-family
+- font-style

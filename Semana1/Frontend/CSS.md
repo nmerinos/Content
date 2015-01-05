@@ -122,3 +122,93 @@
    font-size: 20px;
  }
  ```
+
+## Selectores Universales
+
+En CSS existe el selector universal `*` el cual selecciona todos los elementos de un tipo el cual no es muy usado ya que raras veces se desea que todos los elementos tengan el mismo estilo.
+
+
+```css
+
+```
+
+## Selectores descendentes
+
+En algunas ocasiones se requiere dar estilos diferentes a elementos de un solo tipo pero que se diferencia por el elemento que los contiene.
+Un elemento A es descendiente de otro elemento B si el elemento A esta incluido en el elemento B.
+
+```html
+<h1>
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ <p>Praesent ac risus sed magna ornare pulvinar. </p>
+</h1>
+<p>Integer ex tortor, eleifend non porttitor eget, dictum eu elit.</p>
+```
+
+```css
+h1 p {
+ color: red;
+}
+```
+
+En el ejemplo anterior existen dos etiquetas `<p>` pero se aplica solamente a la primera ya que esta esta contenida dentro de la etiqueta `h1` como se especifica en el selector del CSS.
+Hay que resaltar que no necesariamente el elemento descendiente tiene que estar contenido inmediatamente dentro del elemento externo, es decir el elemento descendiente puede estar contenido dentro de otro elemento que a su vez este contenido en el elemento mas externo.
+
+
+```html
+<h1>
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ <p>Praesent ac risus sed <strong>magna</strong> ornare pulvinar. </p>
+</h1>
+<strong>Integer ex tortor, eleifend non porttitor eget, dictum eu elit.</strong>
+```
+
+```css
+h1 span {
+ color: red;
+}
+```
+En el ejemplo anterior la etiqueta `<strong>` que deseamos aplicar el estilo esta contenida dentro de una etiqueta `<p>` la cual a su vez esta contenida en una etiqueta `h1` por lo cual cumple la regla del selector del CSS.
+
+En general la estructura para selecionar elementos descendientes es los selectores de cada elemento individual comenzando del mas externo hasta el mas interno separadas por un espacio:
+
+```css
+selector1 selector2 selector3 {
+
+}
+
+
+## Ejercicios
+
+###Ejercicio 1
+Agregar una hoja de estilos externa al documento HTLM el cual aplica los siguientes estilos a  todos los parrafos `<p>` del documento:
+- Color: Azul
+- Tamaño de fuente: 12px
+- Tipo de fuente: Times New Roman
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bienvenido!</h1>
+    <a href="http://www.hackspace.la">Visita la pagina</a>
+    <p> Dolor sit amet, consectetur adipiscing elit. Praesent et tortor id turpis vestibulum vestibulum et quis magna. Praesent ac risus sed magna ornare pulvinar. Duis et aliquet nunc. In elit diam, elementum eu dictum quis, pharetra nec justo. Curabitur hendrerit fermentum nisl. Cras convallis gravida mollis. Nunc et feugiat sapien, eu ullamcorper lorem. </p>
+    <p> Mauris faucibus tristique posuere. Nam vehicula quam at venenatis imperdiet. Vivamus mattis tortor eget est mollis tempor. Quisque nec eros libero. Suspendisse ultrices facilisis mi, eget bibendum libero auctor in. </p>
+</html>
+```
+
+###Ejercicio 2
+Completar el CSS para agregar los siguientes estilos al documento HTML.
+- El color del texto de todos los elementos del documento son de color verde.
+- Los elementos con id *HS* tienen un color de fondo negro
+- Los elementos con clase *CoreUp* tienen borde solido de 2px y color de fondo con codigo rgb **rgb(224,224,224) **
+
+
+###Ejercicio 3
+
+
+## Cuestionario

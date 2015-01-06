@@ -38,21 +38,21 @@
 
 <p>Lo que verás será algo parecido a esto:</p>
 
-<p><del>~html <br>
- <br>
- <br>
-     <br>
-     <br>
-    Página 1 <br>
-     <br>
-     <br>
-        </del></p><h1 id="título">Título</h1> <br>
-        <p>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p> <br>
-        <img src="http://puu.sh/e0BO7/f44d5bf1d6.png" alt="HackSpace Perú"> <br>
-        ¡Hazme clic! <br>
-     <br>
- <br>
-~<p></p>
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Página 1<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Título<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://puu.sh/e0BO7/f44d5bf1d6.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"HackSpace Perú"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span>¡Hazme clic!<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
 
 <p>Pero, si abres este archivo con Google Chrome verás lo siguiente:</p>
 
@@ -68,33 +68,33 @@
 
 <p>En este ejemplo añadimos dentro del <code>&lt;body&gt;</code> el estilo (CSS) y el script (Javascript), el orden en el que ha sido colocado influye en la funcionalidad que posee, pero ahora lo que nos interesa es solo ver que funciona.</p>
 
-<p><del>~html <br>
- <br>
- <br>
-     <br>
-     <br>
-    Página 2 <br>
-     <br>
-     <br>
-         <br>
-            .clase1 { <br>
-                color: blue; <br>
-            } <br>
- <br>
-        </del></p><h1 class="clase1" id="título-1">Título</h1> <br>
-        <p id="demo">Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p> <br>
-        <img src="http://puu.sh/e0BO7/f44d5bf1d6.png" alt="HackSpace Perú"> <br>
-         <br>
-            function miFuncion() { <br>
-                var x = document.getElementById("demo"); <br>
-                x.style.fontSize = "25px"; <br>
-                x.style.color = "red";  <br>
-            } <br>
- <br>
-        ¡Hazme clic! <br>
-     <br>
- <br>
-~<p></p>
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Página 2<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+            <span class="hljs-class">.clase1</span> <span class="hljs-rules">{
+                <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> blue</span></span>;
+            <span class="hljs-rule">}</span></span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clase1"</span>&gt;</span>Título<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"demo"</span>&gt;</span>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://puu.sh/e0BO7/f44d5bf1d6.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"HackSpace Perú"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">miFuncion</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">var</span> x = document.getElementById(<span class="hljs-string">"demo"</span>);
+                x.style.fontSize = <span class="hljs-string">"25px"</span>;           
+                x.style.color = <span class="hljs-string">"red"</span>; 
+            }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"miFuncion()"</span>&gt;</span>¡Hazme clic!<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
 
 <p>Si abres este archivo con Google Chrome verás lo siguiente:</p>
 
@@ -117,23 +117,23 @@
 <li>Abrimos el archivos Javascript llamado main.js y vemos el mismo código que teníamos dentro de <code>&lt;script type="text/javascript" src="static/template/themes/admin/layout.js"&gt;&lt;/script&gt;</code>.</li>
 </ol>
 
-<p><del>~html <br>
- <br>
- <br>
-     <br>
-     <br>
-    Página 3 <br>
-     <br>
-     <br>
-     <br>
-        </del></p><h1 class="clase1" id="título-2">Título</h1> <br>
-        <p id="demo">Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.</p> <br>
-        <img src="http://puu.sh/e0BO7/f44d5bf1d6.png" alt="HackSpace Perú"> <br>
-        ¡Hazme clic! <br>
-         <br>
-     <br>
- <br>
-~<p></p>
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Página 3<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"style.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clase1"</span>&gt;</span>Título<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"demo"</span>&gt;</span>Párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sequi optio ullam ad nihil dolores eum, officiis assumenda delectus ea.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://puu.sh/e0BO7/f44d5bf1d6.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"HackSpace Perú"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"miFuncion()"</span>&gt;</span>¡Hazme clic!<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"main.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
 
 <p>Si abres el archivo ejemplo3.html con Google Chrome verás que se ve exactamente igual que en el Ejemplo 2 y tiene la misma funcionalidad:</p>
 

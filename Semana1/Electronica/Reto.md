@@ -17,6 +17,14 @@ El código a copiar es el siguiente:
 >digitalWrite(13, LOW);  
 >}
 
+También puedes descargarlo:
+
+
+
+Si es la primera vez que usas el Arduino en tu computadora, sigue este tutorial de la página oficial:
+
+<http://arduino.cc/en/pmwiki.php?n=Guide/Windows>
+
 y las conexiones son las mismas que las realizadas en la entrada analógica, conectada al pin A0 del Arduino.
 Pdta: observa la placa Arduino al mover el potenciómetro con mucha atención... y verás la luz.
 

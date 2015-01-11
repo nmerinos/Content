@@ -188,4 +188,6 @@ El Fluid Grid System tiene el inconveniente que al reducir el tamaño de pantall
 |`.hidden-phone`|Visible| Oculto | Visible |
 |`.hidden-phone`|Visible| Visible | Oculto |
 
+Se profundizara en detalle sobre responsive design para templating 2.
+
 [1]: http://getbootstrap.com/2.3.2/index.html

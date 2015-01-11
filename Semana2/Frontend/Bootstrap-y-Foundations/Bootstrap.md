@@ -180,7 +180,7 @@ Ahora las columnas de nivel 2 con clase `.span6` funcionan con porcentajes pero 
 El Fluid Grid System tiene el inconveniente que al reducir el tamaño de pantalla drasticamente  en caso de celulares, el contenido en texto que generalmente es medianamente largo se comprime en espesor haciendo que las cajas div aumenten en altura. 
 
 | Clase   |      Telefono      |  Tablet |  Escritorio |
-|------------|:----------------------|:-----------|
+|------------|:----------------------|:-----------|:-----------|
 |`.visible-phone`|Visible| Oculto | Oculto |
 |`.visible-tablet`|Oculto| Visible | Oculto |
 |`.visible-desktop`|Oculto| Oculto | Visible |

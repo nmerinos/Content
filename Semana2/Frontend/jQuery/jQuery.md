@@ -15,13 +15,13 @@ Para importar la librería incluir la siguiente ruta dentro de la etiqueta `<scr
 
 La función **$()** recibe como parámetro una etiqueta HTML y devuelve todos los elementos (nodos) que concuerden con la expresión, para luego poder ejecutar una acción (action) `$(selector).action()` . Esta expresión es denominada **selector** y usa la sintaxis CSS para seleccionar elementos.
 
-$("p").hide() : El método hide() oculta elementos, en este caso elementos `<p>`.
+`$("p").hide()` : El método hide() oculta elementos, en este caso elementos `<p>`.
 
-$("#test").hide() : Ocultamos elementos con el atributo id="test".
+`$("#test").hide()` : Ocultamos elementos con el atributo id="test".
 
-$(".test").hide() : Ocultamos elementos con el atributo class="test".
+`$(".test").hide()` : Ocultamos elementos con el atributo class="test".
 
-$(this).hide() : Ocultamos el actual elemento html.
+`$(this).hide()` : Ocultamos el actual elemento html.
 
 **Ejemplo**
 
@@ -58,21 +58,21 @@ $(document).ready(function(){
 
 ### **Eventos jQuery**
 
-jQuery click() : Define un evento al momento de hacer click.
+`click()` : Define un evento al momento de hacer click.
 
-jQuery dblclick() : Define evento al momento de hacer doble click
+`dblclick()` : Define evento al momento de hacer doble click
 
-jQuery mouseenter() : Define evento al momento en que el puntero del mouse ingresa a la ubicacion del elemento.
+`mouseenter()` : Define evento al momento en que el puntero del mouse ingresa a la ubicacion del elemento.
 
-jQuery mouseleave() : Define evento al momento en que el puntero del mouse deja la ubicacion del elemento.
+`mouseleave()` : Define evento al momento en que el puntero del mouse deja la ubicacion del elemento.
 
-jQuery mousedown() : Define evento al momento en que el puntero del hace click en la ubicacion del elemento sin soltar.
+`mousedown()` : Define evento al momento en que el puntero del hace click en la ubicacion del elemento sin soltar.
 
-jQuery mouseup() : Define evento al momento en que el puntero suelta despues de hacer click en la ubicacion del elemento.
+`mouseup()` : Define evento al momento en que el puntero suelta despues de hacer click en la ubicacion del elemento.
 
-jQuery hover() : Permite definir los eventos mouseenter y mouseleave en una sola funcion.
+`hover()` : Permite definir los eventos mouseenter y mouseleave en una sola funcion.
 
-jQuery focus() and blur() : El evento focus se activa cuando se ingresa con el puntero del mouse a un campo del formulario y el evento blur se activa cuando se deja el campo.
+`focus()` y `blur()` : El evento focus se activa cuando se ingresa con el puntero del mouse a un campo del formulario y el evento blur se activa cuando se deja el campo.
 
 **Ejemplo**
 
@@ -118,11 +118,11 @@ Email: <input type="text" name="email">
 
 ### **Mostrar y Ocultar elementos**
 
-jQuery hide() : Metodo para ocultar un elemento.
+`hide()` : Método para ocultar un elemento.
 
-jQuery hide() and show() : Metodos para ocultar y mostrar elementos respectivamente.
+`hide()` y `show()` : Métodos para ocultar y mostrar elementos respectivamente.
 
-jQuery toggle() : Alterna entre los eventos hide() y show().
+`toggle()` : Alterna entre los eventos hide() y show().
 
 **Ejemplo**
 
@@ -154,13 +154,13 @@ $(document).ready(function(){
 
 ### **Control de opacidad**
 
-jQuery fadeIn() : Metodo para descolorar un elemento.
+`fadeIn()` : Método para descolorar un elemento.
 
-jQuery fadeOut() : Metodo para colorear un elemento.
+`fadeOut()` : Método para colorear un elemento.
 
-jQuery fadeToggle() : Alterna entre los metodos fadeIn() y fadeOut().
+`fadeToggle()` : Alterna entre los métodos fadeIn() y fadeOut().
 
-jQuery fadeTo() : Metodo para controlar la opacidad de un elemento siguiendo un parametro de referencia.
+`fadeTo()` : Método para controlar la opacidad de un elemento siguiendo un parametro de referencia.
 
 **Ejemplo**
 
@@ -195,11 +195,11 @@ $(document).ready(function(){
 
 ### **Deslizar elementos**
 
-jQuery slideDown() : Metodo para desliza hacia abajo un elemento.
+`slideDown()` : Método para desliza hacia abajo un elemento.
 
-jQuery slideUp() : Metodo para deslizar hacia arriba un elemento.
+`slideUp()` : Método para deslizar hacia arriba un elemento.
 
-jQuery slideToggle() : Alterna entre los metodos slideDown() y slideUp().
+`slideToggle()` : Alterna entre los métodos slideDown() y slideUp().
 
 **Ejemplo**
 
@@ -242,7 +242,7 @@ display:none;
 
 ### **Animar elementos**
 
-jQuery animate()
+Utilizamos `animate()` .
 
 **Ejemplo**
 
@@ -276,9 +276,7 @@ $(document).ready(function(){
 
 ### **Detener Animaciones**
 
-jQuery stop() sliding
-
-Detiene una animacion en curso.
+`stop()` sliding: detiene una animacion en curso.
 
 ```html
 <!DOCTYPE html>
@@ -326,11 +324,11 @@ $(document).ready(function(){
 
 ### **Obtener contenido y atributos**
 
-jQuery text() and html() : Obtener contenidos con los metodos text() y html().
+`text()` y `html()` : Obtener contenidos con los métodos text() y html().
 
-jQuery val() : Obtener el valor de un campo de formulario con el metodo val().
+`val()` : Obtener el valor de un campo de formulario con el método val().
 
-jQuery attr() : Obtener el valor de un atributo con el metodo attr().
+`attr()` : Obtener el valor de un atributo con el método attr().
 
 **Ejemplo**
 
@@ -368,7 +366,7 @@ $(document).ready(function(){
 
 ### **Configurar contenido y atributos**
 
-Configurar contenido con los metodos jQuery text(), html() y val().
+Configurar contenido con los métodos jQuery `text()`, `html()` y `val()`.
 
 **Ejemplo**
 
@@ -403,7 +401,7 @@ $(document).ready(function(){
 </html>
 ```
 
-Configurar valores de atributos usando la funcion callback (funcion parametro de otra funcion) dentro del metodo attr().
+Configurar valores de atributos usando la funcion callback (funcion parametro de otra funcion) dentro del método attr().
 
 **Ejemplo**
 
@@ -435,7 +433,7 @@ $(document).ready(function(){
 
 #### Agregar o Eliminar un elemento HTML
 
-Usaremos los metodos **append()**  y **remove()** , para realizar esto.
+Usaremos los métodos `append()`  y `remove()` , para realizar esto.
 
 ```html
 <!DOCTYPE html>
@@ -471,7 +469,7 @@ Texto dentro del div1.
 
 #### Configurar CSS
 
-Para esto usaremos los metodos **css** .
+Para esto usaremos el método `css()`.
 
 ```html
 <!DOCTYPE html>
@@ -500,7 +498,7 @@ $(document).ready(function(){
 
 #### Configurar CSS de elemento padre e hijo
 
-Para esto usaremos **parent()** y **children()**.
+Para esto usaremos `parent()` y `children()`.
 
 ```html
 <!DOCTYPE html>
@@ -543,9 +541,9 @@ $(document).ready(function(){
 
 ### Usando AJAX
 
-#### Metodo AJAX load()
+#### Método AJAX load()
 
-Cargamos el contenido de un elemento especifico dentro de un archivo, en un elemento `<div>` usando **load()**.
+Cargamos el contenido de un elemento especifico dentro de un archivo, en un elemento `<div>` usando `load()`.
 
 ```html
 <!DOCTYPE html>
@@ -569,9 +567,9 @@ $(document).ready(function(){
 </html>
 ```
 
-#### Peticion HTTP GET
+#### Petición HTTP GET
 
-Esto se logra gracias al metodo jQuery AJAX **$.get()**.
+Esto se logra gracias al método jQuery AJAX `$.get()`.
 
 ```html
 <!DOCTYPE html>

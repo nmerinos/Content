@@ -142,7 +142,7 @@ usuario = { "id" : "LulzSec","notas" : [ 15, 20, 13]};
 usuarioJSON = JSON.stringify(usuario, null, 2);
 console.log(usuarioJSON);
 ```
-*En el ejemplo 2 se utiliza el parametro opcional space el cual recibe un numero como parametro que utiliza para agregar ese numero de espacios al identado de cada linea del formato JSON*
+*En el ejemplo anterior se utiliza el parametro opcional space el cual recibe un numero como parametro que utiliza para agregar ese numero de espacios al identado de cada linea del formato JSON*
 
 Para el caso contrario ocurre cuando recibimos una cadena de texto en formato JSON desde el server y queremos convertir esta a un objeto JavaScript, para eso usamos el metodo JSON.parse().
 

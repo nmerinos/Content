@@ -29,9 +29,10 @@ var suma = function (a,b){
 ```
 La principal diferencia es que la declaracion de funcion hace que esta este disponible para todo el programa incluso se puede usar antes de la declaracion de la funcion.
 
-## Parametros  en funcions de JS
+## Parametros  en funciones de JS
 En JavaScript puedes llamar a una funcion con cualquier numero de parametros, independientemente del numero de parametros con la que fue definida la funcion.
-1.) Mas parametros que los que fueron definidos
+
+1. Mas parametros que los que fueron definidos
 Los parametros extras son ignorados en la funcion, pero puedes obtenerlos mediante la variable especial `arguments` la cual retorna todos los argumentos con la que fue llamada la funcion.
 ```js
 function div(a,b){
@@ -40,7 +41,7 @@ function div(a,b){
 }
 div(125,15,5) //
 ```
-2.) Menos parametros que los que fueron definidos:
+2. Menos parametros que los que fueron definidos:
 Si llamamos a una funcion con menos parametros con la que fue definida, estos parametros faltantes toman un valor indefinido `undefined`
 ```js
 function div(a,b){
@@ -51,7 +52,7 @@ function div(a,b){
 }
 div(70)
 ```
-3.) Parametros opcionales:
+3. Parametros opcionales:
 En algunos casos necesitamos llamar a las funciones con ciertos parametros que en caso de no pasarlos a la funcion se les asigne un valor por defecto.
 Por ejemplo si queremos definir una funcion que retorne un objeto con los datos de un usuario:
 ```js
@@ -127,7 +128,6 @@ Podemos ver que se trata de un objeto de JavaScript como se mostro en la primera
 
 En JavaScript podemos usar la funcion `JSON.stringify()` que convierte un elemento de JavaScript a una cadena de texto en formato JSON la cual se utilizara mas adelante para enviar datos desde el server al frontend.
 
-### Ejemplo1
 ```js
 usuario = { "id" : "LulzSec",
             "notas" : [ 15, 20, 13]
@@ -136,7 +136,7 @@ console.log(JSON.stringify(usuario));
 ```
 Ademas se pueden pasar los parametros alternativos `replacer` que modifica el objeto antes de convertirlo en una cadena de texto de JSON y `space` modifican el formato del espaciado.
 
-### Ejemplo2
+
 ```js
 usuario = { "id" : "LulzSec","notas" : [ 15, 20, 13]};
 usuarioJSON = JSON.stringify(usuario, null, 2);
@@ -146,7 +146,6 @@ console.log(usuarioJSON);
 
 Para el caso contrario ocurre cuando recibimos una cadena de texto en formato JSON desde el server y queremos convertir esta a un objeto JavaScript, para eso usamos el metodo JSON.parse().
 
-### Ejemplo3
 ```js
 usuarioJSON = '{ "id" : "LulzSec","notas" : [ 15, 20, 13]}';
 console.log(JSON.parse(usuarioJSON));

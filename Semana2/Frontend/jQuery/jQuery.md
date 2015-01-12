@@ -612,7 +612,7 @@ Crear un programa con jQuery para obtener un menú, tal que cada vez que el usua
 
 ## Cuestionario
 
-> 1.Qué es jQuery
+> 1.¿Qué es jQuery?
 
 a.Una librería.
 
@@ -622,7 +622,7 @@ c.Un lenguaje.
 
 d.Ninguna de las anteriores.
 
-> 2.Qué método usamos para definir un evento cuando el mouse deja la ubicación del elemento
+> 2.¿Qué método usamos para definir un evento cuando el mouse deja la ubicación del elemento?
 
 a.dblclick()
 
@@ -632,7 +632,7 @@ c.mouseleave()
 
 d.focus()
 
-> 3.Qué método usamos para alternar los métodos hide() y shown()
+> 3.¿Qué método usamos para alternar los métodos hide() y shown()?
 
 a.fadeToggle()
 
@@ -642,7 +642,7 @@ c.fadeTo()
 
 d.slideToggle()
 
-> 4.Qué es una función callback
+> 4.¿Qué es una función callback?
 
 a.En una función nueva.
 
@@ -652,7 +652,7 @@ c.Es una función que no tiene parametros.
 
 d.Ninguna de las anteriores.
 
-> 5.Cuál de las dos lineas de código es mas eficiente
+> 5.¿Cuál de las dos lineas de código es más eficiente?
 
 ```js
 document.getElementById( "logo" );

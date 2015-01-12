@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="jquery">jQuery</h1>
+
+<p>Es una librería de JavaScript. No es un lenguaje de programación. <br>
+Simplifica grandemente la programación con JavaScript. <br>
+Es fácil de aprender.</p>
+
+<p>Para importar la librería incluir la siguiente ruta dentro de la etiqueta <code>&lt;script&gt;</code>.</p>
+
+<p><code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;</code> <br>
+<code>&lt;/script&gt;</code></p>
+
+
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+
+
+<h3 id="selectores-jquery"><strong>Selectores jQuery</strong></h3>
+
+<p>La función <strong>$()</strong> recibe como parámetro una etiqueta HTML y devuelve todos los elementos (nodos) que concuerden con la expresión, para luego poder ejecutar una acción (action) <code>$(selector).action()</code> . Esta expresión es denominada <strong>selector</strong> y usa la sintaxis CSS para seleccionar elementos.</p>
+
+<p><code>$("p").hide()</code> : El método hide() oculta elementos, en este caso elementos <code>&lt;p&gt;</code>.</p>
+
+<p><code>$("#test").hide()</code> : Ocultamos elementos con el atributo id=”test”.</p>
+
+<p><code>$(".test").hide()</code> : Ocultamos elementos con el atributo class=”test”.</p>
+
+<p><code>$(this).hide()</code> : Ocultamos el actual elemento html.</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"p"</span>).hide();
+    $(<span class="hljs-string">"#test"</span>).hide();
+    $(<span class="hljs-string">".test"</span>).hide();
+    $(<span class="hljs-keyword">this</span>).hide();
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Yo no desaparesco.<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Este es un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Desaparece por la etiqueta p. :(<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"test"</span>&gt;</span>Desaparece por el id test. :(<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"test"</span>&gt;</span>Desaparece por la clase test. :(<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Desaparece por ser button. :(<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><a href="http://api.jquery.com/category/selectors/">Leer este enlace.</a></p>
+
+
+
+<h3 id="eventos-jquery"><strong>Eventos jQuery</strong></h3>
+
+<p><code>click()</code> : Define un evento al momento de hacer click.</p>
+
+<p><code>dblclick()</code> : Define evento al momento de hacer doble click</p>
+
+<p><code>mouseenter()</code> : Define evento al momento en que el puntero del mouse ingresa a la ubicacion del elemento.</p>
+
+<p><code>mouseleave()</code> : Define evento al momento en que el puntero del mouse deja la ubicacion del elemento.</p>
+
+<p><code>mousedown()</code> : Define evento al momento en que el puntero del hace click en la ubicacion del elemento sin soltar.</p>
+
+<p><code>mouseup()</code> : Define evento al momento en que el puntero suelta despues de hacer click en la ubicacion del elemento.</p>
+
+<p><code>hover()</code> : Permite definir los eventos mouseenter y mouseleave en una sola funcion.</p>
+
+<p><code>focus()</code> y <code>blur()</code> : El evento focus se activa cuando se ingresa con el puntero del mouse a un campo del formulario y el evento blur se activa cuando se deja el campo.</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"h1"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-keyword">this</span>).hide();
+  });
+  $(<span class="hljs-string">"p"</span>).dblclick(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-keyword">this</span>).hide();
+  });
+  $(<span class="hljs-string">"#p1"</span>).mouseenter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    alert(<span class="hljs-string">"Has entrado a p1!"</span>);
+  });
+  $(<span class="hljs-string">"input"</span>).focus(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">"background-color"</span>,<span class="hljs-string">"#cccccc"</span>);
+  });
+  $(<span class="hljs-string">"input"</span>).blur(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">"background-color"</span>,<span class="hljs-string">"#ffffff"</span>);
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>If you click on me, I will disappear.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>If you double-click on me, I will disappear.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"p1"</span>&gt;</span>Enter this paragraph.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+Nombre: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"fullname"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+Email: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"email"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><a href="http://api.jquery.com/category/events/">Leer este enlace.</a></p>
+
+
+
+<h3 id="mostrar-y-ocultar-elementos"><strong>Mostrar y Ocultar elementos</strong></h3>
+
+<p><code>hide()</code> : Método para ocultar un elemento.</p>
+
+<p><code>hide()</code> y <code>show()</code> : Métodos para ocultar y mostrar elementos respectivamente.</p>
+
+<p><code>toggle()</code> : Alterna entre los eventos hide() y show().</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"#hide"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">".p1"</span>).hide();
+  });
+  $(<span class="hljs-string">"#show"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">".p1"</span>).show();
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p1"</span>&gt;</span>Si clickeas en el boton "Hide", Yo desaparecere.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hide"</span>&gt;</span>Hide<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"show"</span>&gt;</span>Show<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="control-de-opacidad"><strong>Control de opacidad</strong></h3>
+
+<p><code>fadeIn()</code> : Método para descolorar un elemento.</p>
+
+<p><code>fadeOut()</code> : Método para colorear un elemento.</p>
+
+<p><code>fadeToggle()</code> : Alterna entre los métodos fadeIn() y fadeOut().</p>
+
+<p><code>fadeTo()</code> : Método para controlar la opacidad de un elemento siguiendo un parametro de referencia.</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#div1"</span>).fadeIn();
+    $(<span class="hljs-string">"#div2"</span>).fadeOut(<span class="hljs-string">"slow"</span>);
+    $(<span class="hljs-string">"#div3"</span>).fadeToggle(<span class="hljs-number">3000</span>);
+    $(<span class="hljs-string">"#div4"</span>).fadeTo(<span class="hljs-string">"slow"</span>,<span class="hljs-number">0.7</span>);
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Demostrar fadeIn,fadeOut,fadeToggle y fadeTo con diferentes parametros.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Click para probar fadeIn() en las cajas.<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"div1"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:80px;height:80px;display:none;background-color:red;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"div2"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:80px;height:80px;background-color:green;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"div3"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:80px;height:80px;display:none;background-color:blue;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"div4"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:80px;height:80px;display:none;background-color:pink;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="deslizar-elementos"><strong>Deslizar elementos</strong></h3>
+
+<p><code>slideDown()</code> : Método para desliza hacia abajo un elemento.</p>
+
+<p><code>slideUp()</code> : Método para deslizar hacia arriba un elemento.</p>
+
+<p><code>slideToggle()</code> : Alterna entre los métodos slideDown() y slideUp().</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"> 
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"#flip"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#panel"</span>).slideToggle(<span class="hljs-string">"slow"</span>);
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"> 
+<span class="hljs-id">#panel</span>,<span class="hljs-id">#flip</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">5</span>px</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#e5eecc</span></span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value">solid <span class="hljs-number">1</span>px <span class="hljs-hexcolor">#c3c3c3</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-id">#panel</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">50</span>px</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
+<span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"flip"</span>&gt;</span>Click para aplicar slide up y slide down al panel<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"panel"</span>&gt;</span>Hola mundo<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="animar-elementos"><strong>Animar elementos</strong></h3>
+
+<p>Utilizamos <code>animate()</code> .</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"> 
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">var</span> div=$(<span class="hljs-string">"div"</span>);
+    div.animate({height:<span class="hljs-string">'300px'</span>,opacity:<span class="hljs-string">'0.4'</span>},<span class="hljs-string">"slow"</span>);
+    div.animate({width:<span class="hljs-string">'300px'</span>,opacity:<span class="hljs-string">'0.8'</span>},<span class="hljs-string">"slow"</span>);
+    div.animate({height:<span class="hljs-string">'100px'</span>,opacity:<span class="hljs-string">'0.4'</span>},<span class="hljs-string">"slow"</span>);
+    div.animate({width:<span class="hljs-string">'100px'</span>,opacity:<span class="hljs-string">'0.8'</span>},<span class="hljs-string">"slow"</span>);
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Empezar Animacion<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Por default, los elementos HTML tienen una posicion estatica, y no pueden ser movidos. Para manipularl la posicion, recuerda primero configurar la propiedad de posicion CSS de un elemento a relativo, fijo o absoluto.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background:#98bf21;height:100px;width:100px;position:absolute;"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="detener-animaciones"><strong>Detener Animaciones</strong></h3>
+
+<p><code>stop()</code> sliding: detiene una animacion en curso.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"> 
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"#start"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"div"</span>).animate({left:<span class="hljs-string">'100px'</span>},<span class="hljs-number">5000</span>);
+    $(<span class="hljs-string">"div"</span>).animate({fontSize:<span class="hljs-string">'3em'</span>},<span class="hljs-number">5000</span>);
+  });
+
+  $(<span class="hljs-string">"#stop"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"div"</span>).stop();
+  });
+
+  $(<span class="hljs-string">"#stop2"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"div"</span>).stop(<span class="hljs-literal">true</span>);
+  });
+
+  $(<span class="hljs-string">"#stop3"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"div"</span>).stop(<span class="hljs-literal">true</span>,<span class="hljs-literal">true</span>);
+  });
+
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"start"</span>&gt;</span>Empezar<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"stop"</span>&gt;</span>Detener<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"stop2"</span>&gt;</span>Detener todo<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"stop3"</span>&gt;</span>Detener y Terminar<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>El boton "Empezar" empieza la animacion.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>El boton "Detener" detiene la animacion activa actual, pero permite que pueda continuar despues.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>El boton "Detener todo" detiene la actual animacion activa y borra la cola de animacion; por lo que todas las animaciones en el elemento son detenida .<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>El boton "Detener y Terminar" apresura a través de la corriente de animación activa, luego se detiene.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span> 
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background:#98bf21;height:100px;width:200px;position:absolute;"</span>&gt;</span>HELLO<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="obtener-contenido-y-atributos"><strong>Obtener contenido y atributos</strong></h3>
+
+<p><code>text()</code> y <code>html()</code> : Obtener contenidos con los métodos text() y html().</p>
+
+<p><code>val()</code> : Obtener el valor de un campo de formulario con el método val().</p>
+
+<p><code>attr()</code> : Obtener el valor de un atributo con el método attr().</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"#btn1"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    alert(<span class="hljs-string">"Text: "</span> + $(<span class="hljs-string">"#test"</span>).text());
+  });
+  $(<span class="hljs-string">"#btn2"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    alert(<span class="hljs-string">"HTML: "</span> + $(<span class="hljs-string">"#test"</span>).html());
+  });
+  $(<span class="hljs-string">"#button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    alert($(<span class="hljs-string">"#hsla"</span>).attr(<span class="hljs-string">"href"</span>));
+    alert(<span class="hljs-string">"Valor: "</span> + $(<span class="hljs-string">"#test"</span>).val());
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"test"</span>&gt;</span>Esto es letra <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>negrita<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> en un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"btn1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Mostrar texto."</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"btn2"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Mostrar HTML."</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Name: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"test"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Hackspace"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.hackspace.la"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hsla"</span>&gt;</span>hackspace.la<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Mostrar valor"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="configurar-contenido-y-atributos"><strong>Configurar contenido y atributos</strong></h3>
+
+<p>Configurar contenido con los métodos jQuery <code>text()</code>, <code>html()</code> y <code>val()</code>.</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"#btn1"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#test1"</span>).text(<span class="hljs-string">"Hola mundo texto!"</span>);
+  });
+  $(<span class="hljs-string">"#btn2"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#test2"</span>).html(<span class="hljs-string">"&lt;b&gt;Hola mundo html!&lt;/b&gt;"</span>);
+  });
+  $(<span class="hljs-string">"#btn3"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#test3"</span>).val(<span class="hljs-string">"Hola mundo valores!"</span>);
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"test1"</span>&gt;</span>Este es un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"test2"</span>&gt;</span>Este es otro parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Campo input: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"test3"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Hackspace"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"btn1"</span>&gt;</span>Configurar texto<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"btn2"</span>&gt;</span>Configurar HTML<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"btn3"</span>&gt;</span>Configurar valores<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Configurar valores de atributos usando la funcion callback (funcion parametro de otra funcion) dentro del método attr().</p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#hsla"</span>).attr(<span class="hljs-string">"href"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(i,origValue)</span>{</span>
+      <span class="hljs-keyword">return</span> origValue + <span class="hljs-string">"/jquery"</span>; 
+    });
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.hackspace.com"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hsla"</span>&gt;</span>Hackspace Core Upgrade 2015<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Cambiar el valor href<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Mouse sobre el link (o click en el) para ver que el valor del atributo href ha cambiado.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="el-dom">El DOM</h3>
+
+
+
+<h4 id="agregar-o-eliminar-un-elemento-html">Agregar o Eliminar un elemento HTML</h4>
+
+<p>Usaremos los métodos <code>append()</code>  y <code>remove()</code> , para realizar esto.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appendText</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">var</span> txt1 = <span class="hljs-string">"&lt;p&gt;Text.&lt;/p&gt;"</span>;              <span class="hljs-comment">// Crear texto con HTML</span>
+    <span class="hljs-keyword">var</span> txt2 = $(<span class="hljs-string">"&lt;p&gt;&lt;/p&gt;"</span>).text(<span class="hljs-string">"Text."</span>);  <span class="hljs-comment">// Crear texto con jQuery</span>
+    <span class="hljs-keyword">var</span> txt3 = document.createElement(<span class="hljs-string">"p"</span>);
+    txt3.innerHTML = <span class="hljs-string">"Text."</span>;               <span class="hljs-comment">// Crear texto con DOM</span>
+    $(<span class="hljs-string">"body"</span>).append(txt1, txt2, txt3);     <span class="hljs-comment">// Agregar txt1,txt2 y txt3</span>
+        $(<span class="hljs-string">"#div1"</span>).remove();                <span class="hljs-comment">// Eliminar div1</span>
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"div1"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"height:100px;width:300px;border:1px solid black;background-color:yellow;"</span>&gt;</span>
+
+Texto dentro del div1.
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Dentro del div1.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Dentro del div1.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Fuera del div1.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"appendText()"</span>&gt;</span>Append text<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h4 id="configurar-css">Configurar CSS</h4>
+
+<p>Para esto usaremos el método <code>css()</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"p"</span>).css({<span class="hljs-string">"background-color"</span>:<span class="hljs-string">"yellow"</span>,<span class="hljs-string">"font-size"</span>:<span class="hljs-string">"200%"</span>});
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Esta es una cabecera<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-color:#ff0000"</span>&gt;</span>Este es un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-color:#00ff00"</span>&gt;</span>Este es un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-color:#0000ff"</span>&gt;</span>Este es un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Este es un parrafo.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Configurar estilos<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h4 id="configurar-css-de-elemento-padre-e-hijo">Configurar CSS de elemento padre e hijo</h4>
+
+<p>Para esto usaremos <code>parent()</code> y <code>children()</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+<span class="hljs-class">.descendants</span> *
+<span class="hljs-rules">{ 
+<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">2</span>px solid lightgrey</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> lightgrey</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">5</span>px</span></span>;
+<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">15</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+
+  $(<span class="hljs-string">".descendants"</span>).children().css({<span class="hljs-string">"color"</span>:<span class="hljs-string">"red"</span>,<span class="hljs-string">"border"</span>:<span class="hljs-string">"2px solid red"</span>});
+  $(<span class="hljs-string">"p"</span>).parent().css({<span class="hljs-string">"color"</span>:<span class="hljs-string">"red"</span>,<span class="hljs-string">"border"</span>:<span class="hljs-string">"2px solid pink"</span>});
+  $(<span class="hljs-string">"p"</span>).children().css({<span class="hljs-string">"color"</span>:<span class="hljs-string">"red"</span>,<span class="hljs-string">"border"</span>:<span class="hljs-string">"2px solid green"</span>});
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grandparent"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:800px"</span>&gt;</span>div abuelo
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"descendants"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:500px;"</span>&gt;</span>div padre 
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>p hijo
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>span nieto<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>     
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>p hijo
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>span nieto<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="usando-ajax">Usando AJAX</h3>
+
+
+
+<h4 id="método-ajax-load">Método AJAX load()</h4>
+
+<p>Cargamos el contenido de un elemento especifico dentro de un archivo, en un elemento <code>&lt;div&gt;</code> usando <code>load()</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $(<span class="hljs-string">"#div1"</span>).load(<span class="hljs-string">"jQuery.txt #p1"</span>);
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"div1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>jQuery AJAX cambiara este texto<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Contenido externo<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h4 id="petición-http-get">Petición HTTP GET</h4>
+
+<p>Esto se logra gracias al método jQuery AJAX <code>$.get()</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  $(<span class="hljs-string">"button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    $.get(<span class="hljs-string">"jQuery.txt"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data,status)</span>{</span>
+      alert(<span class="hljs-string">"Data: "</span> + data + <span class="hljs-string">"\nStatus: "</span> + status);
+    });
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Enviar una peticion HTTP GET y conseguir el resultado devuelta<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre></div></body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="arduino">Arduino</h1>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<p>Pon a prueba tus habilidades de programación con estos ejercicios. Algunos están sencillos, otros no tanto… ¡escoge los 4 que más te gusten y experimenta!</p>
+
+<p>1) Haz parpadear un led</p>
+
+<p>2) Varía la intensidad de brillo de un led mediante un potenciómetro</p>
+
+<p>3) Parpadear un led MIENTRAS se presiona un botón. Al soltarlo, debe dejar de parpadear</p>
+
+<p>4) Variar la intensidad de un led de manera que vaya de menos a más y se reinicie</p>
+
+<p>5) Variar la intensidad de un led de manera que vaya de menos a más, y luego de más a menos.</p>
+
+<p>6) Hacer un juego de luces con 4 leds (la secuencia puede ser como deseen)</p>
+
+<p>7) Hacer un juego de luces con 4 leds (la secuencia debe ser (según posición) “1, 2, 3, 4, 3, 2, 1”)</p>
+
+<p>8) Cada vez que se presiona un botón, se incrementa un contador, y un led se prende cada número par.</p></div></body>
+</html>

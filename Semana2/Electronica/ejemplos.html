@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><p>Damas y caballeros, prepárense. <br>
+El tema de esta semana es:  </p>
+
+
+
+<h1 id="arduino">Arduino</h1>
+
+<p>Arduino es una plataforma de hardware y software de fácil manejo basada en microcontroladores AVR. Esta vez dejaremos la teoría un poco de lado, puesto que estoy casi seguro de que ya quieren empezar.</p>
+
+
+
+<h4 id="pues-entonces-empezemos">Pues entonces, empezemos.</h4>
+
+<p>Existen 2 funciones básicas:</p>
+
+<p><strong><em>Void loop</em></strong> y <strong><em>void setup</em></strong>  </p>
+
+<p>En el <em>void setup</em> ponemos aquello que deseamos que solo ocurra una vez cada vez que se resetee al arduino, mientras que en el <em>void loop</em> colocamos aquello que deseamos que se repita mientras el arduino esté funcionando.</p>
+
+<p>Si lo queremos asimilar mejor, un ejemplo no cae mal. Si deseas fotocopiar una página 50 veces, ¿cuántas veces prendes la impresora? Correcto, entonces eso iría en el void setup, solo necesitamos que pase una vez. Pero la acción de fotocopiar si necesitamos que se repita hasta cumplir su objetivo. Entonces nuestro programa quedaría más o menos así:</p>
+
+<pre class="prettyprint"><code class="language-ino hljs coffeescript"><span class="hljs-reserved">void</span> setup()  
+{  
+    encender la impresora  
+}  
+<span class="hljs-reserved">void</span> <span class="hljs-keyword">loop</span>()  
+{  
+fotocopiar hasta tener las <span class="hljs-number">50</span> copias  
+}  </code></pre>
+
+<p>Entonces ahora veremos algunas otras sentencias usadas frecuentemente:</p>
+
+<p><strong><em>Declarando variables</em></strong>  </p>
+
+<p>Las variables pueden entenderse como contenedores específicos, como los cajones para la ropa y los recipientes para comida. ¿Se te ocurre guardar sal en el recipiente del azúcar? Exactamente. No puedes guardar un dato en una variable que no le corresponda. Por ejemplo, en una variable de tipo <strong>int</strong> solo pueden entrar números enteros, es decir que no podremos guardar valores como <strong>“12,5”</strong> (con coma decimal), pero sí valores como <strong>12</strong> y <strong>13</strong> (números enteros).</p>
+
+<p>Los nombres de las variables no deben de comenzar con un número ni tener espacios, y de preferencia deben de tener un nombre reconocible.  </p>
+
+<p>Ejemplos:  </p>
+
+<p>int promedio;  </p>
+
+<p>float temperatura;  </p>
+
+<p>boolean estado;  </p>
+
+<p>char datoIngresado;  </p>
+
+<p>…</p>
+
+<p><strong><em>pinMode(pin, Mode)    -se usa en el void Setup</em></strong> </p>
+
+<p>¿Recuerdas que los pines digitales podían ser configurados como entradas y como salidas? Esta es la sentencia encargada de hacerlo. Si quieres que un pin sea salida, lo declaras como OUTPUT (siempre en mayúsculas), y si quieres que sea entrada, como INPUT. </p>
+
+<p><strong>Ejemplo</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs scss"><span class="hljs-function">pinMode(<span class="hljs-number">13</span>, OUTPUT)</span> <span class="hljs-comment">// declaramos el pin 13 como salida  </span>
+<span class="hljs-function">pinMode(<span class="hljs-number">5</span>, INPUT)</span> <span class="hljs-comment">// declaramos el pin 5 como entrada</span></code></pre>
+
+<p><strong><em>digitalWrite(pin, value)</em></strong>  </p>
+
+<p>Puedes enviar (escribir) 5V o 0V desde un pin declarado como salida. </p>
+
+<p><strong>Ejemplo</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs scss"><span class="hljs-function">digitalWrite(<span class="hljs-number">13</span>, HIGH)</span> <span class="hljs-comment">// escribimos un 1 lógico (5V, led encendido)  </span>
+<span class="hljs-function">digitalWrite(<span class="hljs-number">13</span>, LOW)</span>  <span class="hljs-comment">// escribimos un 0 lógico (0V, led apagado)</span></code></pre>
+
+<p><strong><em>digitalRead(pin)</em></strong>   </p>
+
+<p>Lee el valor en un pin declarado como entrada. Recibe 2 valores: HIGH y LOW </p>
+
+<p>Ejemplos:  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs autohotkey">digitalRead(<span class="hljs-number">5</span>) //si lee un valor cercano <span class="hljs-literal">a</span> <span class="hljs-number">5</span>V en el pin, devuelve HIGH, si recibe menos, un valor cercano <span class="hljs-literal">a</span> los <span class="hljs-number">0</span>V, devuelve LOW</code></pre>
+
+<p><strong><em>analogRead(pin)</em></strong>   </p>
+
+<p>Lee un valor en uno de los pines analógicos (A0-A5) y lo devuelve como un entero entre 0 y 1023. </p>
+
+<p>Ejemplos:  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs cs"><span class="hljs-keyword">int</span> dato;
+dato = analogRead(A0) <span class="hljs-comment">// almacena un valor entre 0 y 1023 según el voltaje en el pin.</span></code></pre>
+
+<p><strong><em>analogWrite(pin, value)</em></strong>  </p>
+
+<p>Escribe un valor de PWM (permite variar intensidad) entre 0 y 255, siendo 255 toda la intensidad y 0 ninguna. (ejemplo, el brillo de un led).  </p>
+
+<p>Ejemplo:  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs scss"><span class="hljs-function">analogWrite(<span class="hljs-number">9</span>, <span class="hljs-number">250</span>)</span>; <span class="hljs-comment">// el led brilla casi a su 100%  </span>
+<span class="hljs-function">analogWrite(<span class="hljs-number">9</span>, <span class="hljs-number">127</span>)</span>; <span class="hljs-comment">// el led brilla a su 50%  </span>
+<span class="hljs-function">analogWrite(<span class="hljs-number">9</span>, <span class="hljs-number">10</span>)</span>;  <span class="hljs-comment">// el led casi no brilla   </span></code></pre>
+
+<p><strong><em>delay(milisegundos)</em></strong>  </p>
+
+<p>Detiene el Arduino por una cantidad de milisegundos.  </p>
+
+<p>Ejemplo:   </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs scss"><span class="hljs-function">digitalWrite(<span class="hljs-number">13</span>, HIGH)</span>; <span class="hljs-comment">// encender un led</span>
+<span class="hljs-function">delay(<span class="hljs-number">500</span>)</span>;             <span class="hljs-comment">//esperar medio segundo</span>
+<span class="hljs-function">digitalWrite(<span class="hljs-number">13</span>, LOW)</span>;  <span class="hljs-comment">// apagar el led</span>
+<span class="hljs-function">delay(<span class="hljs-number">500</span>)</span>              <span class="hljs-comment">// esperar medio segundo</span></code></pre>
+
+<p><strong><em>map(variable, A, B, C, D)</em></strong>  </p>
+
+<p>Escala la variable de A a B a un rango de C a D. Por ejemplo, al mover un potenciómetro, tenemos una variación de 0 a 1023, pero PWM necesita variación de 0 a 255. </p>
+
+<p>Entonces mapeamos:  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs autohotkey">valorPWM = map(valorPotenciometro, <span class="hljs-number">0</span>, <span class="hljs-number">1023</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>) // convierte la variación de <span class="hljs-number">0</span> <span class="hljs-literal">a</span> <span class="hljs-number">1023</span> <span class="hljs-literal">a</span> una variación de <span class="hljs-number">0</span> <span class="hljs-literal">a</span> <span class="hljs-number">255</span></code></pre>
+
+<p><strong><em>Estructuras de control</em></strong></p>
+
+<p>Aquí tenemos a los clásicos <strong>for</strong>, <strong>while</strong>, <strong>if</strong>, <strong>switch</strong> y similares. <br>
+Usamos el if para tomar desiciones en función a un enunciado. Si este es verdadero, se ejecuta lo que se  encuentra dentro del “if”. Caso contrario, se ejecuta el código dentro del “else”  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs cs"><span class="hljs-keyword">if</span>(condición)  
+{  
+    <span class="hljs-comment">//acciones A </span>
+}    
+<span class="hljs-keyword">else</span>  
+{  
+    <span class="hljs-comment">//acciones B</span>
+}</code></pre>
+
+<p>el for nos permite repetir un conjunto de instrucciones una cantidad determinada de veces</p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs matlab"><span class="hljs-keyword">for</span> (int <span class="hljs-built_in">i</span>=<span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt;= valor máximo; <span class="hljs-built_in">i</span>++)    
+<span class="hljs-cell">{  
+      //acción a repetir  
+}</span>   </code></pre>
+
+<p>el switch nos permite seleccionar un caso en función a una variable  </p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs cs"><span class="hljs-keyword">switch</span>(<span class="hljs-keyword">case</span>)  
+{  
+    <span class="hljs-keyword">case</span> a: acción A  
+    <span class="hljs-keyword">break</span>;  
+    <span class="hljs-keyword">case</span> b: acción B  
+    <span class="hljs-keyword">break</span>;  
+    .  
+    .  
+    .  
+    <span class="hljs-keyword">default</span>: <span class="hljs-keyword">break</span>; <span class="hljs-comment">// el default es aquel caso que ocurre cuando ninguno anterior es seleccionado  </span>
+}  </code></pre>
+
+<p>el while es aquel ciclo que se repite mientras una condición es verdadera</p>
+
+
+
+<pre class="prettyprint"><code class="language-ino hljs mathematica"><span class="hljs-keyword">While</span>(condición)  
+<span class="hljs-list">{  
+    //acción a repetirse  
+}</span>  </code></pre>
+
+<p>…<strong><em>y esas son las funciones básicas que usaremos. Si desean indagar más, pueden buscar en las referencias de arduino, en su página oficial, <a href="http://arduino.cc/en/Reference/HomePage">http://arduino.cc/en/Reference/HomePage</a></em></strong></p>
+
+<p><strong>*ALGO IMPORTANTE:</strong></p>
+
+<p>Si vas a conectar leds, no olvides ponerles una resistencia entre el led y el pin de salida (de 220 ohm o según colores, rojo rojo marrón; o una de 330, naranja naranja marrón). Conectar el led solo puede causar que se queme, excepto por el pin 13, que tiene una resistencia interna</p>
+
+<p>pin de salida Arduino]—–(RESISTENCIA)——–[LED]—-[GND o tierra del Arduino</p></div></body>
+</html>

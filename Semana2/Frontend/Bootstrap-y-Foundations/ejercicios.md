@@ -2,10 +2,11 @@
 
 ¿Recuerdas el primer reto de Frontend? Pues en este ejercicios tendrás que realizarlo nuevamente, pero ahora utilizando [Bootstrap en su versión 2.3.2](http://getbootstrap.com/2.3.2/index.html).
 
-Esta es la maquetación que debes seguir (utilizando el grid system y las etiquetas que mencionamos acá)
+Esta es la maquetación que debes seguir (utilizando el grid system y las etiquetas que mencionamos acá):
+
 ![Maquetación General](imagen1.gif)
 
-Y esta es la estructura más detallada de cada artículo (ponle el contenido que desees). Preocúpate por utilizar todas las clases que puedas para que las vayas conociendo como se debe.
+Y esta es la estructura más detallada de cada artículo (ponle el contenido que desees). Preocúpate por utilizar todas las clases de Bootstrap que puedas para que las vayas conociendo como se debe:
 
 ![Dentro del artículo](imagen2.png)
 

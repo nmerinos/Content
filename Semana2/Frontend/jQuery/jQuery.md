@@ -500,7 +500,7 @@ $(document).ready(function(){
 
 Para esto usaremos **parent()** y **children()**.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -594,4 +594,79 @@ $(document).ready(function(){
 </html>
 ```
 
+## Ejercicios
 
+Pero antes de continuar, reforcemos lo que hemos aprendido en esta primera sección con unos cuántos ejercicios muy simples.
+
+### Ejercicio 1
+
+En 5 segundos aumentar de tamaño a un texto "TEST" y luego desaparecerlo al pasar el mouse encima del texto. Esto usando animate() y modificanto el css apartir de eso.
+
+### Ejercicio 2
+
+Introduce en un documento el plugin [jquery.snow.js](https://drive.google.com/file/d/0B6R_1Md_rpWWWVFuc0VSOFlGalk/view?usp=sharing) para crear el efecto de nevando. Deberás implementar el tamaño mínimo del copo de nieve a 12 (minSize), el tamaño máximo a 18 (maxSize) , la frecuencia con la que cae la nieve a 400 (newOn).
+
+### Ejercicio 3
+
+Crear un programa con jQuery para obtener un menú, tal que cada vez que el usuario introduce el puntero  el item cambia de color.
+
+## Cuestionario
+
+> 1.Qué es jQuery
+
+a.Una librería.
+
+b.Un framework.
+
+c.Un lenguaje.
+
+d.Ninguna de las anteriores.
+
+> 2.Qué método usamos para definir un evento cuando el mouse deja la ubicación del elemento
+
+a.dblclick()
+
+b.mouseenter()
+
+c.mouseleave()
+
+d.focus()
+
+> 3.Qué método usamos para alternar los métodos hide() y shown()
+
+a.fadeToggle()
+
+b.toggle()
+
+c.fadeTo()
+
+d.slideToggle()
+
+> 4.Qué es una función callback
+
+a.En una función nueva.
+
+b.Es una función que se encuentra dentro de otra como un parámetro.
+
+c.Es una función que no tiene parametros.
+
+d.Ninguna de las anteriores.
+
+> 5.Cuál de las dos lineas de código es mas eficiente
+
+```js
+document.getElementById( "logo" );
+or
+```
+
+```js
+$( "#logo" );
+```
+
+a.La primera, pues es javascript puro.
+
+b.La segunda, pues es mas rápido usar jquery.
+
+c.Ambas.
+
+d.Depende de como se usen.

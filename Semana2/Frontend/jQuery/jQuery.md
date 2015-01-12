@@ -1,10 +1,10 @@
 # jQuery
 
-Es una libreria de JavaScript. No es un lenguaje de programacion.
-Simplifica grandemente la programacion con JavaScript.
-Es facil de aprender.
+Es una librería de JavaScript. No es un lenguaje de programación.
+Simplifica grandemente la programación con JavaScript.
+Es fácil de aprender.
 
-Para importar la libreria incluir la siguiente ruta dentro de la etiqueta `<script>`.
+Para importar la librería incluir la siguiente ruta dentro de la etiqueta `<script>`.
 
 `<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">`
 `</script>`
@@ -12,6 +12,8 @@ Para importar la libreria incluir la siguiente ruta dentro de la etiqueta `<scri
 ## Ejemplos
 
 ### **Selectores jQuery**
+
+La función **$()** recibe como parámetro una etiqueta HTML y devuelve todos los elementos (nodos) que concuerden con la expresión, para luego poder ejecutar una acción (action) `$(selector).action()` . Esta expresión es denominada **selector** y usa la sintaxis CSS para seleccionar elementos.
 
 $("p").hide() : El método hide() oculta elementos, en este caso elementos `<p>`.
 

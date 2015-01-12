@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="twitter-bootstrap">Twitter Bootstrap</h1>
+
+<p>Bootstrap es un framework de desarrollo frontend que contiene un conjunto de herramientas y recursos que son comunes en el diseño web.</p>
+
+<p>Un dato importante sobre este articulo es que utilizaremos la version 2.3.2 en vez de la ultima hasta el momento (3.3.1) debido a que esta ultima versión es un poco más dificil de aprender para desarrolladores/diseñadores principiantes. Los animamos a que una vez aprendido, avancen a la ultima versión para no quedar obsoletos.</p>
+
+<p>¡Pues empecemos!</p>
+
+
+
+<h2 id="descargando-bootstrap">Descargando Bootstrap</h2>
+
+<p>Puedes empezar descargando Bootstrap [aquí][<a href="http://getbootstrap.com/2.3.2/]">http://getbootstrap.com/2.3.2/]</a>. <br>
+Luego de descargarlo nos encontramos con 3 carpetas, una para el CSS, otra para el JS y una para las imágenes (img). Dentro de las carpetas css y js verás dos versiones para cada archivo, una versión compilada (.min.css/.min.js) y la original (.css/.js).</p>
+
+<pre><code>bootstrap/
+|—— css/
+|   |—— bootstrap.css
+|   |—— bootstrap.min.css
+|   |—— bootstrap-responsive.css
+|   |—— bootstrap-responsive.min.css
+|—— img/
+|   |—— glyphicons-halflings.png
+|   |—— glyphicons-halflings-white.png
+|—— js/
+|   |—— bootstrap.js
+|   |—— bootstrap.min.js
+</code></pre>
+
+<p>¿Cuál es la diferencia? Que la compilada pesa mucho menos ya que ha pasado por un proceso de reducción en el que se le quitan todos los espacios y el ordenamiento. Sin embargo, si uno desea editar el CSS o JS fuente de Bootstrap, es más fácil editar los archivos originales sin reducir (ya que es máse sencillo encontrar la sección que deseamos editar) y utilizarlos dentro de nuestra página en vez de utilizar los <code>.min</code>.</p>
+
+<p>Para nuestro propósito, utilizaremos la versión compilada (.min). Esto también incrementa la eficiencia del sitio desarrollado por tener menor peso de archivos.</p>
+
+
+
+<h2 id="creando-un-archivo-básico-en-html">Creando un archivo básico en HTML</h2>
+
+<p>Empezamos por un archivo con la siguiente estructura.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Basic HTML File&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Con <code>&lt;!DOCTYPE html&gt;</code> declaramos el archivo como HTML5. Con <code>&lt;meta charset="utf-8"&gt;</code> declaramos que el el archivo soporte caracteres especiales en nuestro idioma como la ñ y tildes.</p>
+
+<p>Para usar Bootstrap, agregamos el archivo CSS <code>bootstrap.min.css</code> antes de <code>&lt;/head&gt;</code> y tambien el archivo JS <code>bootstrap.min.js</code> antes de <code>&lt;/body&gt;</code>.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Basic Bootstrap Template&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Con esto ya tenemos todo listo para usar Bootstrap.</p>
+
+
+
+<h3 id="ejemplo-1-maquetando-con-el-fixed-grid-system">Ejemplo 1: Maquetando con el Fixed Grid System</h3>
+
+<p>Por defecto el sistema de Grid de Bootstrap se basa en una rejilla de 12 columnas  con tamaño de pantalla 940px. </p>
+
+<p>Este sistema de grid es similar a una tabla, donde cada fila puede tener a lo mucho 12 columnas de diferentes anchos ya definidos en pixeles pero ya determinados por archivos CSS de bootstrap.</p>
+
+<p>Empezamos añadiendo al <code>&lt;body&gt;</code> un div con clase <code>.container</code> que contenga una fila con clase <code>.row</code> y que para un primero ejemplo que tenga una sola columna.</p>
+
+<p>Quedaria lo siguiente:</p>
+
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="span12"&gt;
+        &lt;!--Body content--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;  
+&lt;/div&gt;
+</code></pre>
+
+<p>El <code>.span12</code> hace que el la única columna cubra todo el ancho disponible o en otras palabras que su width es 940px.</p>
+
+<p><img src="http://i.imgur.com/nKncUZk.png" alt="Una solo columna" title=""></p>
+
+<p>Para un segundo ejemplo, la fila contendra 2 columnas pero que sus espesores seran como 3 y 9 en una rejilla de 12.</p>
+
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="span3"&gt;
+        &lt;!--Sidebar content--&gt;
+        &lt;/div&gt;
+        &lt;div class="span9"&gt;
+        &lt;!--Body content--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://i.imgur.com/U60xe70.png" alt="2 columnas de diferentes espesores" title=""></p>
+
+<p>Con esto podemos hacer una fila con espesores de columnas que más nos convenga utilizando las clases <code>.span*</code> tal que * puede tomar valores del 1 al 12.</p>
+
+<p>Ahora si queremos que las columnas se muevan para la derecha con un <strong>desplazamiento</strong> usamos la clase <code>.offset*</code> .</p>
+
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="span4"&gt;
+        &lt;/div&gt;
+        &lt;div class="span4 offset4"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="span6 offset6"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://i.imgur.com/Uz4D1hH.png" alt="enter image description here" title=""></p>
+
+<p>Ahora cuando queremos anidar columnas dentro de otra columna se debe crear dentro una fila con clase  <code>.row</code> y dentro columnas con clase <code>.span*</code></p>
+
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="span9"&gt;
+        Columna Nivel 1
+        &lt;div class="row"&gt;
+          &lt;div class="span4"&gt;Nivel 2&lt;/div&gt;
+          &lt;div class="span5"&gt;Nivel 2&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="span3"&gt;
+        Columna Nivel 1
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://i.imgur.com/JHLnOFm.png" alt="Anidado de columnas" title=""></p>
+
+<p>Importante darse cuenta que las columnas de segundo nivel con clases <code>.span4</code> y <code>.span5</code> ocupan todo el espacio dentro de la columna de clase <code>.span9</code>. Esto significa que las columnas anidadas conservan el mismo espesor que las anidadas bajo la misma clase.</p>
+
+<p>Notese que al disminuir el tamaño de ventana del explorador, el diseño no responde y cierta parte se esconde.</p>
+
+
+
+<h3 id="ejemplo-2-maquetando-con-el-fluid-grid-system">Ejemplo 2: Maquetando con el Fluid Grid System</h3>
+
+<p>A diferencia del Fixed Grid System que utiliza valores ya definidos de width hechos en pixeles, el Fluid Grid System utiliza porcentajes para definir los width. Esto significa que el diseño siempre mantiene una proporcionalidad en cuanto a espesores se refiere.</p>
+
+<p>La forma de utilizar este sistema varia con el anterior en el uso de la clase para el contenedor que antes fue <code>.container</code> y ahora <code>.container-fluid</code>para las filas que antes fue <code>.row</code> y ahora es <code>.row-fluid</code></p>
+
+<p>Este sistema aun conserva la característica de las 12 columnas pero hecho porcentajes, también conserva el uso de las clases <code>.span*</code> y <code>.offset*</code>.</p>
+
+<p>La única diferencia importante con el anterior es sobre el uso de columnas anidadas como se muestra.</p>
+
+<pre><code>&lt;div class="container-fluid"&gt;
+    &lt;div class="row-fluid"&gt;
+      &lt;div class="span9"&gt;
+        Columna Nivel 1
+        &lt;div class="row-fluid"&gt;
+          &lt;div class="span6"&gt;Nivel 2&lt;/div&gt;
+          &lt;div class="span6"&gt;Nivel 2&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="span3"&gt;
+        Columna Nivel 1
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://i.imgur.com/L74PdyQ.png" alt="enter image description here" title=""></p>
+
+<p>Ahora las columnas de nivel 2 con clase <code>.span6</code> funcionan con porcentajes pero referidos a su columna padre.</p>
+
+
+
+<h2 id="componentes-del-css">Componentes del CSS</h2>
+
+<p>Empecemos yendo a la <a href="http://getbootstrap.com/2.3.2/base-css.html">documentación oficial de Bootstrap</a>. En esta web encontrarás un resumen de los elementos que existen en Boostrap 2.3.2 de manera oficial.</p>
+
+<p>Sin embargo, si tienes problemas con el inglés, en <a href="http://www.anidocs.es/bootstrap/docs/base-css.php">esta página</a> encontrarás esa misma información pero en Español.</p>
+
+
+
+<h3 id="ejemplo-3-tipografía">Ejemplo 3: Tipografía</h3>
+
+<p>Para encabezados de cualquier tipo tenemos 6 tamaños para elegir:</p>
+
+<pre><code>&lt;h1&gt;Encabezado 1&lt;/h1&gt;
+&lt;h2&gt;Encabezado 2&lt;/h2&gt;
+&lt;h3&gt;Encabezado 3&lt;/h3&gt;
+&lt;h4&gt;Encabezado 4&lt;/h4&gt;
+&lt;h5&gt;Encabezado 5&lt;/h5&gt;
+&lt;h6&gt;Encabezado 6&lt;/h6&gt;
+</code></pre>
+
+<p>Cuando escribimos párrafos podemos añadirle la clase <code>lead</code> para resaltarlos más:</p>
+
+<pre><code>&lt;p&gt;Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.&lt;/p&gt;
+</code></pre>
+
+<p><img src="http://puu.sh/epfOH/a8003961b2.png" alt="Ejemplo de p" title=""></p>
+
+<pre><code>&lt;p class="lead"&gt;Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.&lt;/p&gt;
+</code></pre>
+
+<p><img src="http://puu.sh/epfTP/12c9e9afe6.png" alt="Ejemplo de p con lead" title=""></p>
+
+<p>Podemos utilizar también la etiqueta <code>&lt;small&gt;</code> para secciones más pequeñas o la etiqueta <code>&lt;strong&gt;</code> para darle negrita:</p>
+
+<pre><code>&lt;p&gt;Este texto es normal, &lt;small&gt;este es más pequeño&lt;/small&gt;&lt;strong&gt; y este esta en negrita.&lt;/strong&gt;&lt;/p&gt;
+</code></pre>
+
+<p><img src="http://puu.sh/epgHf/d6adb9feb2.png" alt="Ejemplo con small y strong" title=""></p>
+
+<p>Podemos alinear el texto a la derecha, izquierda o al centro:</p>
+
+<pre><code>&lt;p class="text-left"&gt;Texto alineado a la izquierda.&lt;/p&gt;
+&lt;p class="text-center"&gt;Texto alineado al centro.&lt;/p&gt;
+&lt;p class="text-right"&gt;Texto alineado a la derecha.&lt;/p&gt;
+</code></pre>
+
+<p><img src="http://puu.sh/eph2r/39f8cd3970.png" alt="Alineacion de texto" title=""></p>
+
+<p>Y si van revisando la versión en inglés de la <a href="http://getbootstrap.com/2.3.2/base-css.html#typography">documentación de Boostrap</a> pueden ir viendo que el código y el ejemplo que utilizan son bastante visuales e intuitivos.</p>
+
+
+
+<h3 id="ejemplo-4-formularios">Ejemplo 4: Formularios</h3>
+
+<p>Si vamos a la sección de formularios y queremos hacer un <code>Horizontal Form</code> (formulario horizontal) como el que aparece en la web:</p>
+
+<p><img src="http://puu.sh/epeRV/7cb1ce1756.png" alt="Horizontal Form" title=""></p>
+
+<p>Pues solo debemos copiar y pegar el código en nuestro HTML:</p>
+
+<pre><code>&lt;form class="form-horizontal"&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label" for="inputEmail"&gt;Email&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;input type="text" id="inputEmail" placeholder="Email"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label" for="inputPassword"&gt;Password&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;input type="password" id="inputPassword" placeholder="Password"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;div class="controls"&gt;
+      &lt;label class="checkbox"&gt;
+        &lt;input type="checkbox"&gt; Remember me
+      &lt;/label&gt;
+      &lt;button type="submit" class="btn"&gt;Sign in&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Y quedará así:</p>
+
+<p><img src="http://puu.sh/ephK7/1a2163493c.png" alt="Ejemplo de Horizontal Form" title=""></p>
+
+
+
+<h3 id="ejemplo-5-botones">Ejemplo 5: Botones</h3>
+
+<p>Ahora digamos que queremos poner un botón. Pues solo debemos de utilizar la clase <code>class="btn"</code> y ya tendremos un diseño de botón predeterminado. Con esto se acostumbra utilizar la etiqueta <code>&lt;button&gt;</code> ya que a fin de cuentas se trata de un botón. Entonces, si utilizamos:</p>
+
+<pre><code>&lt;button class="btn"&gt;Botón Predeterminado&lt;/button&gt;
+</code></pre>
+
+<p>Veremos lo siguiente:</p>
+
+<p><img src="http://puu.sh/epidn/888f1dcb5c.png" alt="Botón" title=""></p>
+
+<p>A continuación otros ejemplos de botones según las clases que le añadimos:</p>
+
+<p><img src="http://puu.sh/ephPV/2db057259a.png" alt="Ejemplos de botones" title=""></p>
+
+<p>Entonces, dale una mirada detallada a los distintos <a href="http://getbootstrap.com/2.3.2/base-css.html">componentes</a> que tiene Boostrap y que puedes utilizar luego de añadir <code>bootstrap.min.css</code> en el <code>head</code> de tu HTML.</p></div></body>
+</html>

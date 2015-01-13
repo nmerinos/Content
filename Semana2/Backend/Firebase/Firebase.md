@@ -33,7 +33,7 @@ Además Firebase te permite agregar métodos de autentificación a tu aplicació
 ## Agregar data a Firebase
 - Ahora ya podemos agregar data a nuestro Firebase, para lo cual existen cuatros metodos los cuales son `set()`, `update()`, `push()` o `transaction()`, los cuales toman como parametro cualquier objeto en formato JSON.
 - Para comenzar vamos a utilizar el metodo `set()` la cual nos permite crear o reemplazar (si ya existe) data a una ruta definida.
- ```js
+```js
  myFireBase.set({
    usuario1 : {
      nombre: "Marie",
@@ -46,7 +46,7 @@ Además Firebase te permite agregar métodos de autentificación a tu aplicació
      casado: false
    }
  });
- ```
+```
  **El metodo set va a reemplazar toda la informacion que esta pueda contener**
 
 ## Leer data de Firebase

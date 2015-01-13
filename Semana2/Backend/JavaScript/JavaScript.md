@@ -104,7 +104,7 @@ console.log(crearUsuario())
 
 Podemos considerar un objeto como un conjunto de propiedades donde cada propiedad es un par llave-valor (key-value).La llave es un strin y el valor es cualquier valor de JavaScript.
 
-```
+```js
 var usuario = {
     nombre: 'Jane',
     describe: function () {
@@ -114,12 +114,14 @@ var usuario = {
 ```
 El objeto anterior tiene dos propiedades "nombre" y "describe". Tu puedes leer ("get") y escribir ("set") estas propiedades:
 
-`usuario.nombre // get`
-`console.log(usuario.nombre)`
-`usuario.nombre = 'John' // set`
-`console.log(usuario.nombre)`
-`usuario.apellido = 'Curie'`
-`console.log(jane.apellido)`
+```js
+usuario.nombre // get
+console.log(usuario.nombre)
+usuario.nombre = 'John' // set
+console.log(usuario.nombre)
+usuario.apellido = 'Curie'
+console.log(jane.apellido)
+```
 
 Las propiedades del objeto que son funciones se conocen como metodos. Estos utilizan la variable especial `this` para referirse al objeto que fue usada para llamarlos.
 
@@ -146,9 +148,6 @@ El operador `delete` se utiliza para eliminar una propiedad:
 delete usuario.apellido //true
 'apellido' in  usuario //false
 ```
-
-## Metodos
-## Constructores
 
 # JSON (JavaScript Object Notation)
 

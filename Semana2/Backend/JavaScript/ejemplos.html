@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="funciones-en-javascript">Funciones en JavaScript</h1>
+
+<p>Una vez definida una función en JS esta puede tomar varios roles:</p>
+
+<p>1.Función normal</p>
+
+<p>Puedes llamar a una función directamente por su nombre.Por convención los nombres de estas funciones comienzan con minúscula.</p>
+
+<p><code>mensaje('hi world')</code></p>
+
+<p>2.Constructor</p>
+
+<p>Puedes llamar a una función vía el operador <code>new</code>, en este caso la función viene a ser un constructor de un objeto.Por convención los nombres de los constructores comienzan con mayúscula.</p>
+
+<p><code>new Date()</code></p>
+
+<p>3.Método</p>
+
+<p>Puedes guardar una función en una propiedad de un objeto, la cual se convierte en un método la cual puedes llamar vía ese objeto. Por convención los nombres de los métodos comienzan por letra minúscula.</p>
+
+<p><code>obj.metodo()</code></p>
+
+<p>Los constructores y métodos se explican en el tema de <strong>Objetos</strong>.</p>
+
+<p>Una manera de  las maneras de definir una función es via <em>declaración de una función</em>:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">suma</span><span class="hljs-params">(a,b)</span>{</span>
+  <span class="hljs-keyword">return</span> a + b;
+}</code></pre>
+
+<p>Pero además existe otra manera de definir una función la cual es asignar una expresión con una función a una variable:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> suma = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(a,b)</span>{</span>
+  <span class="hljs-keyword">return</span> a + b;
+};</code></pre>
+
+<p>La principal diferencia es que la declaración de función hace que esta este disponible para todo el programa incluso se puede usar antes de la declaración de la función.</p>
+
+
+
+<h2 id="parametros-en-funciones-de-js">Parametros  en funciones de JS</h2>
+
+<p>En JavaScript puedes llamar a una función con cualquier numero de parámetros, independientemente del número de parámetros con la que fue definida la función.</p>
+
+<p>1.Más parámetros que los que fueron definidos</p>
+
+<p>Los parámetros extras son ignorados en la función, pero puedes obtenerlos mediante la variable especial <code>arguments</code> la cual retorna todos los argumentos con la que fue llamada la función.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">div</span><span class="hljs-params">(a,b)</span>{</span>
+ <span class="hljs-keyword">return</span> (a/b)
+ console.log(<span class="hljs-built_in">arguments</span>)
+}
+div(<span class="hljs-number">125</span>,<span class="hljs-number">15</span>,<span class="hljs-number">5</span>) <span class="hljs-comment">//</span></code></pre>
+
+<p>2.Menos parámetros que los que fueron definidos:</p>
+
+<p>Si llamamos a una función con menos parámetros con la que fue definida, estos parametros faltantes toman un valor indefinido  <br>
+<code>undefined</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">div</span><span class="hljs-params">(a,b)</span>{</span>
+ <span class="hljs-keyword">if</span>(<span class="hljs-built_in">arguments</span>.length&lt; <span class="hljs-number">2</span>){
+ console.log(<span class="hljs-string">"Error en el numero de argumentos"</span>);
+ } <span class="hljs-keyword">else</span>
+ <span class="hljs-keyword">return</span> (a/b)
+}
+div(<span class="hljs-number">70</span>)</code></pre>
+
+<p>3.Parámetros opcionales:</p>
+
+<p>En algunos casos necesitamos llamar a las funciones con ciertos parametros que en caso de no pasarlos a la función se les asigne un valor por defecto.</p>
+
+<p>Por ejemplo si queremos definir una función que retorne un objeto con los datos de un usuario:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">crearUsuario</span><span class="hljs-params">(nombre,id,ciudad)</span>{</span>
+ usuario = { <span class="hljs-string">"nombre"</span>: nombre,<span class="hljs-string">"id"</span>: id, <span class="hljs-string">"ciudad"</span>: ciudad };
+ <span class="hljs-keyword">return</span> usuario;
+}</code></pre>
+
+<p>Si queremos que la función en caso de no pasarle un argumento le asigne un valor por defecto, podemos hacerlo de varias maneras:</p>
+
+<ul>
+<li>Usando el condicional <code>if</code></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">crearUsuario</span><span class="hljs-params">(nombre,id,ciudad)</span>{</span>
+ <span class="hljs-keyword">if</span> (nombre === <span class="hljs-literal">undefined</span>){
+   nombre = <span class="hljs-string">"Anonymous"</span>
+ }
+ <span class="hljs-keyword">if</span> (id === <span class="hljs-literal">undefined</span>){
+   id = <span class="hljs-number">0</span>;
+ }
+ <span class="hljs-keyword">if</span> (ciudad === <span class="hljs-literal">undefined</span>){
+   ciudad = <span class="hljs-string">"Lima"</span>;
+ }
+ usuario = { <span class="hljs-string">"nombre"</span>: nombre,<span class="hljs-string">"id"</span>: id, <span class="hljs-string">"ciudad"</span>: ciudad };
+ <span class="hljs-keyword">return</span> usuario;
+}
+console.log(crearUsuario(<span class="hljs-string">"Amelie"</span>,<span class="hljs-string">"1241239"</span>,<span class="hljs-string">"Arequipa"</span>))
+console.log(crearUsuario(<span class="hljs-string">"Amelie"</span>,<span class="hljs-string">"1241239"</span>))
+console.log(crearUsuario(<span class="hljs-string">"Amelie"</span>))
+console.log(crearUsuario())</code></pre>
+
+<ul>
+<li>Usando el operador “or” <code>||</code></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">crearUsuario</span><span class="hljs-params">(nombre,id,ciudad)</span>{</span>
+  nombre = nombre || <span class="hljs-string">"Anonymous"</span>
+   id = id || <span class="hljs-number">0</span>;
+   ciudad = ciudad || <span class="hljs-string">"Lima"</span>;
+   usuario = { <span class="hljs-string">"nombre"</span>: nombre,<span class="hljs-string">"id"</span>: id, <span class="hljs-string">"ciudad"</span>: ciudad };
+   <span class="hljs-keyword">return</span> usuario;
+}
+console.log(crearUsuario(<span class="hljs-string">"Amelie"</span>,<span class="hljs-string">"1241239"</span>,<span class="hljs-string">"Arequipa"</span>))
+console.log(crearUsuario(<span class="hljs-string">"Amelie"</span>,<span class="hljs-string">"1241239"</span>))
+console.log(crearUsuario(<span class="hljs-string">"Amelie"</span>))
+console.log(crearUsuario())</code></pre>
+
+
+
+<h1 id="objetos-en-javascript">Objetos en JavaScript</h1>
+
+<p>Podemos considerar un objeto como un conjunto de propiedades donde cada propiedad es un par llave-valor (key-value).La llave es un string y el valor es cualquier valor de JavaScript.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> usuario = {
+    nombre: <span class="hljs-string">'Jane'</span>,
+    describe: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Persona llamada '</span>+<span class="hljs-keyword">this</span>.name;
+    }
+};</code></pre>
+
+<p>El objeto anterior tiene dos propiedades “nombre” y “describe”. Tu puedes leer (“get”) y escribir (“set”) estas propiedades:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">usuario.nombre <span class="hljs-comment">// get</span>
+console.log(usuario.nombre)
+usuario.nombre = <span class="hljs-string">'John'</span> <span class="hljs-comment">// set</span>
+console.log(usuario.nombre)
+usuario.apellido = <span class="hljs-string">'Curie'</span>
+console.log(jane.apellido)</code></pre>
+
+<p>Las propiedades del objeto que son funciones se conocen como métodos. Estos utilizan la variable especial <code>this</code> para referirse al objeto que fue usada para llamarlos.</p>
+
+<p><code>usuario.describe() // Llamada al metodo describe del objeto usuario</code></p>
+
+<p><code>usuario.nombre = 'Jane' // Cambiamos la propiedad "nombre" del objeto</code></p>
+
+<p><code>usuario.describe() // Llamada al metodo describe del objeto usuario con la propiedad</code></p>
+
+<p>Podemos usar el operador <code>in</code> para revisar si existe una propiedad en un objeto.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-string">'apellido'</span> <span class="hljs-keyword">in</span> usuario <span class="hljs-comment">//true</span>
+<span class="hljs-string">'ciudad'</span> <span class="hljs-keyword">in</span> usuario <span class="hljs-comment">//false</span></code></pre>
+
+<p>Si se intenta leer una propiedad que no existe, se obtiene como resultado el valor <code>undefined</code>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">console.log(usuario.ciudad) <span class="hljs-comment">//undefined</span></code></pre>
+
+<p>El operador <code>delete</code> se utiliza para eliminar una propiedad:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">delete</span> usuario.apellido <span class="hljs-comment">//true</span>
+<span class="hljs-string">'apellido'</span> <span class="hljs-keyword">in</span>  usuario <span class="hljs-comment">//false</span></code></pre>
+
+
+
+<h1 id="json-javascript-object-notation">JSON (JavaScript Object Notation)</h1>
+
+<ul>
+<li><p>Es un formato de texto plano para almacenar data.</p></li>
+<li><p>Es un formato muy popular para intercambio de datos para servicios web, para archivos de configuración y más.</p></li>
+</ul>
+
+
+
+<h2 id="formato-de-datos">Formato de datos</h2>
+
+<p>Un formato de datos JSON almacena la información como texto plano, su notación es un subconjunto de la notación de JavaScript como se muestra en el siguiente ejemplo:</p>
+
+<p><code>misdatos.json</code></p>
+
+
+
+<pre class="prettyprint"><code class="language-json hljs ">{
+    "<span class="hljs-attribute">nombre</span>": <span class="hljs-value"><span class="hljs-string">"Bilbo"</span></span>,
+    "<span class="hljs-attribute">raza</span>": <span class="hljs-value"><span class="hljs-string">"Hobbit"</span></span>,
+    "<span class="hljs-attribute">casado</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">friends</span>": <span class="hljs-value">[ <span class="hljs-string">"Gandalf"</span>, <span class="hljs-string">"Gollum"</span> ]
+</span>}</code></pre>
+
+<p>Podemos ver que se trata de un objeto de JavaScript como se mostro en la primera parte del curso de JS, este objeto contiene cuatro miembros los cuales son, <em>nombre</em>, <em>raza</em>, <em>casado</em>, y <em>amigos</em>, con sus respectivos valores los cuales son una cadena de texto en el primero y segundo, un booleano en el tercero y un array en el cuarto.</p>
+
+<p>En JavaScript podemos usar la función <code>JSON.stringify()</code> que convierte un elemento de JavaScript a una cadena de texto en formato JSON la cual se utilizara mas adelante para enviar datos desde el server al frontend.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">usuario = { <span class="hljs-string">"id"</span> : <span class="hljs-string">"LulzSec"</span>,
+            <span class="hljs-string">"notas"</span> : [ <span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">13</span>]
+          };
+console.log(<span class="hljs-built_in">JSON</span>.stringify(usuario));</code></pre>
+
+<p>Además se pueden pasar los parámetros alternativos <code>replacer</code> que modifica el objeto antes de convertirlo en una cadena de texto de JSON y <code>space</code> modifican el formato del espaciado.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">usuario = { <span class="hljs-string">"id"</span> : <span class="hljs-string">"LulzSec"</span>,<span class="hljs-string">"notas"</span> : [ <span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">13</span>]};
+usuarioJSON = <span class="hljs-built_in">JSON</span>.stringify(usuario, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>);
+console.log(usuarioJSON);</code></pre>
+
+<p><em>En el ejemplo anterior se utiliza el parámetro opcional space el cual recibe un número como parámetro que utiliza para agregar ese número de espacios al identado de cada línea del formato JSON</em></p>
+
+<p>Para el caso contrario ocurre cuando recibimos una cadena de texto en formato JSON desde el server y queremos convertir esta a un objeto JavaScript, para eso usamos el método JSON.parse().</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">usuarioJSON = <span class="hljs-string">'{ "id" : "LulzSec","notas" : [ 15, 20, 13]}'</span>;
+console.log(<span class="hljs-built_in">JSON</span>.parse(usuarioJSON));</code></pre></div></body>
+</html>

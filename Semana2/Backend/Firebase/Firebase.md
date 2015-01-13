@@ -49,14 +49,49 @@ Además Firebase te permite agregar métodos de autentificación a tu aplicació
 ```
  **El metodo set va a reemplazar toda la informacion que esta pueda contener**
 
+- Si lo que queremos es agregar una lista de datos usamos el metodo `push()` el cual agrega un nuevo objeto a la referencia de Firebase
+
+```js
+ myFirebase.push({
+   usuario : "Ted"
+   comentario: "I love Linux OS"
+ });
+ myFirebase.push({
+   usuario: "Stallman"
+   comentario: "I did write some code in Java once, but that was the island in Indonesia."
+});
+```
+
+**Al usar el metodo push este nos genere un id unico con el cual podemos acceder a este objeto**
+
 ## Leer data de Firebase
 
 - Para poder leer la data de una referencia a Firebase usamos el método `on`
 
 ```js
-  myFirebaseRef.on("value", function(data) {
+  myFirebase.on("value", function(data) {
     console.log(data.val());
   });
+```
+
+- Ademas algo muy importante que nos permite Firebase es agregar eventos cuando existe alguna modificacion en la base de datos, tales como un objeto es agregado,modificado, movido o eliminado de la base datos.
+
+
+```js
+myFirebase.on("child_added", function(snapshot) {
+  var newComment = snapshot.val();
+  console.log("Nuevo comentario agregado");
+  console.log("Usuario" + newComment.usuario);
+  console.log("Comentario: " + newComment.comentario);
+});
+ myFirebase.push({
+   usuario : "Ted"
+   comentario: "I love Linux OS"
+ });
+ myFirebase.push({
+   usuario: "Stallman"
+   comentario: "I did write some code in Java once, but that was the island in Indonesia."
+});
 ```
 
 ## Ejemplo 
@@ -101,8 +136,14 @@ Este es el código de ejemplo para FireBase
 ```
 
 Y esto es todo el código que necesitan para poder hacer un chat! :)
+*Cualquier consulta sobre el codigo puedes hacerla en el foro de la plataforma*
 
 [Ver más ejemplos](https://www.firebase.com/docs/web/examples.html)
+
+##Ejercicio:
+- Realizar utilizando firebase, un webapp ToDoList. Esta webapp tendrá que tener un input text, un botón para agregar lo que se digite en el input-text. La forma en que se añadira cada input-text a la lista será travez de js. El CSS a su gusto.
+![Ejemplo](http://yeoman.io/assets/img/codelab/image_19.524f.png)
+
 
 
 ##Cuestionario:
@@ -137,8 +178,6 @@ c.a y b.
 
 d.Ninguna de las anteriores.
 
-> 4.Crees que usar Firebase es más conveniente que tener un propio backend?(Especifica porqué o en qué casos)
 
-> 5.¿Qué métodos se utilizan para agregar datos a un firebase?
  
 

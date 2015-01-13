@@ -102,13 +102,56 @@ console.log(crearUsuario())
 
 # Objetos en JavaScript
 
-## Single Objects
+Podemos considerar un objeto como un conjunto de propiedades donde cada propiedad es un par llave-valor (key-value).La llave es un strin y el valor es cualquier valor de JavaScript.
+
+```
+var usuario = {
+    nombre: 'Jane',
+    describe: function () {
+        return 'Persona llamada '+this.name;
+    }
+};
+```
+El objeto anterior tiene dos propiedades "nombre" y "describe". Tu puedes leer ("get") y escribir ("set") estas propiedades:
+
+`usuario.nombre // get`
+`console.log(usuario.nombre)`
+`usuario.nombre = 'John' // set`
+`console.log(usuario.nombre)`
+`usuario.apellido = 'Curie'`
+`console.log(jane.apellido)`
+
+Las propiedades del objeto que son funciones se conocen como metodos. Estos utilizan la variable especial `this` para referirse al objeto que fue usada para llamarlos.
+
+`usuario.describe() // Llamada al metodo describe del objeto usuario`
+`usuario.nombre = 'Jane' // Cambiamos la propiedad "nombre" del objeto`
+`usuario.describe() // Llamada al metodo describe del objeto usuario con la propiedad`
+
+Podemos usar el operador `in` para revisar si existe una propiedad en un objeto.
+
+```js
+'apellido' in usuario //true
+'ciudad' in usuario //false
+```
+
+Si se intenta leer una propiedad que no existe, se obtiene como resultado el valor `undefined`.
+
+```js
+console.log(usuario.ciudad) //undefined
+```
+
+El operador `delete` se utiliza para eliminar una propiedad:
+
+```js
+delete usuario.apellido //true
+'apellido' in  usuario //false
+```
+
 ## Metodos
 ## Constructores
 
 # JSON (JavaScript Object Notation)
 
-En esta seccion se explica lo ques es el formato JSON y como se aplica.
 - Es un formato de texto plano para almacenar data.
 - Es un formato muy popular para intercambio de datos para servicios web, para archivos de configuracion y mas
 

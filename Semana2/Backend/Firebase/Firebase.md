@@ -1,4 +1,4 @@
-#Firebase
+# Firebase
 
 Firebase es servicio en la nube la cual nos permite crear una base de datos en tiempo real, esta la podemos utilizar para diferentes aplicaciones tales como crear juegos multiplayer en tiempo real, un chat, entre otros.
 Además Firebase te permite agregar métodos de autentificación a tu aplicación de manera sencilla con diferentes servicios tales como Facebook, Twitter, Google+ o Github.
@@ -140,13 +140,15 @@ Y esto es todo el código que necesitan para poder hacer un chat! :)
 
 [Ver más ejemplos](https://www.firebase.com/docs/web/examples.html)
 
-##Ejercicio:
+## Ejercicio
+
 - Realizar utilizando firebase, un webapp ToDoList. Esta webapp tendrá que tener un input text, un botón para agregar lo que se digite en el input-text. La forma en que se añadira cada input-text a la lista será travez de js. El CSS a su gusto.
+
 ![Ejemplo](http://yeoman.io/assets/img/codelab/image_19.524f.png)
 
 
 
-##Cuestionario:
+## Cuestionario:
 
 > 1.¿Qué es Firebase?
 

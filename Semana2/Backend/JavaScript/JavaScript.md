@@ -192,3 +192,7 @@ Para el caso contrario ocurre cuando recibimos una cadena de texto en formato JS
 usuarioJSON = '{ "id" : "LulzSec","notas" : [ 15, 20, 13]}';
 console.log(JSON.parse(usuarioJSON));
 ```
+
+#Ejercicio
+
+Modificar el script del archivo que se muestra como ejemplo para completar los campos del cuestionario, usando el objeto que se recibe como respuesta a un archivo JSON, ademas validar que la respuesta sea la correcta, la alternativa correcta la encuentras como una propiedad del objeto.

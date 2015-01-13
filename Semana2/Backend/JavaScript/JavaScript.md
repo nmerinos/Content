@@ -2,19 +2,19 @@
 
 Una vez definida una función en JS esta puede tomar varios roles:
 
-1. Función normal
+1.Función normal
 
 Puedes llamar a una función directamente por su nombre.Por convención los nombres de estas funciones comienzan con minúscula.
 
   `mensaje('hi world')`
 
-2. Constructor
+2.Constructor
 
 Puedes llamar a una función vía el operador `new`, en este caso la función viene a ser un constructor de un objeto.Por convención los nombres de los constructores comienzan con mayúscula.
 
   `new Date()`
 
-3. Método
+3.Método
 
 Puedes guardar una función en una propiedad de un objeto, la cual se convierte en un método la cual puedes llamar vía ese objeto. Por convención los nombres de los métodos comienzan por letra minúscula.
 
@@ -42,7 +42,7 @@ La principal diferencia es que la declaración de función hace que esta este di
 
 En JavaScript puedes llamar a una función con cualquier numero de parámetros, independientemente del número de parámetros con la que fue definida la función.
 
-1. Más parámetros que los que fueron definidos
+1.Más parámetros que los que fueron definidos
 
 Los parámetros extras son ignorados en la función, pero puedes obtenerlos mediante la variable especial `arguments` la cual retorna todos los argumentos con la que fue llamada la función.
 
@@ -54,7 +54,7 @@ function div(a,b){
 div(125,15,5) //
 ```
 
-2. Menos parámetros que los que fueron definidos:
+2.Menos parámetros que los que fueron definidos:
 
 Si llamamos a una función con menos parámetros con la que fue definida, estos parametros faltantes toman un valor indefinido 
 `undefined`.
@@ -69,7 +69,7 @@ function div(a,b){
 div(70)
 ```
 
-3. Parámetros opcionales:
+3.Parámetros opcionales:
 
 En algunos casos necesitamos llamar a las funciones con ciertos parametros que en caso de no pasarlos a la función se les asigne un valor por defecto.
 
@@ -212,7 +212,7 @@ usuario = { "id" : "LulzSec","notas" : [ 15, 20, 13]};
 usuarioJSON = JSON.stringify(usuario, null, 2);
 console.log(usuarioJSON);
 ```
-*En el ejemplo anterior se utiliza el parametro opcional space el cual recibe un numero como parametro que utiliza para agregar ese numero de espacios al identado de cada linea del formato JSON*
+*En el ejemplo anterior se utiliza el parámetro opcional space el cual recibe un número como parámetro que utiliza para agregar ese número de espacios al identado de cada línea del formato JSON*
 
 Para el caso contrario ocurre cuando recibimos una cadena de texto en formato JSON desde el server y queremos convertir esta a un objeto JavaScript, para eso usamos el método JSON.parse().
 

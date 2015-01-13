@@ -196,3 +196,4 @@ console.log(JSON.parse(usuarioJSON));
 #Ejercicio
 
 Modificar el script del archivo que se muestra como ejemplo para completar los campos del cuestionario, usando el objeto que se recibe como respuesta a un archivo JSON, ademas validar que la respuesta sea la correcta, la alternativa correcta la encuentras como una propiedad del objeto.
+![Ejemplo1](https://raw.githubusercontent.com/nmerinos/Content/master/Semana2/Backend/JavaScript/Ejercicio/Ejemplo1.png?token=AA-cF4ACgPGLAU0ZKtFKf6pVYo0vq757ks5UvbWuwA%3D%3D)

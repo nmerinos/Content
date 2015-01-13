@@ -1,4 +1,6 @@
-# Funciones en JavaScript
+# JavaScript
+
+## Funciones en JavaScript
 
 Una vez definida una función en JS esta puede tomar varios roles:
 
@@ -122,7 +124,7 @@ console.log(crearUsuario("Amelie"))
 console.log(crearUsuario())
 ```
 
-# Objetos en JavaScript
+## Objetos en JavaScript
 
 Podemos considerar un objeto como un conjunto de propiedades donde cada propiedad es un par llave-valor (key-value).La llave es un string y el valor es cualquier valor de JavaScript.
 
@@ -173,13 +175,13 @@ delete usuario.apellido //true
 'apellido' in  usuario //false
 ```
 
-# JSON (JavaScript Object Notation)
+## JSON (JavaScript Object Notation)
 
 - Es un formato de texto plano para almacenar data.
 
 - Es un formato muy popular para intercambio de datos para servicios web, para archivos de configuración y más.
 
-## Formato de datos
+### Formato de datos
 
 Un formato de datos JSON almacena la información como texto plano, su notación es un subconjunto de la notación de JavaScript como se muestra en el siguiente ejemplo:
 
@@ -221,7 +223,7 @@ usuarioJSON = '{ "id" : "LulzSec","notas" : [ 15, 20, 13]}';
 console.log(JSON.parse(usuarioJSON));
 ```
 
-#Ejercicio
+##Ejercicio
 
 Modificar el script del archivo que se muestra como [ejemplo](ejercicio1.html) para completar los campos del cuestionario, usando el objeto que se recibe como respuesta a un archivo JSON, ademas agregar la funcionalidad de validar que la respuesta sea la correcta, la alternativa correcta la encuentras como una propiedad del objeto.
 

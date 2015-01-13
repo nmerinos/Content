@@ -223,7 +223,7 @@ console.log(JSON.parse(usuarioJSON));
 
 #Ejercicio
 
-Modificar el script del archivo que se muestra como [ejemplo](ejercicios.html) para completar los campos del cuestionario, usando el objeto que se recibe como respuesta a un archivo JSON, ademas agregar la funcionalidad de validar que la respuesta sea la correcta, la alternativa correcta la encuentras como una propiedad del objeto.
+Modificar el script del archivo que se muestra como [ejemplo](ejercicio1.html) para completar los campos del cuestionario, usando el objeto que se recibe como respuesta a un archivo JSON, ademas agregar la funcionalidad de validar que la respuesta sea la correcta, la alternativa correcta la encuentras como una propiedad del objeto.
 
 El resultado final debe ser algo similar a esto:
 

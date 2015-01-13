@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Ejemplo JS II</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>Ejemplo</p>
+    <!--
+    Usando la libreria JQuery modificar el script de JS para completar los campos del siguiente cuestionario, ademas validar que la respuesta sea la correcta, la alternativa correcta la encuentras como una propiedad del objeto.
+    -->
+    <div>
+      <p>Titulo de la pregunta</p>
+      <p id="enunciado">Enunciado de la pregunta</p>
+      <div>
+        <label><input type="radio" name="alt"> Alternativa 1</label>
+        <label><input type="radio" name="alt"> Alternativa 2</label>
+        <label><input type="radio" name="alt"> Alternativa 3</label>
+        <label><input type="radio" name="alt"> Alternativa 4</label>
+        <label><input type="radio" name="alt"> Alternativa 5</label>
+      </div>
+      <input type="button" value="Enviar"/>
+    </div>
+    <script>
+     $.ajax({url:"https://radiant-fire-5378.firebaseio.com/data/49.json",
+             success:function(data){
+               // El resultado de la llamada ajax a este archivo JSON nos retorna un objeto de JavaScript "data"
+               // Este objeto "data" tiene ciertas propiedades como son 'question' y 'alt' las cuales la usaremos para completar el cuestionario
+               console.log(data);
+               var pregunta = data["question"];
+               $( "#enunciado" ).text( pregunta );
+             }});
+    </script>
+  </body>
+</html>

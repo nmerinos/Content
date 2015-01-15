@@ -232,3 +232,60 @@ El resultado final debe ser algo similar a esto:
 ![Ejemplo1](https://raw.githubusercontent.com/nmerinos/Content/master/Semana2/Backend/JavaScript/Ejercicio/Ejemplo1.png?token=AA-cF4ACgPGLAU0ZKtFKf6pVYo0vq757ks5UvbWuwA%3D%3D)
 
 ![Ejemplo2](https://raw.githubusercontent.com/nmerinos/Content/master/Semana2/Backend/JavaScript/Ejercicio/imagen2.png?token=AA-cF_YMawewNwddf1ZoR7PmqArJhcb1ks5UvbWwwA%3D%3D)
+
+## Cuestionario:
+
+> 1.La llamada al código Javascript se coloca en:
+
+a.El body.
+
+b.El header.
+
+c.Solo el header.
+
+d.Puede colocarse en el body o header.
+
+> 2.Por convención los nombres de los constructores comienzan con:
+
+a.Uppercase o mayúscula.
+
+b.Lowercase o minúscula.
+
+c.Las dos anteriores.
+
+d.Ninguna de las anteriores.
+
+> 3.Por convención los nombres de los métodos comienzan por:
+
+a.Uppercase o mayúscula.
+
+b.Lowercase o minúscula.
+
+c.Las dos anteriores.
+
+d.Ninguna de las anteriores.
+
+> 4.Es un ejemplo de la(s) propiedad(es) __ (y __) de un objeto:
+
+```js
+usuario.nombre 
+usuario.nombre = 'John' 
+```
+
+a.set
+
+b.get
+
+c.Las dos anteriores.
+
+d.Ninguna de las anteriores.
+
+> 5.Convierte un elemento de JavaScript a una cadena de texto en formato JSON:
+
+a.stringify()
+
+b.toString()
+
+c.parseString()
+
+d.Ninguna de las anteriores

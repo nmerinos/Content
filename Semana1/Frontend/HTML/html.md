@@ -353,7 +353,7 @@ d. Todas las anteriores.
 
 > 3.¿Qué etiquetas no se cierran?
 
-a. `<b>`.
+a. `<br>`.
 
 b. `<base>`.
 

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="nodejs">Node.js</h1>
+
+
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+
+
+<h3 id="chat-con-socketio">Chat con socket.io</h3>
+
+<p>Los llamados sockets proveen una comunicación bidireccional entre un cliente y un servidor. Lo que permite el envío de mensajes en tiempo real. Como explicamos anteriormente cuando se escribe un mensaje el servidor lo recibe y lo envía a todos los clientes conectados.</p>
+
+<p>Primero creamos el archivo <strong>package.json</strong>, podemos llamar a nuestra carpeta del proyecto <strong>primer-chat</strong>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-json hljs ">{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"socket-chat-example"</span></span>,
+  "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-string">"0.0.1"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"my first socket.io app"</span></span>,
+  "<span class="hljs-attribute">dependencies</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">express</span>": <span class="hljs-value"><span class="hljs-string">"4.10.2"</span></span>,
+    "<span class="hljs-attribute">socket.io</span>": <span class="hljs-value"><span class="hljs-string">"1.2.0"</span>
+  </span>}
+</span>}</code></pre>
+
+<p>Como vemos estaremos usando la librería <strong>socket.io</strong>. Como sabemos descargamos las dependencias con el siguiente comando:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">npm install</code></pre>
+
+<p>Luego creamos un archivo llamado <strong>index.js</strong> que servira para correr nuestraaplicaciónn.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)();
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>).Server(app);
+
+app.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span>{</span>
+  res.send(<span class="hljs-string">'&lt;h1&gt;Hola mundo&lt;/h1&gt;'</span>);
+});
+
+http.listen(<span class="hljs-number">3000</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  console.log(<span class="hljs-string">'listening on *:3000'</span>);
+});</code></pre>
+
+<p>Esto es, Express inicializa la inicializa la app y le provee un servidor HTTP. Definimos que el path “/”mostrará un mensaje de <strong>“Hola mundo”</strong>. Finalmente definimos que el puerto donde correrá el servidor será el <strong>3000</strong>.</p>
+
+<p>Ejecuta <strong>node index.js</strong> para que veas lo siguiente:</p>
+
+<p><img src="http://imageshack.com/a/img913/5307/27HsTb.png" alt="Pantallazo" title=""></p>
+
+<p><img src="http://imageshack.com/a/img673/2716/2gptn3.png" alt="Pantallazo" title=""></p>
+
+
+
+<h4 id="creando-html">Creando HTML</h4>
+
+<p>Hasta ahora hemos creado el archivo <strong>index.js</strong> en el cual mediante <strong>res.send</strong> enviamos una cadena HTML. Pero nuestro HTML completo (que mostrará el chat) a mostrar se vería confuso si lo situamos en ese mismo lugar. Es por ello que, por una cuestión de orden, crearemos un archivo <strong>index.html</strong>. Para ello en lugar de usar <strong>res.send</strong> usaremos <strong>res.sendFile</strong>.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">app.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span>{</span>
+  res.sendFile(__dirname + <span class="hljs-string">'/index.html'</span>);
+});</code></pre>
+
+<p>Luego, escribiremos en <strong>index.html</strong> lo siguiente:</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Socket.IO chat<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+      * <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-tag">body</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span class="hljs-number">13</span>px Helvetica, Arial</span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-tag">form</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#000</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">3</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> fixed</span></span>; <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-tag">form</span> <span class="hljs-tag">input</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">90</span>%</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> .<span class="hljs-number">5</span>%</span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-tag">form</span> <span class="hljs-tag">button</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">9</span>%</span></span>; <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-function">rgb(<span class="hljs-number">130</span>, <span class="hljs-number">224</span>, <span class="hljs-number">255</span>)</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> none</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-id">#messages</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">list-style-type</span>:<span class="hljs-value"> none</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-id">#messages</span> <span class="hljs-tag">li</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">5</span>px <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule">}</span></span>
+      <span class="hljs-id">#messages</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-child(odd)</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>; <span class="hljs-rule">}</span></span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"messages"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"m"</span> <span class="hljs-attribute">autocomplete</span>=<span class="hljs-value">"off"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Send<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Si reiniciamos el proceso (con Ctrl+C y corremos el <strong>node index</strong> otra vez) y refrescamos la página obtendremos:</p>
+
+<p><img src="http://imageshack.com/a/img538/16/D99jCq.png" alt="Pantallazo" title=""></p>
+
+
+
+<h4 id="integrando-socketio">Integrando Socket.io</h4>
+
+<p>Socket.IO esta compuesto de 2 partes:</p>
+
+<p>Un servidor (socket.io )que integra el servidor HTTP Node.js y la libreria cliente (socket.io-client) que corre en el lado del browser.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-comment">//index.js</span>
+<span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)();
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>).Server(app);
+<span class="hljs-keyword">var</span> io = <span class="hljs-built_in">require</span>(<span class="hljs-string">'socket.io'</span>)(http);
+
+app.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span>{</span>
+  res.sendfile(<span class="hljs-string">'index.html'</span>);
+});
+
+io.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(socket)</span>{</span>
+  console.log(<span class="hljs-string">'a user connected'</span>);
+});
+
+http.listen(<span class="hljs-number">3000</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  console.log(<span class="hljs-string">'listening on *:3000'</span>);
+});</code></pre>
+
+<p>Notar que se inicializa el socket.io al pasar el objeto http. Luego se escucha el evento conexión para sockets que llegan y lo muestra en la consola.  </p>
+
+<p>En index.html se agrega lo siguiente antes del <code>&lt;/body&gt;</code>:</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/socket.io/socket.io.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> socket = io();
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Esto es todo lo que necesitamos para el <strong>socket.io-client</strong>. Si ahora recargamos el servidor y la página web debería ver en la consola el mensaje <strong>“a user connected”</strong>.</p>
+
+<p><img src="http://imageshack.com/a/img908/5882/B4a8Ph.png" alt="Pantallazo" title=""></p>
+
+<p>Cada socket dispara un evento especial:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">io.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(socket)</span>{</span>
+  console.log(<span class="hljs-string">'a user connected'</span>);
+  socket.on(<span class="hljs-string">'disconnect'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    console.log(<span class="hljs-string">'user disconnected'</span>);
+  });
+});</code></pre>
+
+<p>Luego si refrescas la pagina, veras:</p>
+
+<p><img src="http://imageshack.com/a/img661/2556/1MxR7F.png" alt="Pantallazo" title=""></p>
+
+
+
+<h4 id="eventos">Eventos</h4>
+
+<p>La idea principal detras de Socket.io es enviar y recibir cualquier evento que se quiera, con cualquier data que se quiera. </p>
+
+<p>Hagamos que cuando el usuario tipea un mensaje, el servidor lo consigua como evento de mensaje de chat. Para ello los scripts en <strong>index.html</strong> deben verse como:</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://cdn.socket.io/socket.io-1.2.0.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://code.jquery.com/jquery-1.11.1.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> socket = io();
+  $(<span class="hljs-string">'form'</span>).submit(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    socket.emit(<span class="hljs-string">'chat message'</span>, $(<span class="hljs-string">'#m'</span>).val());
+    $(<span class="hljs-string">'#m'</span>).val(<span class="hljs-string">''</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Y en <strong>index.js</strong> imprimimos el mensaje:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">io.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(socket)</span>{</span>
+  socket.on(<span class="hljs-string">'chat message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(msg)</span>{</span>
+    console.log(<span class="hljs-string">'message: '</span> + msg);
+  });
+});</code></pre>
+
+<p><video sutoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/zboNrGSsai.mp4"></video></p>
+
+
+
+<h4 id="broadcasting">Broadcasting</h4>
+
+<p>Para enviar el evento a todos los clientes, usamos <strong>io.emit</strong>:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">io.emit(<span class="hljs-string">'some event'</span>, { <span class="hljs-keyword">for</span>: <span class="hljs-string">'everyone'</span> });</code></pre>
+
+<p>Y si queremos enviar el mensaje a todos menos a cierto socket, tenemos el flag broadcast:ast flag:</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">io.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(socket)</span>{</span>
+  socket.broadcast.emit(<span class="hljs-string">'hi'</span>);
+});</code></pre>
+
+<p>En este caso, enviaremos el mensaje a todos, incluyendo al emisor.</p>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs ">io.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(socket)</span>{</span>
+  socket.on(<span class="hljs-string">'chat message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(msg)</span>{</span>
+    io.emit(<span class="hljs-string">'chat message'</span>, msg);
+  });
+});</code></pre>
+
+<p>Y en el lado del cliente capturamos el evento de mensaje del chat, lo incluiremos en la página. El código javascript del lado del cliente será:</p>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> socket = io();
+  $(<span class="hljs-string">'form'</span>).submit(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    socket.emit(<span class="hljs-string">'chat message'</span>, $(<span class="hljs-string">'#m'</span>).val());
+    $(<span class="hljs-string">'#m'</span>).val(<span class="hljs-string">''</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  });
+  socket.on(<span class="hljs-string">'chat message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(msg)</span>{</span>
+    $(<span class="hljs-string">'#messages'</span>).append($(<span class="hljs-string">'&lt;li&gt;'</span>).text(msg));
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p><video sutoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/J4xwRU9DRn.mp4"></video></p></div></body>
+</html>

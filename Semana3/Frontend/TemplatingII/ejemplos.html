@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="templating-i">Templating II</h1>
+
+
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+
+
+<h3 id="diseño-responsivo">Diseño Responsivo</h3>
+
+
+
+<h4 id="descarguemos-los-siguientes-ejemplos">Descarguemos los siguientes ejemplos:</h4>
+
+
+
+<h4 id="ejemplo-1-viewports-ventana-de-visualización">Ejemplo 1: Viewports (Ventana de Visualización)</h4>
+
+<p>Puedes definir el ancho de la vista en el navegador. Si no utilizas <code>width=device-width</code>, tu página en iOS se estiraría en todo el ancho disponible del celular que es 920px. Si utilizas <code>width=device-width</code>, tu página encajaría en el tamaño real de la pantalla que es 320px. Entonces es recomendable incluir <strong>siempre</strong> la siguiente etiqueta dentro de nuestro <code>head</code>:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=device-width"&gt;
+</code></pre>
+
+<p><img src="Imagen1.png" alt="Ejemplo Gráfico" title=""></p>
+
+<h4 id="ejemplo-2-media-queries">Ejemplo 2: Media Queries</h4>
+
+<p>Los media queries de CSS3 son realmente simples en términos de su sintaxis. Tiene una directiva <code>@media</code>, estos <em>media type</em> especifican el soporte al cual apuntan los estilos css definidos dentro de ella: pantalla (screen), papel (print), móviles (handheld), etc. Algunas propiedades CSS están diseñadas para distintos medios. Sin embargo, para nuestro interés utilizamos simplemente:</p>
+
+<pre><code>@media screen and (max-width:500px) {
+  &lt;!--introducimos acá el css--&gt;
+}
+</code></pre>
+
+<p>Finalmente es recomendable utilizar <code>only screen</code> en vez de únicamente <code>screen</code> para evitar que navegadores antiguos que <strong>no reconocen</strong> media queries no lean el CSS que está dentro. Por lo que nuestro <strong>media query</strong> quedaría así:</p>
+
+<pre><code>@media only screen and (min-width:640px) {
+  &lt;!--introducimos acá el css--&gt;
+}
+</code></pre>
+
+<p>Como habrán visto, utilizamos <code>max-width</code> y <code>min-width</code>, los cuales indican el ancho máximo y mínimo, respectivamente, en el que el navegador interpretará los estilos CSS introducidos dentro de los corchetes.</p>
+
+
+
+<h5 id="pero-dónde-ubicamos-estos-media-queries">¿Pero dónde ubicamos estos <strong>media queries</strong>?</h5>
+
+<p>Pues al final de nuestro documento CSS. Ya que así serán interpretado y sobre escribirán cualquier otro estilo que ya hayamos escrito. Por ejemplo:</p>
+
+<pre><code>html { background: red; }
+
+@media (max-width: 600px) {
+  html { background: green; }
+}
+</code></pre>
+
+
+
+<h5 id="y-estos-media-queries-también-los-podemos-utilizar-en-cascada">Y estos media queries también los podemos utilizar en cascada:</h5>
+
+<pre><code>html { background: red; }
+@media (min-width: 600px) {
+  html { background: green; }
+}
+@media (min-width: 800px) {
+  html { background: blue; }
+}
+</code></pre>
+
+<p>Y si esta configuración de arriba es complicada para ti, pues podrías utilizar también la siguiente, que es lo mismo:</p>
+
+<pre><code>@media (max-width: 599px) {
+  html { background: red; }
+}
+@media (min-width: 600px) and (max-width: 799px) {
+  html { background: green; }
+}
+@media (min-width: 800px) {
+  html { background: blue; }
+}
+</code></pre></div></body>
+</html>

@@ -1,4 +1,5 @@
-# Templating I
+# Templating II
+
 ## Ejemplos
 
 ### Diseño Responsivo
@@ -7,7 +8,6 @@
 
 
 #### Ejemplo 1: Viewports (Ventana de Visualización)
-
 
 Puedes definir el ancho de la vista en el navegador. Si no utilizas `width=device-width`, tu página en iOS se estiraría en todo el ancho disponible del celular que es 920px. Si utilizas `width=device-width`, tu página encajaría en el tamaño real de la pantalla que es 320px. Entonces es recomendable incluir **siempre** la siguiente etiqueta dentro de nuestro `head`:
 

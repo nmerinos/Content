@@ -79,7 +79,9 @@ void serialEvent(Serial myPort) //Se ejecuta cada vez que hay un nuevo dato en e
 
 
 Recuerden ejecutar primero el código de Arduino y luego el de Processing. Las conexiones al arduino son las mismas que en el ejemplo de conexión analógica.
+
 ##Ejercicios
+
 Ahora, puedes modificar algo visual desde el arduino. Imagina las posibilidades.... listo? ahora que dejen de ser posibilidades.  Investiga sobre Processing y juega con la comunicación serial. Tal vez variar la posición de una imagen (investiga Pimage)... o el tamaño de algún objeto. Esos son los ejercicios. Intenta hacer algo interactuando entre Arduino y Processing. Tienes pulsadores y potenciómetros para apoyarte, y los conocimientos previos de la semana 1 y 2. 
 Si tienen dudas, nos vemos en el foro. :)
 

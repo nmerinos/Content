@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="processing">Processing</h1>
+
+<p>Probablemente te estés preguntando qué es processing, o para que sirve; probablemente no, pero en cualquiera de los casos google siempre está dispuestos a resolver nuestras dudas.</p>
+
+<p>Esta es la página oficial de processing: <a href="https://processing.org/">https://processing.org/</a></p>
+
+<p>Dale click a la sección de Descargas: <a href="https://processing.org/download/">https://processing.org/download/</a></p>
+
+<p>Si puedes, haz una pequeña donación, a los creadores les encantará. Si no, no hay problema (… #programoPorComida).</p>
+
+<p><img src="pictures/lol.JPG" alt="Sin titulo" title=""></p>
+
+<p>y clic en Download!</p>
+
+<p>Y listo… tenemos Processing. </p>
+
+<p>Ahora, ¿para qué nos sirve? Excelente pregunta!! Con las librerías adecuadas y un par de trucos, Processing es capaz de hacer desde reconocimiento de imágenes hasta tweetear por nosotros. Pero lo más interesante es que puede comunicarse con Arduino por el puerto Serial, y esto nos da una gama terriblemente amplia de usos para el Arduino. </p>
+
+<p>Dejando el floro de lado, empecemos con processing.</p>
+
+<p>Processing tiene 2 funciones principales, como a Arduino: <br>
+<strong>void setup</strong>: Se ejecuta una sola vez. <br>
+<strong>void draw</strong>: Se ejecuta continuamente. <br>
+¿Te suena familiar?</p>
+
+
+
+<h4 id="funciones-básicas-en-processing">Funciones básicas en processing:</h4>
+
+<p>Puesto que Processing cuenta con una excelente referencia, nos evitaremos la descripción detallada de todas sus funciones, pero les dejaré una lista de funciones que les resultarán realmente útiles:</p>
+
+<p><strong>size()</strong> nos permite crear una pantalla o lienzo. <br>
+<em>ejemplo</em> size(500,500); // crea una pantalla de 500 píxeles por 500 píxeles</p>
+
+<p><strong>background()</strong> nos permite darle fondo de un color a la pantalla generada por <strong>size()</strong></p>
+
+<p>Ahora empezemos a jugar. Para este ejemplo variaremos el color del fondo desde un potenciómetro.</p>
+
+
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+<p>Para esto tenemos que programar primero el Arduino, y luego recibir los datos que este envía en Processing.</p>
+
+<p>El programa que debe ser grabado en el arduino es el siguiente:</p>
+
+<blockquote>
+  <p>int color = 0; // La variable que vamos a leer y transformar <br>
+  int datos = 0; // La variable que vamos a enviar <br>
+  void setup() //Solo se ejecuta una vez <br>
+  { <br>
+    Serial.begin(9600); // La velocidad de comunicación 9600 baudios <br>
+  } <br>
+  void loop() //Se ejecuta continuamente <br>
+  { <br>
+    color= analogRead(A0); //Lectura del potenciómetro <br>
+    datos= map(pos, 0, 1023, 0, 255); // Escalamiento <br>
+    Serial.write(datos); // Envío del dato. <br>
+    delay(10); // Espera 10 milisegundos entre dato y dato para no sobrecargar el puerto <br>
+  }   </p>
+</blockquote>
+
+<p>y el código para Processing es el siguiente:</p>
+
+<blockquote>
+  <p>import processing.serial.*; // Importamos la librería Serial <br>
+  Serial myPort;        // Creamos un objeto llamado myPort <br>
+  int datoLeido;       // creamos la variable que vamos a recibir <br>
+  void setup()  // Se ejecuta solo una vez <br>
+  { <br>
+    myPort = new Serial(this, Serial.list()[0], 9600); //inicializamos la comunicación serial <br>
+    size(1000, 600); //Creamos la pantalla <br>
+  } <br>
+  void draw()  // Se ejecuta repetidamente <br>
+  { <br>
+     background(datoLeido);    // Damos color al fondo según el valor del dato leído <br>
+  } <br>
+  void serialEvent(Serial myPort) //Se ejecuta cada vez que hay un nuevo dato en el puerto serial <br>
+  { <br>
+    datoLeido = myPort.read(); // Almacenamos el dato leído <br>
+  }  </p>
+</blockquote>
+
+<p>Recuerden ejecutar primero el código de Arduino y luego el de Processing. Las conexiones al arduino son las mismas que en el ejemplo de conexión analógica.</p></div></body>
+</html>
